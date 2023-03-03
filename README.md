@@ -11,8 +11,10 @@ git clone https://gitlab.liu.se/auggu628/tddd96-kandidatprojekt-2023-pum12.git
 
 ```
 ## Git workflow - Gitflow
-Här ska August skriva en massa om hur git grejer går till.
-![Gitflow model](https://gitlab.liu.se/tddd96-2023_pum12/tddd96-kandidatprojekt-2023-pum12/-/blob/main/git-model.png "Gitflow")
+Det workflow som kommer användas är Gitflow. En tydlig överblick av Gitflow ses på bilden nedan.
+Mer info om Gitflow: https://nvie.com/posts/a-successful-git-branching-model/
+
+![Gitflow model](./git-model.png "Gitflow")
 
 ## Test and Deploy (August ska titta vidare på detta)
 
