@@ -15,3 +15,15 @@ Backend: In folder "/server" run "python server.py"
 frontend: In folder "/client" run "npm start"
 
 The app autorefreshes when a new change is saved
+
+# ModuleNotFoundError: No module named 'google'
+Installera BigQuery Client library:
+pip install --upgrade google-cloud-bigquery
+
+# Requirements
+Server:
+Install flask
+
+Client:
+npm install
+npm install recharts

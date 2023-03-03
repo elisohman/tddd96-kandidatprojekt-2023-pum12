@@ -11,6 +11,7 @@ x = datetime.datetime.now()
 # Initializing flask app
 app = Flask(__name__)
 
+
 # Route for seeing a data
 @app.route("/data")
 def get_time():
@@ -24,7 +25,6 @@ def get_time():
         """
     )
     results = query_job.result()  # Waits for job to complete.
-    count  = 0
     temp = {}
     for row in results:
         temp = {
@@ -34,8 +34,6 @@ def get_time():
 			"airpressure": row.airpressure,
             "temp": row.temp
         }
-        count += 1
-    
     return temp
 
 # Running app
