@@ -19,6 +19,11 @@ blablabla
 ### Developing
 blablabla
 
+## Start app
+Backend: In folder "/server" run "python server.py"\
+Frontend: In folder "/client" run "npm start"\
+
+The app autorefreshes when a new change is saved
 ## Project structure
 (nedan är endast ett template)
 ```
@@ -34,3 +39,8 @@ blablabla
 
 ## Documentation
 Se doc mappen.
+
+## FAQ
+### ModuleNotFoundError: No module named 'google'
+Installera BigQuery Client library:
+pip install --upgrade google-cloud-bigquery
