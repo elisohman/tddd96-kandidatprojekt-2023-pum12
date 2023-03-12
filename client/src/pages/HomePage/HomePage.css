@@ -1,0 +1,32 @@
+.HomePageContent{
+    display: flex;
+    /* flex-direction: row; */
+    flex-wrap: wrap;
+    /* height: 100%; */
+    width: 100%;
+
+}
+
+.HomePageContent .cards{
+    padding: 1em;
+    width: 100%;
+    /* height: 100%; */
+    display: grid;
+    grid-template-columns: 49% 49%;
+    grid-auto-rows: minmax(100px, auto);
+    /* grid-template-rows: minmax(100px, 40vw); */
+    grid-gap: 1em;
+    color: white;
+}
+
+.HomePageBackground{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(143, 146, 156);
+    z-index: -1;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
