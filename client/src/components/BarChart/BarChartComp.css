@@ -1,0 +1,17 @@
+.ChartContainer{
+    /* border: 2px solid black */
+    /* height: 400px;
+    width: 400px; */
+}
+
+.ChartContainer .Content{
+    height: 100%;
+    background-color: rgb(37, 45, 48);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.ChartTitle {
+    padding-left: 1em;
+}

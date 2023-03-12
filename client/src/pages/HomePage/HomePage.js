@@ -1,7 +1,9 @@
 import React, { useState, useEffect, PureComponent } from "react";
-import Chart from "./../components/Charts/TestChart";
+import Sidebar from '../../components/Sidebar/Sidebar';
+import './HomePage.css';
+import BarChart from "../../components/BarChart/BarChartComp";
 
-function FrontPage(props) {
+function HomePage(props) {
     // Data fetch for graph
 	const [data, setData] = useState([{
 		unit: 0,
@@ -31,11 +33,17 @@ function FrontPage(props) {
 	)
 	}
     return (
-        <div>
-            <h1>FrontPage</h1>
-            <Chart data={data}/>
+        <div className="HomePageContent">
+            <div className='HomePageBackground' />
+            <div className='cards'>
+                <BarChart data={data}/>
+                <BarChart data={data}/>
+                <BarChart data={data}/>
+                <BarChart data={data}/>
+            </div>
         </div>
+
     );
 }
 
-export default FrontPage;
+export default HomePage;
