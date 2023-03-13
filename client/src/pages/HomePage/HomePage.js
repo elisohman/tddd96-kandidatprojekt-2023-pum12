@@ -2,6 +2,8 @@ import React, { useState, useEffect, PureComponent } from "react";
 import Sidebar from '../../components/Sidebar/Sidebar';
 import './HomePage.css';
 import BarChart from "../../components/BarChart/BarChartComp";
+import Topbar from "../../components/Topbar/Topbar";
+import TopCard from "../../components/topCard/topCard";
 
 function HomePage(props) {
     // Data fetch for graph
@@ -35,7 +37,14 @@ function HomePage(props) {
     return (
         <div className="HomePageContent">
             <div className='HomePageBackground' />
+			<Topbar />
             <div className='cards'>
+				<div className="topCards">
+					<TopCard />
+					<TopCard />
+					<TopCard />
+					<TopCard />
+				</div>
                 <BarChart data={data}/>
                 <BarChart data={data}/>
                 <BarChart data={data}/>

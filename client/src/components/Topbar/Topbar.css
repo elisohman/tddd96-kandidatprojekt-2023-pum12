@@ -1,0 +1,9 @@
+.TopbarContainer{
+    height: 60px;
+    background-color: rgb(143, 146, 156);
+    border-bottom: 2px rgb(87, 87, 87) solid;
+    width: 100%;
+    display: flex;
+    padding-left: 5%;
+    align-items: center;
+}
