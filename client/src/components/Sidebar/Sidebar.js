@@ -9,7 +9,7 @@ function Sidebar(props) {
         <div className='Sidebar'>
             <div className="SidebarHeader">
                 <img src={logo} id="logo"/>
-                <h1 id='header'>Neue</h1>
+                <div id='header'>Neue</div>
             </div>
             <ul className="SidebarList">
                 {SidebarData.map((val, key) => {

@@ -4,7 +4,7 @@ import './topCard.css';
 function topCard(props) {
     return (
         <div className='topCardContainer'>
-            yooo
+            <p>Small bit of info</p>
         </div>
     );
 }

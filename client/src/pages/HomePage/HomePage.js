@@ -4,6 +4,7 @@ import './HomePage.css';
 import BarChart from "../../components/BarChart/BarChartComp";
 import Topbar from "../../components/Topbar/Topbar";
 import TopCard from "../../components/topCard/topCard";
+import EditIcon from '@mui/icons-material/Edit';
 
 function HomePage(props) {
     // Data fetch for graph
@@ -37,19 +38,28 @@ function HomePage(props) {
     return (
         <div className="HomePageContent">
             <div className='HomePageBackground' />
-			<Topbar />
-            <div className='cards'>
+			{/* <Topbar /> */}
+			<div className="GridContainer">
+				<div className="Topbar">
+					<div id="TopbarHeader">Overview</div>
+					<div id="TopbarButton">
+						<EditIcon />
+						Edit
+					</div>
+				</div>
+
 				<div className="topCards">
 					<TopCard />
 					<TopCard />
 					<TopCard />
 					<TopCard />
 				</div>
-                <BarChart data={data}/>
-                <BarChart data={data}/>
-                <BarChart data={data}/>
-                <BarChart data={data}/>
-            </div>
+				<BarChart data={data}/>
+				<BarChart data={data}/>
+				<BarChart data={data}/>
+				<BarChart data={data}/>
+
+			</div>
         </div>
 
     );
