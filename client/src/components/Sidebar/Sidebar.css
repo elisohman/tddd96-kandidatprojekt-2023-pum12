@@ -1,10 +1,10 @@
 .Sidebar{
     margin: 0;
     padding: 0;
-    height:100vh;
-    width: 200px;
+    /* height:100vh;
+    width: 200px; */
     background-color: #EBEBEB;
-    position: fixed;
+    /* position: fixed; */
 }
 
 .SidebarList{

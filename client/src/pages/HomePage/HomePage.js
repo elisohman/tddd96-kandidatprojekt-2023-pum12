@@ -2,7 +2,6 @@ import React, { useState, useEffect, PureComponent } from "react";
 import Sidebar from '../../components/Sidebar/Sidebar';
 import './HomePage.css';
 import BarChart from "../../components/BarChart/BarChartComp";
-import Topbar from "../../components/Topbar/Topbar";
 import TopCard from "../../components/topCard/topCard";
 import EditIcon from '@mui/icons-material/Edit';
 
@@ -37,17 +36,9 @@ function HomePage(props) {
 	}
     return (
         <div className="HomePageContent">
-            <div className='HomePageBackground' />
-			{/* <Topbar /> */}
+			<Sidebar />
+            
 			<div className="GridContainer">
-				<div className="Topbar">
-					<div id="TopbarHeader">Overview</div>
-					<div id="TopbarButton">
-						<EditIcon />
-						Edit
-					</div>
-				</div>
-
 				<div className="topCards">
 					<TopCard />
 					<TopCard />

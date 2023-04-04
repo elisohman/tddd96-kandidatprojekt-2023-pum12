@@ -1,34 +1,25 @@
 // inspired by https://www.youtube.com/watch?v=5R9jFHlG6ik
-import React from 'react';
+import React, { useState, useEffect, PureComponent } from "react";
 import "./Sidebar.css";
-import { SidebarData } from './SidebarData';
-import logo from '../../image/logo.png';
+import SidebarHeader from '../SidebarHeader/SidebarHeader';
+import SidebarMenu from "../SidebarMenu/SidebarMenu";
+import SidebarSearch from "../SidebarSearch/SidebarSearch";
 
 function Sidebar(props) {
+    // Get json data from server what sensors and units are available
+    const [data, setData] = useState([{}]);
+	useEffect(() => API_call("/sensors"), []) // TODO implement API_call in server side
+	function API_call(request) {
+		fetch(request)
+			.then(res => res.json())
+			.then(res => {setData(res);	})
+	}
+
     return (
         <div className='Sidebar'>
-            <div className="SidebarHeader">
-                <img src={logo} id="logo"/>
-                <div id='header'>Neue</div>
-            </div>
-            <ul className="SidebarList">
-                {SidebarData.map((val, key) => {
-                    return (
-                        <li 
-                            key={key} 
-                            onClick={() => {window.location.pathname = val.link}}
-                            className="row"
-                            id={window.location.pathname === val.link ? "active" : ""}>
-                            {" "}
-                            <div id="icon">{val.icon}</div>
-                            <div id="title">{val.title}</div>
-                        </li>
-                    );
-                })}
-            </ul>
-            <div className="BottomCopyright">
-                <p>© some text about compyright</p>
-            </div>
+            <SidebarHeader/> 
+            <SidebarSearch/>
+            <SidebarMenu/>
         </div>
     );
 }
