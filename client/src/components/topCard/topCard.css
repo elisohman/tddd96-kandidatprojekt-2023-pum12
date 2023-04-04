@@ -1,0 +1,7 @@
+.topCardContainer{
+    height: 100%;
+    background-color: #EBEBEB;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}

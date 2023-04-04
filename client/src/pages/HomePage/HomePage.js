@@ -2,6 +2,8 @@ import React, { useState, useEffect, PureComponent } from "react";
 import Sidebar from '../../components/Sidebar/Sidebar';
 import './HomePage.css';
 import BarChart from "../../components/BarChart/BarChartComp";
+import TopCard from "../../components/topCard/topCard";
+import EditIcon from '@mui/icons-material/Edit';
 
 function HomePage(props) {
     // Data fetch for graph
@@ -34,13 +36,21 @@ function HomePage(props) {
 	}
     return (
         <div className="HomePageContent">
-            <div className='HomePageBackground' />
-            <div className='cards'>
-                <BarChart data={data}/>
-                <BarChart data={data}/>
-                <BarChart data={data}/>
-                <BarChart data={data}/>
-            </div>
+			<Sidebar />
+            
+			<div className="GridContainer">
+				<div className="topCards">
+					<TopCard />
+					<TopCard />
+					<TopCard />
+					<TopCard />
+				</div>
+				<BarChart data={data}/>
+				<BarChart data={data}/>
+				<BarChart data={data}/>
+				<BarChart data={data}/>
+
+			</div>
         </div>
 
     );
