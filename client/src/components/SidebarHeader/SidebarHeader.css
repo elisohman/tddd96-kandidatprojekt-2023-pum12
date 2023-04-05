@@ -1,0 +1,17 @@
+.SidebarHeaderContainer {
+    padding: 10px;
+    display: flex;
+}
+
+.CompanyName {
+    margin: 0;
+    padding-right: 10px;
+    width: fit-content;
+    font-size: 25pt;
+    font-family:'Times New Roman', Times, serif;
+}
+
+.CompanyLogo {
+    width: 40px;
+    height: 40px;
+}

@@ -3,7 +3,6 @@ import Sidebar from '../../components/Sidebar/Sidebar';
 import './HomePage.css';
 import BarChart from "../../components/BarChart/BarChartComp";
 import TopCard from "../../components/topCard/topCard";
-import EditIcon from '@mui/icons-material/Edit';
 
 function HomePage(props) {
     // Data fetch for graph
