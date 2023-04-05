@@ -3,6 +3,7 @@ import Sidebar from '../../components/Sidebar/Sidebar';
 import './HomePage.css';
 import BarChart from "../../components/BarChart/BarChartComp";
 import TopCard from "../../components/topCard/topCard";
+import HomePageHeader from "../../components/HomePageHeader/HomePageHeader"
 
 function HomePage(props) {
     // Data fetch for graph
@@ -37,18 +38,22 @@ function HomePage(props) {
         <div className="HomePageContent">
 			<Sidebar />
             
-			<div className="GridContainer">
-				<div className="topCards">
-					<TopCard />
-					<TopCard />
-					<TopCard />
-					<TopCard />
-				</div>
-				<BarChart data={data}/>
-				<BarChart data={data}/>
-				<BarChart data={data}/>
-				<BarChart data={data}/>
+			<div className="SensorData">
+				<HomePageHeader />
 
+				<div className="GridContainer">
+
+					<div className="topCards">
+						<TopCard />
+						<TopCard />
+						<TopCard />
+						<TopCard />
+					</div>
+					<BarChart data={data}/>
+					<BarChart data={data}/>
+					<BarChart data={data}/>
+					<BarChart data={data}/>
+				</div>
 			</div>
         </div>
 

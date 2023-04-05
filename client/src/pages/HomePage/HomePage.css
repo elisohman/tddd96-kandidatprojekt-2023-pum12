@@ -23,15 +23,6 @@
     color: black;
 }
 
-.HomePageContent .cards{
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 300px, 300px, 300px;
-    grid-gap: 1em;
-    color: white;
-}
-
 .GridContainer .topCards {
     /* border: 2px solid white; */
     grid-column: span 2;
