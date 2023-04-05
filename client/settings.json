@@ -1,0 +1,22 @@
+{
+    "files.autoSave": "onFocusChange",
+    "editor.wordWrap": "on",
+    "liveServer.settings.donotShowInfoMsg": true,
+    "explorer.confirmDragAndDrop": false,
+    "liveServer.settings.useWebExt": true,
+    "window.zoomLevel": 0,
+    "sync.autoDownload": true,
+    "sync.autoUpload": true,
+    "sync.gist": "d7df2168a88d5b20f3c18dd38db04b63",
+    "python.languageServer": "Pylance",
+    "liveshare.authenticationProvider": "GitHub",
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter.notebook.ipynb"
+    },
+    "editor.unicodeHighlight.nonBasicASCII": false,
+    "liveshare.presence": true,
+    "workbench.startupEditor": "none",
+    "[python]": {
+        "editor.formatOnType": true
+    }
+}

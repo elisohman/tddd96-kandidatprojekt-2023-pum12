@@ -4,7 +4,6 @@ import './HomePage.css';
 import BarChart from "../../components/BarChart/BarChartComp";
 import TopCard from "../../components/topCard/topCard";
 import HomePageHeader from "../../components/HomePageHeader/HomePageHeader"
-import EditIcon from '@mui/icons-material/Edit';
 
 function HomePage(props) {
     // Data fetch for graph
