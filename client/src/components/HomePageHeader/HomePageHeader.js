@@ -11,24 +11,28 @@ export default function HomePageHeader() {
       
       <div className="HomePageHeaderButtons">
 
-        <a className="ButtonLinks" href="alarms">
-          <div className="AlarmButton">
+        <div className="AlarmButton">
+
+          <a className="ButtonLinks" href="alarms">
 
             {/* Image should only be shown if there is an alarm */}
             <img src={alarm} id="alarmLogo" alt="Alarm symbol" className="ButtonImage"></img>
             <p className="ButtonText">Alarm</p>
 
-          </div>
-        </a>
+          </a>
 
-        <a className="ButtonLinks" href="edit">
-          <div className="EditButton">
+        </div>
+
+        <div className="EditButton">
+
+          <a className="ButtonLinks" href="edit">
 
             <img src={edit} id="editLogo" alt="Edit symbol" className="ButtonImage"></img>
             <p className="ButtonText">Edit</p>
 
-          </div>
-        </a>
+          </a>
+          
+        </div>
 
       </div>
     

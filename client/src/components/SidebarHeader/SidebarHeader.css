@@ -1,6 +1,14 @@
 .SidebarHeaderContainer {
     padding: 10px;
     display: flex;
+    height: 40px;
+}
+
+.CompanyLogoLink {
+    margin: 0;
+    color: black;
+    text-decoration: none;
+    display: flex;
 }
 
 .CompanyName {
