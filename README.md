@@ -44,3 +44,10 @@ Se doc mappen.
 ### ModuleNotFoundError: No module named 'google'
 Installera BigQuery Client library:
 pip install --upgrade google-cloud-bigquery
+
+
+# Icons
+Example:
+import HelpIcon from '@mui/icons-material/Help';
+Link to website:
+https://mui.com/material-ui/material-icons/ for icons

@@ -1,0 +1,57 @@
+
+.SidebarMenuContainer{
+    display: grid;
+    grid-template-columns: 1fr 5fr 5fr 2fr;
+    grid-row-gap: 20px;
+    overflow-y:scroll;
+    height: 500px;
+    
+}
+
+.HeaderSensors{
+    grid-column: 2;
+    font-size: 25px;
+}
+
+.HeaderAlarms{
+    grid-column: 3;
+    font-size: 25px;
+}
+
+.HeaderFlow{
+    grid-column: 4;
+    font-size: 25px;
+}
+
+
+.MenuItemName{
+    grid-column: 2;
+}
+
+.MenuItemName:hover{
+    transition: transform 0.1s ease-in-out;
+    transform: scale(1.05);
+}
+
+.Unit{
+    font-size: 20px;
+    grid-column: 2;
+}
+
+.BottomBorder{
+    border-bottom: 1px solid #a0a0a0;
+}
+
+.Alarms{
+    grid-column: 3;
+}
+
+.Sensor{
+    grid-column: 2;
+    padding-left: 20px;
+}
+
+.SensorValue{
+    grid-column: 4;
+}
+
