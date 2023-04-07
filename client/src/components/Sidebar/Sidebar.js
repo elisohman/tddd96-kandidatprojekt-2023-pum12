@@ -7,19 +7,21 @@ import SidebarSearch from "../SidebarSearch/SidebarSearch";
 
 function Sidebar(props) {
     // Get json data from server what sensors and units are available
-    const [data, setData] = useState([{}]);
+    const [sensorJSON, setSensorJSON] = useState({"units":[]});
+
 	useEffect(() => API_call("/sensors"), []) // TODO implement API_call in server side
 	function API_call(request) {
 		fetch(request)
 			.then(res => res.json())
-			.then(res => {setData(res);	})
-	}
+			.then(res => {setSensorJSON(res);	})
+        
 
+	}
     return (
         <div className='Sidebar'>
             <SidebarHeader/> 
             <SidebarSearch/>
-            <SidebarMenu/>
+            <SidebarMenu data={sensorJSON}/>
         </div>
     );
 }
