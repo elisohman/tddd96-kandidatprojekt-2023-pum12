@@ -1,11 +1,14 @@
 
+.SidebarMenuContent{
+    
+}
+
 .SidebarMenuContainer{
     display: grid;
     grid-template-columns: 1fr 5fr 5fr 2fr;
     grid-row-gap: 20px;
-    overflow-y:scroll;
-    height: 500px;
     
+ 
 }
 
 .HeaderSensors{
@@ -53,5 +56,9 @@
 
 .SensorValue{
     grid-column: 4;
+}
+
+#Selected{
+    border-left: 5px solid #0AC29B;
 }
 
