@@ -2,6 +2,11 @@
     display: none;
 }
 
+.SensorData{
+    overflow-y:scroll;
+    height: 100vh;
+}
+
 .HomePageContent{
     width: 100%;
     display: grid;

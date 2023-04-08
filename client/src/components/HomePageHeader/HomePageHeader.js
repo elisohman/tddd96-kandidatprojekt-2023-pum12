@@ -7,7 +7,7 @@ export default function HomePageHeader() {
   return ( 
     <div className="HomePageHeaderContent">
 
-      <p className="SensorNumber">Sensor 001</p>
+      <p className="SensorNumber">{window.location.pathname === "/" ? "Home" : window.location.pathname}</p>
       
       <div className="HomePageHeaderButtons">
 

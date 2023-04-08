@@ -47,6 +47,7 @@
 
 .Alarms{
     grid-column: 3;
+    display: flex;
 }
 
 .Sensor{

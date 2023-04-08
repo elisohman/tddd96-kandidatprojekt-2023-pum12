@@ -5,15 +5,18 @@
         "id": "unit001",
         "name": "Unit 001",
         "flow": 2.2,
+        "alarms": [],
         "sensors": [
           {
             "id": "sensor011",
             "name": "Sensor 011",
+            "alarms": [{"id":"no_data"}],
             "flow": 1.1
           },
           {
             "id": "sensor022",
             "name": "Sensor 022",
+            "alarms": [],
             "flow": 2.2
           }
         ]
@@ -22,15 +25,18 @@
         "id": "unit002",
         "name": "Unit 002",
         "flow": 2.2,
+        "alarms": [],
         "sensors": [
           {
             "id": "sensor021",
             "name": "Sensor 021",
+            "alarms": [],
             "flow": 3.3
           },
           {
             "id": "sensor022",
             "name": "Sensor 022",
+            "alarms": [],
             "flow": 4.4
           }
         ]
@@ -38,16 +44,19 @@
       {
         "id": "unit003",
         "name": "Unit 003",
+        "alarms": [],
         "flow": 3.3,
         "sensors": [
           {
             "id": "sensor031",
             "name": "Sensor 031",
+            "alarms": [],
             "flow": 2.2
           },
           {
             "id": "sensor032",
             "name": "Sensor 032",
+            "alarms": [],
             "flow": 1.1
           }
         ]
@@ -55,16 +64,19 @@
       {
         "id": "unit004",
         "name": "Unit 004",
+        "alarms": [],
         "flow": 4.4,
         "sensors": [
           {
             "id": "sensor041",
             "name": "Sensor 041",
+            "alarms": [],
             "flow": 3.3
           },
           {
             "id": "sensor042",
             "name": "Sensor 042",
+            "alarms": [],
             "flow": 4.4
           }
         ]
@@ -72,16 +84,19 @@
       {
         "id": "unit005",
         "name": "Unit 005",
+        "alarms": [],
         "flow": 5.5,
         "sensors": [
           {
             "id": "sensor051",
             "name": "Sensor 051",
+            "alarms": [],
             "flow": 2.2
           },
           {
             "id": "sensor052",
             "name": "Sensor 052",
+            "alarms": [],
             "flow": 3.3
           }
         ]
@@ -89,16 +104,19 @@
       {
         "id": "unit006",
         "name": "Unit 006",
+        "alarms": [{"id":"low_flow"}],
         "flow": 6.6,
         "sensors": [
           {
             "id": "sensor061",
             "name": "Sensor 061",
+            "alarms": [],
             "flow": 4.4
           },
           {
             "id": "sensor062",
             "name": "Sensor 062",
+            "alarms": [],
             "flow": 1.1
           }
         ]
@@ -106,16 +124,19 @@
       {
         "id": "unit007",
         "name": "Unit 007",
+        "alarms": [],
         "flow": 7.7,
         "sensors": [
           {
             "id": "sensor071",
             "name": "Sensor 071",
+            "alarms": [],
             "flow": 3.3
           },
           {
             "id": "sensor072",
             "name": "Sensor 072",
+            "alarms": [],
             "flow": 2.2
           }
         ]
