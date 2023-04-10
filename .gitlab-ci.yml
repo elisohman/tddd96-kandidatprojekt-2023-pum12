@@ -5,7 +5,7 @@ isort:
     stage: linting
     image: registry.gitlab.com/mafda/python-linting
     script:
-        - isort . --check-only
+        - isort ./server --check-only
     only:
         - merge_requests
 
@@ -13,6 +13,6 @@ flake8:
     stage: linting
     image: registry.gitlab.com/mafda/python-linting
     script:
-        - flake8 .
+        - flake8 ./server
     only:
         - merge_requests
