@@ -27,6 +27,7 @@ eslint:
         - cd client
         - npm i eslint
         - npm i eslint-plugin-react
+        - npm i eslint-plugin-import
         # Run eslint
         - node_modules/eslint/bin/eslint.js .
     only:
