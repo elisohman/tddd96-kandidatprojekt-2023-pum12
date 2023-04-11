@@ -16,3 +16,15 @@ flake8:
         - flake8 ./server
     only:
         - merge_requests
+
+eslint:
+    stage: linting
+    image: node
+    script:
+        # install eslint
+        - npm i eslint \
+        eslint-plugin-react
+        # Run eslint
+        - node_modules/eslint/bin/eslint.js ./client
+    only:
+        - merge_requests
