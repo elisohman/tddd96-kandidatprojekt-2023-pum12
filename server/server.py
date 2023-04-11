@@ -1,5 +1,5 @@
 # Import flask and datetime module for showing date and time
-from flask import Flask, render_template, url_for, json
+from flask import Flask, json
 import datetime
 from google.cloud import bigquery
 import os
@@ -20,22 +20,23 @@ def get_time():
     client = bigquery.Client()
     query_job = client.query(
         """
-        SELECT * 
+        SELECT *
         FROM `internet-of-kegs.Testing123.DummyData`
         LIMIT 1
         """
     )
     results = query_job.result()  # Waits for job to complete.
     temp = {}
-    for row in results: 
+    for row in results:
         temp = {
             "timestamp": row.timestamp,
             "unit": row.unit,
-			"flow": row.flow,
-			"airpressure": row.airpressure,
+            "flow": row.flow,
+            "airpressure": row.airpressure,
             "temp": row.temp
         }
     return temp
+
 
 # Route for seeing sensors available
 @app.route("/sensors")
@@ -48,4 +49,3 @@ def get_sensors():
 # Running app
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
-

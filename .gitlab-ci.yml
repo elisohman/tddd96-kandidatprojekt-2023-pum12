@@ -1,0 +1,33 @@
+stages:
+    - linting
+
+isort:
+    stage: linting
+    image: registry.gitlab.com/mafda/python-linting
+    script:
+        - cd server
+        - isort .
+    only:
+        - merge_requests
+
+flake8:
+    stage: linting
+    image: registry.gitlab.com/mafda/python-linting
+    script:
+        - cd server
+        - flake8 .
+    only:
+        - merge_requests
+
+eslint:
+    stage: linting
+    image: node
+    script:
+        # install eslint
+        - cd client
+        - npm i eslint
+        - npm i eslint-plugin-react
+        # Run eslint
+        - node_modules/eslint/bin/eslint.js .
+    only:
+        - merge_requests
