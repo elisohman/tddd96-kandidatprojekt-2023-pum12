@@ -13,7 +13,7 @@ git clone https://gitlab.liu.se/tddd96-2023_pum12/tddd96-kandidatprojekt-2023-pu
 
 ```
 ### Prerequisites
-Python
+Python, Node.js
 ### Installation
 blablabla
 ### Developing
