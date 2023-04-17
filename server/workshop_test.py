@@ -1,16 +1,18 @@
 # My amazing print function
 def print_stuff():
     test = """
-        Never gonna give you up
-        Never gonna let you down
-        Never gonna run around and desert you
-        Never gonna make you cry
-        Never gonna say goodbye
-        Never gonna tell a lie and hurt you
+       Hejsan svejsan!
     """
     print(test)
 
+# My amazing print function
+def my_new_func():
+    test = """
+       hallå! 
+    """
+    print(test)
 
 # Running app
 if __name__ == '__main__':
-    print_stuff()
+        print_stuff()
+        my_new_func()
