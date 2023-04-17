@@ -5,14 +5,16 @@ def print_stuff():
     """
     print(test)
 
+
 # My amazing print function
 def my_new_func():
     test = """
-       hallå! 
+       hallå!
     """
     print(test)
 
+
 # Running app
 if __name__ == '__main__':
-        print_stuff()
-        my_new_func()
+    print_stuff()
+    my_new_func()
