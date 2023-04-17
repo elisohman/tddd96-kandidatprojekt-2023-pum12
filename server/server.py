@@ -1,5 +1,5 @@
 # Import flask and datetime module for showing date and time
-from flask import Flask
+from flask import Flask, json, jsonify
 import datetime
 from google.cloud import bigquery
 import os
@@ -21,19 +21,14 @@ def get_time():
         """
         SELECT * 
         FROM `internet-of-kegs.Testing123.DummyData`
-        LIMIT 1
+        LIMIT 10
         """
     )
     results = query_job.result()  # Waits for job to complete.
-    temp = {}
-    for row in results:
-        temp = {
-            "timestamp": row.timestamp,
-            "unit": row.unit,
-			"flow": row.flow,
-			"airpressure": row.airpressure,
-            "temp": row.temp
-        }
+    temp = []
+    for row in query_job:
+        temp = [dict(row) for row in query_job]
+    
     return temp
 
 # Running app
