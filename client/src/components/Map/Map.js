@@ -1,5 +1,6 @@
 import React from 'react'
 import './Map.css'
+import SidebarHeader from "../../components/SidebarHeader/SidebarHeader";
 import {
     ComposableMap,
     Geographies,
@@ -13,6 +14,7 @@ const geoUrl = "world.json";
 export default function Map() {
     return ( 
         <div>
+            <SidebarHeader/>
             <ComposableMap data-tip="" className="Map">
                 <Geographies geography={geoUrl} className="Country">
                     {({geographies}) => 

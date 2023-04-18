@@ -4,7 +4,8 @@ import Map from '../../components/Map/Map'
 import './HomePage.css';
 import BarChart from "../../components/BarChart/BarChartComp";
 import TopCard from "../../components/topCard/topCard";
-import HomePageHeader from "../../components/HomePageHeader/HomePageHeader"
+import HomePageHeader from "../../components/HomePageHeader/HomePageHeader";
+import SidebarHeader from "../../components/SidebarHeader/SidebarHeader";
 
 function HomePage(props) {
     // Data fetch for graph
