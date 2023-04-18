@@ -1,9 +1,11 @@
 import React, { useState, useEffect, PureComponent } from "react";
 import Sidebar from '../../components/Sidebar/Sidebar';
+import Map from '../../components/Map/Map'
 import './HomePage.css';
 import BarChart from "../../components/BarChart/BarChartComp";
 import TopCard from "../../components/topCard/topCard";
-import HomePageHeader from "../../components/HomePageHeader/HomePageHeader"
+import HomePageHeader from "../../components/HomePageHeader/HomePageHeader";
+import SidebarHeader from "../../components/SidebarHeader/SidebarHeader";
 
 function HomePage(props) {
     // Data fetch for graph
@@ -36,8 +38,8 @@ function HomePage(props) {
 	}
     return (
         <div className="HomePageContent">
-			<Sidebar />
-            
+			<Map/>
+
 			<div className="SensorData">
 				<HomePageHeader />
 
