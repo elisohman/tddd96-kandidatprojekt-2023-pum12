@@ -1,8 +1,9 @@
 # Import flask and datetime module for showing date and time
-from flask import Flask, json
-import datetime
-from google.cloud import bigquery
 import os
+from google.cloud import bigquery
+import datetime
+from flask import Flask, json, jsonify
+from flask import Flask, json
 
 SITE_ROOT = os.path.realpath(os.path.dirname(__file__))
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'service-account-key.json'

@@ -14,7 +14,8 @@ function HomePage(props) {
 
 	// Using useEffect for single rendering
 	useEffect(() => API_call("/data"), [])
-
+	//useEffect(() => API_call("/alldata"), [])
+	
 	function API_call(request) {
 		console.log("api call")
 		fetch(request)
@@ -45,7 +46,6 @@ function HomePage(props) {
 				</div>
 			</div>
         </div>
-
     );
 }
 
