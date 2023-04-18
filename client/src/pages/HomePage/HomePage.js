@@ -7,8 +7,25 @@ import LineChart from "../../components/LineChart/LineChartComp";
 import TopCard from "../../components/topCard/topCard";
 import HomePageHeader from "../../components/HomePageHeader/HomePageHeader";
 import SidebarHeader from "../../components/SidebarHeader/SidebarHeader";
+import Table from "../../components/Table/Table";
 
 function HomePage(props) {
+	//
+	const tableColumns = [
+        {
+            Header: "Country",
+            accessor : "unit"
+        },
+        {
+            Header: "Avg Time",
+            accessor : "flow"
+        },
+        {
+            Header: "Tapped (l)",
+            accessor : "airpressure"
+        }
+        ];
+
     // Data fetch for graph
 	const [data, setData] = useState([]);
 
@@ -29,7 +46,8 @@ function HomePage(props) {
 
 			<div className="SensorData">
 				<HomePageHeader />
-
+				{/*<Table data = {data} columns = {tableColumns}/>*/}
+				<Table />
 				<div className="GridContainer">
 					{/*
 					<div className="topCards">

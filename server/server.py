@@ -23,7 +23,7 @@ def get_time():
         """
         SELECT *
         FROM `internet-of-kegs.Testing123.DummyData`
-        LIMIT 100
+        LIMIT 5
         """
     )
     results = query_job.result()  # Waits for job to complete.
