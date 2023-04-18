@@ -15,7 +15,9 @@ git clone https://gitlab.liu.se/tddd96-2023_pum12/tddd96-kandidatprojekt-2023-pu
 ### Prerequisites
 Python, Node.js
 ### Installation
-blablabla
+npm install
+npm install react-simple-maps
+npm install react-tooltip
 ### Developing
 blablabla
 
