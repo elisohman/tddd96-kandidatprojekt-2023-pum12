@@ -45,6 +45,12 @@ def get_sensors():
     data = json.load(open(json_url))
     return data
 
+@app.route("/map_data")
+def get_map_data():
+    json_url = os.path.join(SITE_ROOT, "test_map_data.csv")
+    data = open(json_url)
+    return data
+
 
 # Running app
 if __name__ == '__main__':
