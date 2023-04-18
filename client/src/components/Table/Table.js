@@ -4,7 +4,7 @@ import { useGlobalFilter, useSortBy, useTable } from "react-table";
 
 function Table(props){
 
-    const data = useMemo( () => (
+    const data = useMemo( () => 
         //props.data
         [
             {
@@ -43,29 +43,35 @@ function Table(props){
                 "Timestamp": 5
             }
     
-        ]    
+        ],
+        [] 
 
-    ));
+    );
 
-    const column = useMemo(()=>(
+    const columns = useMemo(
+        () =>
         //props.columns
         [
             {
                 Header: "Country",
-                accessor: "unit"
+                accessor: "data.unit"
             },
             {
                 Header: "Avg Time",
-                accessor: "flow"
+                accessor: "data.flow"
             },
             {
                 Header: "Tapped (l)",
-                accessor: "airpressure"
+                accessor: "data.airpressure"
             }
-            ]
-    ));
-
-    const tableInstance = useTable({column, data});
+        ]
+        ,
+        []
+    );
+    
+    console.log(columns)
+    console.log(data)
+    const tableInstance = useTable({columns, data,});
 
     const {getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } = tableInstance;
 
@@ -73,8 +79,8 @@ function Table(props){
         <thead>
             {headerGroups.map((headerGroup,) => (
                 <tr {...headerGroup.getHeaderGroupProps()}>
-                    {headerGroup.map((column) => (
-                        <th {...column.getHeaderProps()}>{ column.render("Header") }</th>
+                    {headerGroup.map((columns) => (
+                        <th {...columns.getHeaderProps()}>{ columns.render("Header") }</th>
                     ))}
                 </tr>
             ))}
