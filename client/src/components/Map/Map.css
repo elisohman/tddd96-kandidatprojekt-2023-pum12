@@ -1,7 +1,7 @@
-.Map {
-    background-color: white;
-}
-
-.Country {
-    
+.MapContainer {
+    max-width: 100%;
+    max-height: 80vh;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }

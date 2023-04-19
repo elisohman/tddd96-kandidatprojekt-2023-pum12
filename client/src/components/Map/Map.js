@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import './Map.css';
 import { scaleLinear } from "d3-scale";
 import { csv } from "d3-fetch";
 import {
@@ -79,18 +80,28 @@ const MapChart = () => {
     }
 
     return (
-      <div>
+      <div className="MapContainer">
         <ComposableMap
           projectionConfig={{
             rotate: [-10, 0, 0],
             scale: 147
           }}
         >
-            <ZoomableGroup center={pos} zoom={zoom} maxZoom={70}>
+          <ZoomableGroup 
+            center={pos} 
+            zoom={zoom} 
+            maxZoom={70}
+            translateExtent={[
+                [0, 0],
+                [800, 600]
+              ]}
+            >
           <Sphere stroke="#E4E5E6" strokeWidth={0.5} />
           <Graticule stroke="#E4E5E6" strokeWidth={0.5} />
           {data.length > 0 && (
-            <Geographies geography={map}>
+            <Geographies 
+            geography={map}
+            >
               {({ geographies }) =>
                 geographies.map((geo) => {
                   var d = data.find((s) => s.name === geo.properties.NAME_2);
@@ -111,13 +122,9 @@ const MapChart = () => {
                           outline: "none"
                           },
                           hover: {
-                          fill: "#F53",
+                          fill: "#BFCDFF",
                           stroke: "#000000",
                           strokeWidth: 0.05,
-                          outline: "none"
-                          },
-                          pressed: {
-                          fill: "#E42",
                           outline: "none"
                           },
                       }} 
