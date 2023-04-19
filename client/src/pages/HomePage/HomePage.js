@@ -8,7 +8,6 @@ import TopCard from "../../components/topCard/topCard";
 import HomePageHeader from "../../components/HomePageHeader/HomePageHeader";
 import SidebarHeader from "../../components/SidebarHeader/SidebarHeader";
 import Table from "../../components/Table/Table";
-import SidebarMap from "../../components/SidebarMap/SidebarMap";
 
 function HomePage(props) {
 	let location = "World"
