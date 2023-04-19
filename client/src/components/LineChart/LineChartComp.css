@@ -6,7 +6,7 @@
 
 .ChartContainer .Content{
     height: 100%;
-    background-color: #EBEBEB;
+    background-color: white;
     border-radius: 10px;
     display: flex;
     /*flex-direction: column;*/

@@ -3,11 +3,12 @@ import './HomePageHeader.css'
 import edit from '../../image/edit.png'
 import alarm from '../../image/alarm.png'
 
-export default function HomePageHeader() {
+export default function HomePageHeader(props) {
   return ( 
     <div className="HomePageHeaderContent">
 
-      <p className="SensorNumber">{window.location.pathname === "/" ? "Home" : window.location.pathname}</p>
+      {/*<p className="SensorNumber">{window.location.pathname === "/" ? "Home" : window.location.pathname}</p>*/}
+      <p className="SensorNumber">{props.location}</p>
       
       <div className="HomePageHeaderButtons">
 

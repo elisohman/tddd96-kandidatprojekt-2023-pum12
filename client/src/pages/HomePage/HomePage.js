@@ -12,6 +12,7 @@ import SidebarMap from "../../components/SidebarMap/SidebarMap";
 
 function HomePage(props) {
 	//
+	let location = "World"
 	const tableColumns = [
         {
             Header: "Amount",
@@ -52,13 +53,15 @@ function HomePage(props) {
 			<Map/>
 
 			<div className="SensorData">
-				<HomePageHeader />
-				
-				<Table data = {data} columns = {tableColumns}/>
-				<div className="GridContainer">
-					
-					<LineChart data={data} xkey={"timestamp"} ykey={"airpressure"} title={"Air Pressure"} width={700} height={300}/>
-	</div>
+				<HomePageHeader location={location}/>
+				<div className="Sidebar">
+					<div className="TableContainer">
+						<Table data = {data} columns = {tableColumns}/>
+					</div>
+					<div className="GridContainer">
+						<LineChart data={data} xkey={"timestamp"} ykey={"airpressure"} title={"Air Pressure"} width={700} height={300}/>
+					</div>
+				</div>
 			</div>
         </div>
     );

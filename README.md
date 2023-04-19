@@ -29,8 +29,6 @@ npm install react-simple-maps
 
 npm install react-tooltip
 
-npm install react-table
-
 ### Developing
 
 Stå i Client mappen, kör npm start

@@ -8,7 +8,7 @@ function LineChartComp(props) {
             <div className='Content'>
 
                 <p className='ChartTitle'>{props.title}</p>
-                <ResponsiveContainer width="95%" height={400}>
+                <ResponsiveContainer width="95%" height={350}>
                         
                         <LineChart width={props.width} height={props.height} data={props.data}>
                             <CartesianGrid strokeDasharray="3 3" />
