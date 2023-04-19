@@ -1,10 +1,7 @@
 import React from 'react'
 import './SidebarMenu.css'
-import alarm from '../../image/alarm.png'
-//import ReportProblemIcon from '@mui/icons-material/ReportProblem';
 
 export default function SidebarMenu(props) {
-  // console.log(props.data["units"])
 
   return (
     <div className='SidebarMenuContent'>

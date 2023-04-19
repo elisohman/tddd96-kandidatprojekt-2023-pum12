@@ -1,7 +1,5 @@
 import React from 'react'
 import './SidebarHeader.css'
-import edit from '../../image/edit.png'
-import alarm from '../../image/alarm.png'
 import OpenInFullIcon from '@mui/icons-material/OpenInFull';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 

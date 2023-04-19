@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useMemo } from "react";
 import "./Table.css";
 
 function Table(props){
@@ -26,8 +26,7 @@ function Table(props){
                             return(<td key={indexVal}>{valData[colVal.accessor]}</td>);
                         })}
                     </tr>)
-                })
-                }                   
+                })}                   
             </table>
         </div>
     );

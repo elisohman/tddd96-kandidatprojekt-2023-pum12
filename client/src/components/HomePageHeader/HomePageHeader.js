@@ -9,7 +9,7 @@ export default function SidebarHeader() {
       <a href="/" className="CompanyLogoLink">
 
         <p className="CompanyName">Neue</p>
-        <img src={logo} id="logo" className="CompanyLogo"></img>
+        <img src={logo} id="logo" alt="logo" className="CompanyLogo"></img>
 
       </a>
     

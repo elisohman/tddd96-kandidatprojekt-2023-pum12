@@ -1,5 +1,5 @@
 // inspired by https://www.youtube.com/watch?v=5R9jFHlG6ik
-import React, { useState, useEffect, PureComponent } from "react";
+import React from "react";
 import "./Sidebar.css";
 import LineChart from "../../components/LineChart/LineChartComp";
 import SidebarHeader from "../../components/SidebarHeader/SidebarHeader";

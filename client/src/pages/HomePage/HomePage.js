@@ -1,4 +1,4 @@
-import React, { useState, useEffect, PureComponent } from "react";
+import React, { useState, useEffect } from "react";
 import Sidebar from '../../components/Sidebar/Sidebar';
 import Map from '../../components/Map/Map'
 import './HomePage.css';
