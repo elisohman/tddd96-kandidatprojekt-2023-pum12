@@ -13,6 +13,14 @@
     grid-template-columns: 5fr 2fr;
 }
 
+.SidebarHeader {
+    grid-column: 1;
+}
+
+.Map {
+    grid-column: 1;
+}
+
 .HomePageContent .Sidebar{
     grid-column: 1;
     height: 100vh;
