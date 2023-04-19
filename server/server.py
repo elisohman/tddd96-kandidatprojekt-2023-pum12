@@ -38,6 +38,20 @@ def get_sensors():
     return data
 
 
+@app.route("/map_data")
+def get_map_data():
+    json_url = os.path.join(SITE_ROOT, "sample_data/test_map_data.csv")
+    data = open(json_url)
+    return data
+
+
+@app.route("/map_data/<name>")
+def get_district_data(name):
+    json_url = os.path.join(SITE_ROOT, f'sample_data/{name}.csv')
+    data = open(json_url)
+    return data
+
+
 # Running app
 if __name__ == '__main__':
     app.run(debug=True, port=5000)

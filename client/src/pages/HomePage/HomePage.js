@@ -50,8 +50,9 @@ function HomePage(props) {
 	
     return (
         <div className="HomePageContent">
-			<Map/>
-
+			<div className="SidebarHeader"><SidebarHeader/></div>
+			<div className="Map"><Map/></div>
+			
 			<div className="SensorData">
 				<HomePageHeader location={location}/>
 				<div className="Sidebar">
