@@ -1,5 +1,4 @@
 # Internet of Kegs
-
 React + Flask app
 
 ## Table of Contents
@@ -9,18 +8,13 @@ React + Flask app
 - [Documentation](#documentation)
 
 ## Getting started
-
 ```
 git clone https://gitlab.liu.se/tddd96-2023_pum12/tddd96-kandidatprojekt-2023-pum12.git
 
 ```
-
 ### Prerequisites
-
 Python, Node.js
-
 ### Installation
-
 Stå i Client mappen, sedan kör följande kommandon:
 
 npm install
@@ -29,23 +23,20 @@ npm install react-simple-maps
 
 npm install react-tooltip
 
-### Developing
 
+### Developing
 Stå i Client mappen, kör npm start
 
 Öppna en ny terminal, ställ dig i server mappen, kör python3 server.py
 
-## Start app
 
+## Start app
 Backend: In folder "/server" run "python server.py"\
 Frontend: In folder "/client" run "npm start"\
 
 The app autorefreshes when a new change is saved
-
 ## Project structure
-
 (nedan är endast ett template)
-
 ```
 ├── doc
 ├── config
@@ -58,18 +49,15 @@ The app autorefreshes when a new change is saved
 ```
 
 ## Documentation
-
 Se doc mappen.
 
 ## FAQ
-
 ### ModuleNotFoundError: No module named 'google'
-
 Installera BigQuery Client library:
 pip install --upgrade google-cloud-bigquery
 
-# Icons
 
+# Icons
 Example:
 import HelpIcon from '@mui/icons-material/Help';
 Link to website:
