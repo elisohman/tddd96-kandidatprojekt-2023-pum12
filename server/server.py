@@ -45,11 +45,13 @@ def get_sensors():
     data = json.load(open(json_url))
     return data
 
+
 @app.route("/map_data")
 def get_map_data():
     json_url = os.path.join(SITE_ROOT, "sample_data/test_map_data.csv")
     data = open(json_url)
     return data
+
 
 @app.route("/map_data/<name>")
 def get_district_data(name):
@@ -58,7 +60,7 @@ def get_district_data(name):
 
     if not (name in available):
         name = "test_map_data"
-   
+
     json_url = os.path.join(SITE_ROOT, f'sample_data/{name}.csv')
     data = open(json_url)
     return data
