@@ -22,20 +22,11 @@ def get_time():
         """
         SELECT *
         FROM `internet-of-kegs.Testing123.DummyData`
-        LIMIT 1
+        LIMIT 5
         """
     )
     results = query_job.result()  # Waits for job to complete.
-    temp = {}
-    for row in results:
-        temp = {
-            "timestamp": row.timestamp,
-            "unit": row.unit,
-            "flow": row.flow,
-            "airpressure": row.airpressure,
-            "temp": row.temp
-        }
-    return temp
+    return [dict(row) for row in results]
 
 
 # Route for seeing sensors available

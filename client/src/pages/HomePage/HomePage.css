@@ -10,7 +10,8 @@
 .HomePageContent{
     width: 100%;
     display: grid;
-    grid-template-columns: 5fr 2fr;
+    grid-template-columns: 4fr 3fr;
+    
 }
 
 .SidebarHeader {
@@ -21,21 +22,48 @@
     grid-column: 1;
 }
 
+
+.HomePageContent .SensorData{
+    background-color: #d3d3d3;
+    margin-top: 10px;
+    border-radius: 25px;
+    margin-bottom: 10px;
+    height:97vh;
+    margin-right: 20px;
+    
+}
+
 .HomePageContent .Sidebar{
+    background-color: #d3d3d3;
     grid-column: 1;
-    height: 100vh;
+    height: auto;
+    padding-left: 0px;
+    
 }
 
 .HomePageContent .GridContainer{
     /* width: 1000px; */
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns:1fr;
     grid-auto-rows: minmax(100px, auto);
     grid-column: 2;
     padding: 20px;
     grid-gap: 1em;
     color: black;
 }
+
+.HomePageContent .TableContainer{
+    display: grid;
+    height: 350px;
+    grid-template-columns:1fr;
+    grid-auto-rows: minmax(100px, auto);
+    grid-column: 2;
+    padding: 20px;
+    grid-gap: 1em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 
 .GridContainer .topCards {
     /* border: 2px solid white; */
