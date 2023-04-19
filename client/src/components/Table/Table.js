@@ -55,15 +55,15 @@ function Table(props){
         [
             {
                 Header: "Country",
-                accessor: "unit"
+                accessor: "data.unit"
             },
             {
                 Header: "Avg Time",
-                accessor: "flow"
+                accessor: "data.flow"
             },
             {
                 Header: "Tapped (l)",
-                accessor: "airpressure"
+                accessor: "data.airpressure"
             }
             ]
             */
@@ -127,8 +127,8 @@ function Table(props){
         <thead>
             {headerGroups.map((headerGroup,) => (
                 <tr {...headerGroup.getHeaderGroupProps()}>
-                    {headerGroup.map((column) => (
-                        <th {...column.getHeaderProps()}>{ column.render("Header") }</th>
+                    {headerGroup.map((columns) => (
+                        <th {...columns.getHeaderProps()}>{ columns.render("Header") }</th>
                     ))}
                 </tr>
             ))}
