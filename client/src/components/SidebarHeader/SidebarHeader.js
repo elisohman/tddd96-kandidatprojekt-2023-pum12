@@ -1,18 +1,27 @@
 import React from 'react'
-import "./SidebarHeader.css";
-import logo from '../../image/logo.png'
+import './SidebarHeader.css'
+import OpenInFullIcon from '@mui/icons-material/OpenInFull';
+import NotificationsIcon from '@mui/icons-material/Notifications';
 
-export default function SidebarHeader() {
-  return (
-    <div className="SidebarHeaderContainer">
+export default function SidebarHeader(props) {
+  return ( 
+    <div className="SidebarHeaderContent">
+      <p className="SidebarHeader">{props.location}</p>
+      
+      <div className="AlarmButton">
+        <a className="ButtonLinks" href="alarms">
+          {/* Image should only be shown if there is an alarm */}
+          <NotificationsIcon className='Buttons'/>
+        </a>
+      </div>
 
-      <a href="/" className="CompanyLogoLink">
-
-        <p className="CompanyName">Neue</p>
-        <img src={logo} id="logo" className="CompanyLogo"></img>
-
-      </a>
-    
+      <div className="EnlargeButton">
+        <a className="ButtonLinks" href="enlarge">
+          {/* Image should only be shown if there is an alarm */}
+          <OpenInFullIcon className='Buttons'/>
+        </a>
+      </div>
     </div>
   )
 }
+

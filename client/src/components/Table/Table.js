@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useMemo } from "react";
 import "./Table.css";
 
 /*
@@ -10,14 +10,11 @@ function Table(props){
 
     const data = useMemo( () => (
         props.data
-
     ));
 
     const column = useMemo(()=>(
         props.columns
     ));
-
-
     return (
         <div className = "Tbl">
             <table>
@@ -26,18 +23,8 @@ function Table(props){
                         {column.map((val, index) => {
                             return (<td key={index}> {val.Header}</td>);
                         })}
-                        
-                    </tr>
-                    
-                    {data.map((valData, indexTrData) => {
-                        return (<tr key = {indexTrData}>
-                            {column.map((colVal, indexVal) => {
-                                return(<td key={indexVal}>{valData[colVal.accessor]}</td>);
-                            })}
-                        </tr>)
-                    })
-                    }
-                </tbody>
+                    </tr>)
+                })}                   
             </table>
         </div>
     );

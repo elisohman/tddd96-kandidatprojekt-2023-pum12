@@ -1,7 +1,7 @@
 // Importing modules
 import "./App.css";
-import React, { useState, useEffect, PureComponent } from "react";
-import { Routes, Route, Redirect } from "react-router-dom";
+import React from "react";
+import { Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage/HomePage";
 
 function App() {

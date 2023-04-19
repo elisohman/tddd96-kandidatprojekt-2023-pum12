@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React from "react";
 import "./SidebarMap.css";
 import LineChart from "../LineChart/LineChartComp"
 import Table from"../Table/Table";

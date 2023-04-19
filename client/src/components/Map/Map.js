@@ -8,8 +8,7 @@ import {
     Geography,
     ZoomableGroup,
     Sphere,
-    Graticule,
-    Marker
+    Graticule
 } from "react-simple-maps";
 
 // The colorscale to display on contries/regions
