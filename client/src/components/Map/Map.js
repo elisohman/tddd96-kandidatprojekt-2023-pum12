@@ -25,7 +25,6 @@ const MapChart = () => {
     useEffect(() => {
         csv(`./map_data`).then((data) => {
         setData(data);
-        console.log(data)
         });
     }, []);
 

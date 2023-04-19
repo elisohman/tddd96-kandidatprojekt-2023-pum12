@@ -3,7 +3,7 @@ import json
 import csv
 import random
 
-file_name = "ESP"
+file_name = "DEU"
 
 json_file = open(f'../client/public/maps/{file_name}.json')
 csv_file = open(f'sample_data/{file_name}.csv', 'w')
