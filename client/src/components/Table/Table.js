@@ -5,7 +5,8 @@ import { useGlobalFilter, useSortBy, useTable } from "react-table";
 function Table(props){
 
     const data = useMemo( () => (
-        //props.data
+        props.data
+        /*
         [
             {
                 "unit": 4,
@@ -44,11 +45,13 @@ function Table(props){
             }
     
         ]    
+        */
 
     ));
 
     const column = useMemo(()=>(
-        //props.columns
+        props.columns
+        /*
         [
             {
                 Header: "Country",
@@ -63,13 +66,64 @@ function Table(props){
                 accessor: "airpressure"
             }
             ]
+            */
     ));
 
-    const tableInstance = useTable({column, data});
+   // const tableInstance = useTable({column, data});
 
-    const {getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } = tableInstance;
 
-    return <Table {...getTableProps()}>
+
+
+    //const {getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } = tableInstance;
+
+
+    return (
+        <div className = "Tbl">
+            <table>
+                <tr className="Header">
+                    {column.map((val, index) => {
+                        return (<td key={index}> {val.Header}</td>);
+                    })}
+                    
+                </tr>
+                
+                {data.map((valData) => {
+                    return (<tr>
+                        {column.map((colVal, indexVal) => {
+                            return(<td key={indexVal}>{valData[colVal.accessor]}</td>);
+                        })}
+                    </tr>)
+                })
+                }
+                
+               
+                {/*}
+                {data.map((valData) => {
+                        <tr>
+                        for (let i = 0; i < column.length; i ++){
+                            return (<td>{valData.column[i].accessor}</td>)
+                        }
+                        </tr>
+                    })}*/}
+
+                {
+                    
+            }
+            </table>
+        </div>
+    );
+    /*
+<td>{val.unit}</td>
+<td>{val.flow}</td>
+<td>{val.temp}</td>
+
+
+
+
+
+    return (
+    <>
+    <Table {...getTableProps()}>
         <thead>
             {headerGroups.map((headerGroup,) => (
                 <tr {...headerGroup.getHeaderGroupProps()}>
@@ -88,7 +142,10 @@ function Table(props){
                 ))
             })}
         </tbody>
-    </Table>;
+    </Table>
+    </>
+    );
+    */
 }
 
 

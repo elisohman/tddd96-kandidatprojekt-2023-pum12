@@ -8,23 +8,30 @@ import TopCard from "../../components/topCard/topCard";
 import HomePageHeader from "../../components/HomePageHeader/HomePageHeader";
 import SidebarHeader from "../../components/SidebarHeader/SidebarHeader";
 import Table from "../../components/Table/Table";
+import SidebarMap from "../../components/SidebarMap/SidebarMap";
 
 function HomePage(props) {
 	//
 	const tableColumns = [
         {
-            Header: "Country",
+            Header: "Amount",
             accessor : "unit"
         },
         {
-            Header: "Avg Time",
+            Header: "Average Flow",
             accessor : "flow"
         },
         {
-            Header: "Tapped (l)",
+            Header: "Air Pressure",
             accessor : "airpressure"
+        },
+		{
+            Header: "Temperature",
+            accessor : "temp"
         }
         ];
+		/*col 1: "amount": "unit"
+*/
 
     // Data fetch for graph
 	const [data, setData] = useState([]);
@@ -46,25 +53,29 @@ function HomePage(props) {
 
 			<div className="SensorData">
 				<HomePageHeader />
-				{/*<Table data = {data} columns = {tableColumns}/>*/}
-				<Table />
+				
+				<Table data = {data} columns = {tableColumns}/>
 				<div className="GridContainer">
-					{/*
-					<div className="topCards">
-						<TopCard />
-						<TopCard />
-						<TopCard />
-						<TopCard />
-					</div>
-					*/}
+					
 					<LineChart data={data} xkey={"timestamp"} ykey={"airpressure"} title={"Air Pressure"} width={700} height={300}/>
-					{/*<LineChart data={data} xkey={"timestamp"} ykey={"temp"} title={"Temperature"}/>
-					<LineChart data={data} xkey={"timestamp"} ykey={"flow"} title={"Flow"}/>
-					<BarChart data={data} xkey={"timestamp"} ykey={"unit"} title={"Unit"}/>*/}
-				</div>
+	</div>
 			</div>
         </div>
     );
 }
 
 export default HomePage;
+
+/*<LineChart data={data} xkey={"timestamp"} ykey={"temp"} title={"Temperature"}/>
+					<LineChart data={data} xkey={"timestamp"} ykey={"flow"} title={"Flow"}/>
+					<BarChart data={data} xkey={"timestamp"} ykey={"unit"} title={"Unit"}/>*/
+/*
+					<div className="topCards">
+						<TopCard />
+						<TopCard />
+						<TopCard />
+						<TopCard />
+					</div>
+
+					/*<Table data = {data} columns = {tableColumns}/>*/
+					
