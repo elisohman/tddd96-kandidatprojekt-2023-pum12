@@ -18,12 +18,18 @@ function Table(props){
     return (
         <div className = "Tbl">
             <table>
-                <tbody>
-                    <tr className="Header">
-                        {column.map((val, index) => {
-                            return (<td key={index}> {val.Header}</td>);
-                        })}
-                    </tr>)
+                <tr className="Header">
+                    {column.map((val, index) => {
+                        return (<td key={index}> {val.Header}</td>);
+                    })}
+                    
+                </tr>
+                
+                {data.map((valData) => {
+                    return (<tr>
+                        {column.map((colVal, indexVal) => {
+                            return(<td key={indexVal}>{valData[colVal.accessor]}</td>);
+
                 })}                   
             </table>
         </div>
