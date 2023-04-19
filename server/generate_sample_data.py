@@ -16,11 +16,11 @@ csv_writer.writerow(header)
 
 for i in json_data["objects"][f"{file_name}_adm2"]["geometries"]:
     name = i["properties"]["NAME_2"]
-    csv_writer.writerow([name, 
-                         random.uniform(0, 1), 
-                         random.uniform(0, 1), 
-                         random.uniform(0, 1), 
-                         random.uniform(0, 1), 
+    csv_writer.writerow([name,
+                         random.uniform(0, 1),
+                         random.uniform(0, 1),
+                         random.uniform(0, 1),
+                         random.uniform(0, 1),
                          random.uniform(0, 1)])
 
 json_file.close()
