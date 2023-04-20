@@ -1,6 +1,11 @@
 import React from 'react';
 import "./LineChartComp.css";
+import TimespanButtons from "../../components/TimespanButtons/TimespanButtons"
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+
+function ButtonFunction(index){
+    console.log(`${index == 1 ? "Knapp1" : "annan knapp"}`);
+}
 
 function LineChartComp(props) {
     return (
@@ -19,6 +24,7 @@ function LineChartComp(props) {
                             
                         </LineChart>
                 </ResponsiveContainer>
+                <TimespanButtons parentFunction = {ButtonFunction} title = {["1 d", "1 w", "1 m", "1 y", "All"]}/>
             </div>
         </div>
     );

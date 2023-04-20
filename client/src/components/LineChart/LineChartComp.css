@@ -10,6 +10,15 @@
     height: 100%;
     border-radius: 10px;
     display: grid;
-    grid-template-rows: 1fr 5fr;
+    grid-template-rows: 1fr 7fr 1fr;
     /* width: 95%; */
+}
+
+.ChartTitle {
+    margin: 0;
+    margin-left: auto;
+    font-size: 20px;
+    margin-right: auto;
+    width: fit-content;
+    height: fit-content;
 }
