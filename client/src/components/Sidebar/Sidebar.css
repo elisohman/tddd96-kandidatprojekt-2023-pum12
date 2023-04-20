@@ -2,31 +2,73 @@
     display: none;
 }
 
-.SidebarContainer{
-    display: grid;
-    grid-template-rows: 1fr 6fr 6fr;
+.SidebarGridItem{
+    background-color: #6b6b6b;
+}
+
+/*-----------------------------
+Styling for the small sidebar
+-------------------------------*/
+
+.smallSidebarContainer{
     height: calc(100vh - 40px);
     background-color: #EBEBEB;
-    padding-left: 0px;
-    margin-top: 20px;
-    margin-right: 20px;
-    margin-bottom: 20px;
     border-radius: 10px;
+    margin: 20px 20px 20px 0px;
+    padding: 10px;
     overflow-y: scroll;
+
+    display: grid;
+    grid-template-rows: 1fr 6fr 6fr;
+    gap: 10px;
 }
 
-.LineChartContainer{
-    margin: 20px;
-    padding: 20px;
-    color: black;
-    background-color: #FFFFFF;
-    border-radius: 10px;
+.smallSidebarLineChartContainer2{
+    visibility: hidden;
 }
 
-.TableContainer{
-    padding: 20px;
-    margin: 20px;
-    margin-bottom: 0;
-    background-color: #FFFFFF;
-    border-radius: 10px;
+.smallSidebarOverviewBox{
+    visibility: hidden;
+}
+
+/*-----------------------------
+Styling for the large sidebar
+-------------------------------*/
+
+.largeSidebarContainer{
+    position: absolute;
+    left:20px;
+    right:20px;
+    height: calc(100vh - 40px);
+    background-color: #EBEBEB;
+    margin-top: 20px;
+    padding: 10px;
+    overflow-y: scroll;
+
+    display: grid;
+    grid-template-rows: 1fr 6fr 6fr;
+    grid-template-columns: 1fr 1fr 1fr; 
+    gap: 10px;
+    
+}
+
+.largeSidebarLineChartContainer1{
+    grid-column: 3;
+    grid-row: 3;
+}
+
+.largeSidebarLineChartContainer2{
+    grid-column: 2;
+    grid-row: 3;
+}
+
+.largeSidebarTableContainer{
+    background-color: white;
+    grid-column: 1;
+    grid-row: 2/4;
+}
+
+.largeSidebarSidebarHeader{
+    grid-column: 1/4;
+    grid-row: 1;
 }

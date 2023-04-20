@@ -8,7 +8,6 @@
 
 .ChartContainer .Content{
     height: 100%;
-    border-radius: 10px;
     display: grid;
     grid-template-rows: 1fr 5fr;
     /* width: 95%; */

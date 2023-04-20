@@ -4,6 +4,15 @@ import OpenInFullIcon from '@mui/icons-material/OpenInFull';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 
 export default function SidebarHeader(props) {
+  function detailedView(geo) {
+    console.log("onclick detailed view")
+    if(props.sidebarState === "largeSidebar") {
+      props.setSidebarState("smallSidebar")
+      return
+    }
+    props.setSidebarState("largeSidebar")
+  }
+
   return ( 
     <div className="SidebarHeaderContent">
       <p className="SidebarHeader">{props.location}</p>
@@ -16,9 +25,9 @@ export default function SidebarHeader(props) {
       </div>
 
       <div className="EnlargeButton">
-        <a className="ButtonLinks" href="enlarge">
+        <a className="ButtonLinks" > {/*href="germany/detailed_page"}
           {/* Image should only be shown if there is an alarm */}
-          <OpenInFullIcon className='Buttons'/>
+          <OpenInFullIcon className='Buttons' onClick={() => {detailedView()}}/>
         </a>
       </div>
     </div>

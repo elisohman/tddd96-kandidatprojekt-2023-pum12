@@ -1,0 +1,63 @@
+.DetailedViewContent{
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.DetailedViewContainer{
+    margin: 20px;
+    padding: 20px;
+    background-color: #EBEBEB;
+    height: calc(100vh - 80px);
+    width: calc(100vw - 80px);
+    border-radius: 20px;
+}
+
+.gridContainer{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 0.1fr 1fr 1fr;
+    gap: 20px;
+    margin: 20px;
+    height: calc(100% - 40px);
+    border-radius: 20px;
+}
+
+.DetailedViewGridItem{
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.table{
+    grid-column: 1;
+    grid-row: 2 / 4;
+}
+
+.smallBit1{
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.smallBit2{
+    grid-column: 3;
+    grid-row: 2;
+}
+
+.chart1{
+    grid-column: 2;
+    grid-row: 3;
+}
+
+.chart2{
+    grid-column: 3;
+    grid-row: 3;
+}
+
+.DetailedViewHeader{
+    grid-column: 1 / 4;
+    grid-row: 1;
+    font-size: 60px;
+    border-radius: 10px;
+    padding: 20px;
+}
