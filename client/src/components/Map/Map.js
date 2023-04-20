@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from 'react-router-dom';
 import './Map.css';
 import { scaleLinear } from "d3-scale";
 import { csv } from "d3-fetch";
@@ -21,6 +22,14 @@ const MapChart = () => {
     const [map, setMap] = useState("./maps/world.json");
     const [pos, setPos] = useState([0,0]);
     const [zoom, setZoom] = useState(1);
+    const [country, setCountry] = useState(["", ""]);
+    const navigate = useNavigate();
+
+    // List of countries that use NAME_1. Add ISO3 if the country has been added and uses NAME_1
+    const name1 = ["AZE", "ARG", "DZA", "CHN", "COL", "CZE", "DNK", "IND", "IRL", "ITA", "JPN", "LBR", "NZL", "NOR", "PHL", "POL", "PRT", "ROU", "ZAF", "SWE", "ARE", "VEN"];
+
+    // List of all available countries. Add ISO3 if there exists a json file for it
+    const available = ["DEU", "ESP", "AZE", "ARG", "DZA", "BEL", "CHN", "COL", "CZE", "DNK", "FIN", "FRA", "IND", "IRL", "ITA", "JPN", "LBR", "NZL", "NOR", "PAK", "PHL", "POL", "PRT", "ROU", "ZAF", "SWE", "ARE", "GBR", "VEN"];
     
     useEffect(() => {
         csv(`./map_data`).then((data) => {
@@ -30,12 +39,22 @@ const MapChart = () => {
 
     // Activated when map is clicked
     // Changes the map, colordata, zoom and location
-    function change_map(geo){
-      const map_id = geo["id"];
-      const available = ["DEU", "ESP"];
-
+    function change_map(geo){  
+      const map_id = geo.id;
+      
+      console.log(window.location.pathname)
+      if (map === "./maps/world.json") {
+        navigate('/' + geo.properties.name);
+        setCountry([geo.id, geo.properties.name]);
+      }
+      else {
+        var NAME = "NAME_2";
+        if(name1.includes(country[0])) NAME = "NAME_1";
+        navigate(country[1] + '/' + geo.properties[NAME]);
+      }
+      
       average_postion(geo);
-      if(!available.includes(map_id)) return
+      if(!available.includes(map_id)) return;
       
       // Update the map
       setMap("./maps/" + map_id + ".json");
@@ -43,7 +62,7 @@ const MapChart = () => {
       // Update the colors on the map
       csv(`./map_data/` + map_id).then((data) => {
       setData(data);
-      });    
+      });
     }
 
     function average_postion(geo){
@@ -103,10 +122,10 @@ const MapChart = () => {
             >
               {({ geographies }) =>
                 geographies.map((geo) => {
-                  var d = data.find((s) => s.name === geo.properties.NAME_2);
-                  if(map === "./maps/world.json"){
-                    d = data.find((s) => s.ISO3 === geo.id);
-                  }
+                  var NAME = "NAME_2";
+                  if(name1.includes(country[0])) NAME = "NAME_1";
+                  var d = data.find((s) => s.name === geo.properties[NAME]);
+                  if(map === "./maps/world.json") d = data.find((s) => s.ISO3 === geo.id);
                   
                   return (
                     <Geography
