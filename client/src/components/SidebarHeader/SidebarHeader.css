@@ -8,20 +8,17 @@
 .AlarmButton {
     margin: 0;
     margin-left: auto;
-    margin-right: auto;
-    max-width: 50%;
 }
 
 .EnlargeButton {
     margin: 0;
     margin-left: auto;
-    margin-right: auto;
-    max-width: 50%;
 }
 
 .Buttons {
-    margin-top: 20px;
-    transform: scale(2);
+    margin-top: 10px;
+    margin-right: 10px;
+    transform: scale(1.5);
 }
 
 .ButtonLinks {
