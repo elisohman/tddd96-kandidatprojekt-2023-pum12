@@ -1,0 +1,242 @@
+[
+    {
+        "iso": "DEU",
+        "country": "Germany",
+        "layer_1": "Th\u00fcringen",
+        "layer_2": "Th\u00fcringen"
+    },
+    {
+        "iso": "DEU",
+        "country": "Germany",
+        "layer_1": "Schleswig-Holstein",
+        "layer_2": "Schleswig-Holstein"
+    },
+    {
+        "iso": "DEU",
+        "country": "Germany",
+        "layer_1": "Sachsen-Anhalt",
+        "layer_2": "Magdeburg"
+    },
+    {
+        "iso": "DEU",
+        "country": "Germany",
+        "layer_1": "Sachsen-Anhalt",
+        "layer_2": "Halle"
+    },
+    {
+        "iso": "DEU",
+        "country": "Germany",
+        "layer_1": "Sachsen-Anhalt",
+        "layer_2": "Dessau"
+    },
+    {
+        "iso": "DEU",
+        "country": "Germany",
+        "layer_1": "Sachsen",
+        "layer_2": "Leipzig"
+    },
+    {
+        "iso": "DEU",
+        "country": "Germany",
+        "layer_1": "Sachsen",
+        "layer_2": "Dresden"
+    },
+    {
+        "iso": "DEU",
+        "country": "Germany",
+        "layer_1": "Sachsen",
+        "layer_2": "Chemnitz"
+    },
+    {
+        "iso": "DEU",
+        "country": "Germany",
+        "layer_1": "Saarland",
+        "layer_2": "Saarland"
+    },
+    {
+        "iso": "DEU",
+        "country": "Germany",
+        "layer_1": "Rheinland-Pfalz",
+        "layer_2": "Trier"
+    },
+    {
+        "iso": "DEU",
+        "country": "Germany",
+        "layer_1": "Rheinland-Pfalz",
+        "layer_2": "Rheinhessen-Pfalz"
+    },
+    {
+        "iso": "DEU",
+        "country": "Germany",
+        "layer_1": "Rheinland-Pfalz",
+        "layer_2": "Koblenz"
+    },
+    {
+        "iso": "DEU",
+        "country": "Germany",
+        "layer_1": "Nordrhein-Westfalen",
+        "layer_2": "Munster"
+    },
+    {
+        "iso": "DEU",
+        "country": "Germany",
+        "layer_1": "Nordrhein-Westfalen",
+        "layer_2": "K\u00f6ln"
+    },
+    {
+        "iso": "DEU",
+        "country": "Germany",
+        "layer_1": "Nordrhein-Westfalen",
+        "layer_2": "D\u00fcsseldorf"
+    },
+    {
+        "iso": "DEU",
+        "country": "Germany",
+        "layer_1": "Nordrhein-Westfalen",
+        "layer_2": "Detmold"
+    },
+    {
+        "iso": "DEU",
+        "country": "Germany",
+        "layer_1": "Nordrhein-Westfalen",
+        "layer_2": "Arnsberg"
+    },
+    {
+        "iso": "DEU",
+        "country": "Germany",
+        "layer_1": "Niedersachsen",
+        "layer_2": "Weser-Ems"
+    },
+    {
+        "iso": "DEU",
+        "country": "Germany",
+        "layer_1": "Niedersachsen",
+        "layer_2": "Luneburg"
+    },
+    {
+        "iso": "DEU",
+        "country": "Germany",
+        "layer_1": "Niedersachsen",
+        "layer_2": "Hannover"
+    },
+    {
+        "iso": "DEU",
+        "country": "Germany",
+        "layer_1": "Niedersachsen",
+        "layer_2": "Braunschweig"
+    },
+    {
+        "iso": "DEU",
+        "country": "Germany",
+        "layer_1": "Mecklenburg-Vorpommern",
+        "layer_2": "Mecklenburg-Vorpommern"
+    },
+    {
+        "iso": "DEU",
+        "country": "Germany",
+        "layer_1": "Hessen",
+        "layer_2": "Kassel"
+    },
+    {
+        "iso": "DEU",
+        "country": "Germany",
+        "layer_1": "Hessen",
+        "layer_2": "Gie\u00dfen"
+    },
+    {
+        "iso": "DEU",
+        "country": "Germany",
+        "layer_1": "Hessen",
+        "layer_2": "Darmstadt"
+    },
+    {
+        "iso": "DEU",
+        "country": "Germany",
+        "layer_1": "Hamburg",
+        "layer_2": "Hamburg"
+    },
+    {
+        "iso": "DEU",
+        "country": "Germany",
+        "layer_1": "Bremen",
+        "layer_2": "Bremen"
+    },
+    {
+        "iso": "DEU",
+        "country": "Germany",
+        "layer_1": "Brandenburg",
+        "layer_2": "Brandenburg"
+    },
+    {
+        "iso": "DEU",
+        "country": "Germany",
+        "layer_1": "Berlin",
+        "layer_2": "Berlin"
+    },
+    {
+        "iso": "DEU",
+        "country": "Germany",
+        "layer_1": "Bayern",
+        "layer_2": "Mittelfranken"
+    },
+    {
+        "iso": "DEU",
+        "country": "Germany",
+        "layer_1": "Baden-W\u00fcrttemberg",
+        "layer_2": "T\u00fcbingen"
+    },
+    {
+        "iso": "DEU",
+        "country": "Germany",
+        "layer_1": "Baden-W\u00fcrttemberg",
+        "layer_2": "Stuttgart"
+    },
+    {
+        "iso": "DEU",
+        "country": "Germany",
+        "layer_1": "Baden-W\u00fcrttemberg",
+        "layer_2": "Karlsruhe"
+    },
+    {
+        "iso": "DEU",
+        "country": "Germany",
+        "layer_1": "Baden-W\u00fcrttemberg",
+        "layer_2": "Freiburg"
+    },
+    {
+        "iso": "DEU",
+        "country": "Germany",
+        "layer_1": "Bayern",
+        "layer_2": "Unterfranken"
+    },
+    {
+        "iso": "DEU",
+        "country": "Germany",
+        "layer_1": "Bayern",
+        "layer_2": "Schwaben"
+    },
+    {
+        "iso": "DEU",
+        "country": "Germany",
+        "layer_1": "Bayern",
+        "layer_2": "Oberpfalz"
+    },
+    {
+        "iso": "DEU",
+        "country": "Germany",
+        "layer_1": "Bayern",
+        "layer_2": "Oberfranken"
+    },
+    {
+        "iso": "DEU",
+        "country": "Germany",
+        "layer_1": "Bayern",
+        "layer_2": "Oberbayern"
+    },
+    {
+        "iso": "DEU",
+        "country": "Germany",
+        "layer_1": "Bayern",
+        "layer_2": "Niederbayern"
+    }
+]
