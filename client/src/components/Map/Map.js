@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import './Map.css';
+import Tooltip from '@mui/material/Tooltip';
 import { scaleLinear } from "d3-scale";
 import { csv } from "d3-fetch";
 import {
@@ -23,6 +24,7 @@ const MapChart = () => {
     const [pos, setPos] = useState([0,0]);
     const [zoom, setZoom] = useState(1);
     const [country, setCountry] = useState(["", ""]);
+    const [hover, setHover] = useState("");
     const navigate = useNavigate();
 
     // List of countries that use NAME_1. Add ISO3 if the country has been added and uses NAME_1
@@ -99,61 +101,71 @@ const MapChart = () => {
 
     return (
       <div className="MapContainer">
-        <ComposableMap
-          projectionConfig={{
-            rotate: [-10, 0, 0],
-            scale: 147
-          }}
-        >
-          <ZoomableGroup 
-            center={pos} 
-            zoom={zoom} 
-            maxZoom={70}
-            translateExtent={[
-                [0, 0],
-                [800, 600]
-              ]}
+        <Tooltip title={hover} followCursor={true}>
+          <ComposableMap
+            projectionConfig={{
+              rotate: [-10, 0, 0],
+              scale: 147
+            }}
             >
-          <Sphere stroke="#E4E5E6" strokeWidth={0.5} />
-          <Graticule stroke="#E4E5E6" strokeWidth={0.5} />
-          {data.length > 0 && (
-            <Geographies 
-            geography={map}
-            >
-              {({ geographies }) =>
-                geographies.map((geo) => {
-                  var NAME = "NAME_2";
-                  if(name1.includes(country[0])) NAME = "NAME_1";
-                  var d = data.find((s) => s.name === geo.properties[NAME]);
-                  if(map === "./maps/world.json") d = data.find((s) => s.ISO3 === geo.id);
-                  
-                  return (
-                    <Geography
-                      key={geo.rsmKey}
-                      geography={geo}
-                      fill={d ? colorScale(d["1m"]) : "#CBCBCB"}
-                      onClick={() => {change_map(geo)}}
-                      style={{
-                          default: {
+              <ZoomableGroup 
+                center={pos} 
+                zoom={zoom} 
+                maxZoom={70}
+                translateExtent={[
+                    [0, 0],
+                    [800, 600]
+                  ]}
+                >
+              <Sphere stroke="#E4E5E6" strokeWidth={0.5} />
+              <Graticule stroke="#E4E5E6" strokeWidth={0.5} />
+              {data.length > 0 && (
+                <Geographies 
+                geography={map}
+                >
+                  {({ geographies }) =>
+                    geographies.map((geo) => {
+                      var NAME = "NAME_2";
+                      if(name1.includes(country[0])) NAME = "NAME_1";
+                      var d = data.find((s) => s.name === geo.properties[NAME]);
+                      if(map === "./maps/world.json") d = data.find((s) => s.ISO3 === geo.id);
+                      
+                      return (
+                        <Geography
+                          key={geo.rsmKey}
+                          geography={geo}
+                          fill={d ? colorScale(d["1m"]) : "#CBCBCB"}
+                          onClick={() => {change_map(geo)}}
+                          onMouseEnter={() => {
+                            console.log("Entering " + geo.properties.name);
+                            setHover(geo.properties.name);
+                          }}
+                          onMouseLeave={() => {
+                            console.log("Leaving " + geo.properties.name);
+                            setHover("");
+                          }}
+                          style={{
+                            default: {
+                              stroke: "#000000",
+                              strokeWidth: 0.05,
+                            outline: "none"
+                            },
+                            hover: {
+                            fill: "#BFCDFF",
                             stroke: "#000000",
                             strokeWidth: 0.05,
-                          outline: "none"
-                          },
-                          hover: {
-                          fill: "#BFCDFF",
-                          stroke: "#000000",
-                          strokeWidth: 0.05,
-                          outline: "none"
-                          },
-                      }} 
-                    />
-                  );
-                })
-              }
-            </Geographies>
-          )}
-          </ZoomableGroup>
-        </ComposableMap>
+                            outline: "none"
+                            }
+                          }} 
+                        />
+                      );
+                    })
+                  }
+                </Geographies>
+              )}
+              </ZoomableGroup>
+            </ComposableMap>
+          </Tooltip>
         </div>
       );
       
