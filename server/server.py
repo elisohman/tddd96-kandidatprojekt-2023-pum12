@@ -1,5 +1,6 @@
 # Import flask and datetime module for showing date and time
 from flask import Flask, json
+from api.map import map_route
 import datetime
 from google.cloud import bigquery
 import os
@@ -11,6 +12,7 @@ x = datetime.datetime.now()
 
 # Initializing flask app
 app = Flask(__name__)
+app.register_blueprint(map_route)
 
 
 # Route for seeing a data
@@ -32,22 +34,8 @@ def get_time():
 # Route for seeing sensors available
 @app.route("/sensors")
 def get_sensors():
-    json_url = os.path.join(SITE_ROOT, "sensors.json")
+    json_url = os.path.join(SITE_ROOT, "utils/sensors.json")
     data = json.load(open(json_url))
-    return data
-
-
-@app.route("/map_data")
-def get_map_data():
-    json_url = os.path.join(SITE_ROOT, "sample_data/test_map_data.csv")
-    data = open(json_url)
-    return data
-
-
-@app.route("/map_data/<name>")
-def get_district_data(name):
-    json_url = os.path.join(SITE_ROOT, f'sample_data/{name}.csv')
-    data = open(json_url)
     return data
 
 
