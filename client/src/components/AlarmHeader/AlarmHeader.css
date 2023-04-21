@@ -2,41 +2,44 @@
     padding: 20px;
     padding-bottom: 0;
     display: grid;
-    grid-template-columns: 15fr 2fr 7fr;
-}
+    grid-template-columns: 16fr 1fr 1fr;
+    align-items: center;
+  }
 
 
-
-.BackButton {
-    margin: 0;
-    margin-left: auto;
-    
-}
-
-.Buttons {
-    margin-top: 10px;
-    margin-right: 10px;
-    transform: scale(1.5);
-    cursor: pointer;
-    
-}
-
-.ButtonLinks {
-    margin: 0;
-    color: black;
-    text-decoration: none;
+  .backButton {
+    width: 100%;
     display: flex;
-    width: fit-content;
-}
+    align-items: center;
+    cursor: pointer;
+    color: #000;
+    
+  }
 
-.AlarmHeader {
+  .backButton:hover{
+    transform: scale(1.05);
+  }
+  
+  .Icon {
+    width: 5px;
+    transform: scale(2.7);
+    height: 5px;
+    margin-right: 15px;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  
+  .Back {
+    margin: 0;
+    font-size: 40px;
+    font-family: "Arial";
+  }
+  
+
+  
+  .AlarmHeader {
     font-size: 40px;
     padding: 0;
     margin: 0;
-}
-
-.BackLabel{
-    font-size: 40px;
-    font-family: "Arial";
-    cursor: pointer;
-}
+  }
+      

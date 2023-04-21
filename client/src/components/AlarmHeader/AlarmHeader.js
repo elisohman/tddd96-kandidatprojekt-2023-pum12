@@ -10,14 +10,21 @@ export default function AlarmHeader(props) {
       
 
 
-      <div className="BackButton" onClick={() => {console.log("back button")}}> 
-          {/* Image should only be shown if there is an alarm */}
+        <div className='backButton' onClick={() => {console.log("back button")}}>
+        <KeyboardBackspaceIcon className='Icon' />
+        <p className='Back'>Back</p>
+        </div>
+        
+      {/* <div className="BackButton" onClick={() => {console.log("back button")}}> 
+          
           <KeyboardBackspaceIcon className='Buttons' />
       </div>
+
       <div className="BackLabel" onClick={() => {console.log("back button")}}> 
-          {/* Image should only be shown if there is an alarm */}
+          
           <p>Back</p>
-      </div>
+      </div> */}
+
     </div>
   )
 }
