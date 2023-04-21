@@ -1,0 +1,1362 @@
+{
+    "IND": {
+        "country": "India",
+        "provinces": {
+            "West Bengal": [],
+            "Uttaranchal": [],
+            "Uttar Pradesh": [],
+            "Tripura": [],
+            "Tamil Nadu": [],
+            "Sikkim": [],
+            "Rajasthan": [],
+            "Punjab": [],
+            "Puducherry": [],
+            "Orissa": [],
+            "Nagaland": [],
+            "Mizoram": [],
+            "Meghalaya": [],
+            "Manipur": [],
+            "Maharashtra": [],
+            "Madhya Pradesh": [],
+            "Lakshadweep": [],
+            "Kerala": [],
+            "Karnataka": [],
+            "Jharkhand": [],
+            "Jammu and Kashmir": [],
+            "Himachal Pradesh": [],
+            "Haryana": [],
+            "Gujarat": [],
+            "Goa": [],
+            "Delhi": [],
+            "Daman and Diu": [],
+            "Dadra and Nagar Haveli": [],
+            "Chhattisgarh": [],
+            "Chandigarh": [],
+            "Bihar": [],
+            "Assam": [],
+            "Arunachal Pradesh": [],
+            "Andhra Pradesh": [],
+            "Andaman and Nicobar": []
+        }
+    },
+    "VEN": {
+        "country": "Venezuela",
+        "provinces": {
+            "Zulia": [],
+            "Yaracuy": [],
+            "Vargas": [],
+            "Trujillo": [],
+            "T\u00e1chira": [],
+            "Sucre": [],
+            "Portuguesa": [],
+            "Nueva Esparta": [],
+            "Monagas": [],
+            "Miranda": [],
+            "M\u00e9rida": [],
+            "Lara": [],
+            "Gu\u00e1rico": [],
+            "Falc\u00f3n": [],
+            "Distrito Capital": [],
+            "Dependencias Federales": [],
+            "Delta Amacuro": [],
+            "Cojedes": [],
+            "Carabobo": [],
+            "Bol\u00edvar": [],
+            "Barinas": [],
+            "Aragua": [],
+            "Apure": [],
+            "Anzo\u00e1tegui": [],
+            "Amazonas": []
+        }
+    },
+    "ESP": {
+        "country": "Spain",
+        "provinces": {
+            "Regi\u00f3n de Murcia": [
+                "Murcia"
+            ],
+            "Principado de Asturias": [
+                "Asturias"
+            ],
+            "Pa\u00eds Vasco": [
+                "Vizcaya",
+                "Guip\u00fazcoa",
+                "\u00c1lava"
+            ],
+            "La Rioja": [
+                "La Rioja"
+            ],
+            "Islas Canarias": [
+                "Santa Cruz de Tenerife",
+                "Las Palmas"
+            ],
+            "Islas Baleares": [
+                "Baleares"
+            ],
+            "Galicia": [
+                "Pontevedra",
+                "Ourense",
+                "Lugo",
+                "A Coru\u00f1a"
+            ],
+            "Extremadura": [
+                "C\u00e1ceres",
+                "Badajoz"
+            ],
+            "Comunidad Valenciana": [
+                "Valencia",
+                "Castell\u00f3n",
+                "Alicante"
+            ],
+            "Comunidad Foral de Navarra": [
+                "Navarra"
+            ],
+            "Comunidad de Madrid": [
+                "Madrid"
+            ],
+            "Ceuta y Melilla": [
+                "Melilla",
+                "Ceuta"
+            ],
+            "Catalu\u00f1a": [
+                "Tarragona",
+                "Lleida",
+                "Girona",
+                "Barcelona"
+            ],
+            "Castilla-La Mancha": [
+                "Toledo",
+                "Guadalajara",
+                "Cuenca",
+                "Ciudad Real",
+                "Albacete"
+            ],
+            "Castilla y Le\u00f3n": [
+                "Zamora",
+                "Valladolid",
+                "Soria",
+                "Segovia",
+                "Salamanca",
+                "Palencia",
+                "Le\u00f3n",
+                "Burgos",
+                "\u00c1vila"
+            ],
+            "Cantabria": [
+                "Cantabria"
+            ],
+            "Arag\u00f3n": [
+                "Zaragoza",
+                "Teruel",
+                "Huesca"
+            ],
+            "Andaluc\u00eda": [
+                "Sevilla",
+                "M\u00e1laga",
+                "Ja\u00e9n",
+                "Huelva",
+                "Granada",
+                "C\u00f3rdoba",
+                "C\u00e1diz",
+                "Almer\u00eda"
+            ]
+        }
+    },
+    "SWE": {
+        "country": "Sweden",
+        "provinces": {
+            "V\u00e4stra G\u00f6taland": [],
+            "V\u00e4stmanland": [],
+            "V\u00e4sternorrland": [],
+            "V\u00e4sterbotten": [],
+            "V\u00e4rmland": [],
+            "Uppsala": [],
+            "Stockholm": [],
+            "Sk\u00e5ne": [],
+            "S\u00f6dermanland": [],
+            "Orebro": [],
+            "Norrbotten": [],
+            "Kronoberg": [],
+            "Kalmar": [],
+            "J\u00f6nk\u00f6ping": [],
+            "J\u00e4mtland": [],
+            "Halland": [],
+            "Gotland": [],
+            "G\u00e4vleborg": [],
+            "Dalarna": [],
+            "Blekinge": [],
+            "\u00d6sterg\u00f6tland": []
+        }
+    },
+    "ARE": {
+        "country": "United Arab Emirates",
+        "provinces": {
+            "Umm Al Qaywayn": [],
+            "Sharjah": [],
+            "Ras Al Khaymah": [],
+            "Neutral Zone": [],
+            "Fujayrah": [],
+            "Dubay": [],
+            "Ajman": [],
+            "Abu Dhabi": []
+        }
+    },
+    "GBR": {
+        "country": "United Kingdom",
+        "provinces": {
+            "Wales": [
+                "Wrexham",
+                "Vale of Glamorgan",
+                "Torfaen",
+                "Swansea",
+                "Rhondda, Cynon, Taff",
+                "Powys",
+                "Pembrokeshire",
+                "Newport",
+                "Neath Port Talbot",
+                "Monmouthshire",
+                "Merthyr Tydfil",
+                "Gwynedd",
+                "Flintshire",
+                "Denbighshire",
+                "Conwy",
+                "Ceredigion",
+                "Carmarthenshire",
+                "Cardiff",
+                "Caerphilly",
+                "Bridgend",
+                "Blaenau Gwent",
+                "Anglesey"
+            ],
+            "Scotland": [
+                "West Lothian",
+                "West Dunbartonshire",
+                "Stirling",
+                "South Lanarkshire",
+                "South Ayrshire",
+                "Shetland Islands",
+                "Scottish Borders",
+                "Renfrewshire",
+                "Perthshire and Kinross",
+                "Orkney Islands",
+                "North Lanarkshire",
+                "North Ayshire",
+                "Moray",
+                "Midlothian",
+                "Inverclyde",
+                "Highland",
+                "Glasgow",
+                "Fife",
+                "Falkirk",
+                "Eilean Siar",
+                "Edinburgh",
+                "East Renfrewshire",
+                "East Lothian",
+                "East Dunbartonshire",
+                "East Ayrshire",
+                "Dundee",
+                "Dumfries and Galloway",
+                "Clackmannanshire",
+                "Argyll and Bute",
+                "Angus",
+                "Aberdeen",
+                "Aberdeenshire"
+            ],
+            "Northern Ireland": [
+                "Strabane",
+                "Omagh",
+                "North Down",
+                "Newtownabbey",
+                "Newry and Mourne",
+                "Moyle",
+                "Magherafelt",
+                "Lisburn",
+                "Limavady",
+                "Larne",
+                "Fermanagh",
+                "Dungannon",
+                "Down",
+                "Derry",
+                "Craigavon",
+                "Cookstown",
+                "Coleraine",
+                "Castlereagh",
+                "Carrickfergus",
+                "Belfast",
+                "Banbridge",
+                "Ballymoney",
+                "Ballymena",
+                "Armagh",
+                "Ards",
+                "Antrim"
+            ],
+            "England": [
+                "York",
+                "Worcestershire",
+                "Wiltshire",
+                "Westminster",
+                "West Yorkshire",
+                "West Sussex",
+                "West Midlands",
+                "Warwickshire",
+                "Warrington",
+                "Wandsworth",
+                "Waltham Forest",
+                "Tyne and Wear",
+                "Tower Hamlets",
+                "Torbay",
+                "Thurrock",
+                "Telford and Wrekin",
+                "Swindon",
+                "Sutton",
+                "Surrey",
+                "Suffolk",
+                "Stoke-on-Trent",
+                "Stockton-on-Tees",
+                "Staffordshire",
+                "Southwark",
+                "Southend-on-Sea",
+                "Southampton",
+                "South Yorkshire",
+                "South Gloucestershire",
+                "Somerset",
+                "Shropshire",
+                "Rutland",
+                "Richmond upon Thames",
+                "Redcar and Cleveland",
+                "Redbridge",
+                "Portsmouth",
+                "Poole",
+                "Plymouth",
+                "Peterborough",
+                "Oxfordshire",
+                "Nottingham",
+                "Nottinghamshire",
+                "Northumberland",
+                "Northamptonshire",
+                "North Yorkshire",
+                "North Somerset",
+                "North Lincolnshire",
+                "North East Lincolnshire",
+                "Norfolk",
+                "Newham",
+                "Milton Keynes",
+                "Middlesbrough",
+                "Merton",
+                "Merseyside",
+                "Medway",
+                "Manchester",
+                "Luton",
+                "London",
+                "Lincolnshire",
+                "Lewisham",
+                "Leicester",
+                "Leicestershire",
+                "Lancashire",
+                "Lambeth",
+                "Kingston upon Thames",
+                "Kingston upon Hull",
+                "Kent",
+                "Kensington and Chelsea",
+                "Islington",
+                "Isle of Wight",
+                "Hounslow",
+                "Hillingdon",
+                "Hertfordshire",
+                "Herefordshire",
+                "Havering",
+                "Hartlepool",
+                "Harrow",
+                "Haringey",
+                "Hampshire",
+                "Hammersmith and Fulham",
+                "Halton",
+                "Hackney",
+                "Greenwich",
+                "Gloucestershire",
+                "Essex",
+                "Enfield",
+                "East Sussex",
+                "East Riding of Yorkshire",
+                "Ealing",
+                "Durham",
+                "Dorset",
+                "Devon",
+                "Derby",
+                "Derbyshire",
+                "Darlington",
+                "Cumbria",
+                "Croydon",
+                "Cornwall",
+                "Cheshire",
+                "Camden",
+                "Cambridgeshire",
+                "Buckinghamshire",
+                "Bromley",
+                "Bristol",
+                "Brighton and Hove",
+                "Brent",
+                "Bournemouth",
+                "Blackburn with Darwen",
+                "Bexley",
+                "Berkshire",
+                "Bedfordshire",
+                "Bath and North East Somerset",
+                "Barking and Dagenham"
+            ]
+        }
+    },
+    "CHN": {
+        "country": "China",
+        "provinces": {
+            "Zhejiang": [],
+            "Yunnan": [],
+            "Xizang": [],
+            "Xinjiang Uygur": [],
+            "Tianjin": [],
+            "Sichuan": [],
+            "Shanxi": [],
+            "Shanghai": [],
+            "Shandong": [],
+            "Shaanxi": [],
+            "Qinghai": [],
+            "Ningxia Hui": [],
+            "Nei Mongol": [],
+            "Liaoning": [],
+            "Jilin": [],
+            "Jiangxi": [],
+            "Jiangsu": [],
+            "Hunan": [],
+            "Hubei": [],
+            "Henan": [],
+            "Heilongjiang": [],
+            "Hebei": [],
+            "Hainan": [],
+            "Guizhou": [],
+            "Guangxi": [],
+            "Guangdong": [],
+            "Gansu": [],
+            "Fujian": [],
+            "Chongqing": [],
+            "Beijing": [],
+            "Anhui": []
+        }
+    },
+    "PHL": {
+        "country": "Philippines",
+        "provinces": {
+            "Zamboanga Sibugay": [],
+            "Zamboanga del Sur": [],
+            "Zamboanga del Norte": [],
+            "Zambales": [],
+            "Tawi-Tawi": [],
+            "Tarlac": [],
+            "Surigao del Sur": [],
+            "Surigao del Norte": [],
+            "Sulu": [],
+            "Sultan Kudarat": [],
+            "Southern Leyte": [],
+            "South Cotabato": [],
+            "Sorsogon": [],
+            "Siquijor": [],
+            "Sarangani": [],
+            "Samar": [],
+            "Romblon": [],
+            "Rizal": [],
+            "Quirino": [],
+            "Quezon": [],
+            "Pangasinan": [],
+            "Pampanga": [],
+            "Palawan": [],
+            "Oriental Mindoro": [],
+            "Occidental Mindoro": [],
+            "Nueva Vizcaya": [],
+            "Nueva Ecija": [],
+            "Northern Samar": [],
+            "North Cotabato": [],
+            "Negros Oriental": [],
+            "Negros Occidental": [],
+            "Mountain Province": [],
+            "Misamis Oriental": [],
+            "Misamis Occidental": [],
+            "Metropolitan Manila": [],
+            "Masbate": [],
+            "Marinduque": [],
+            "Maguindanao": [],
+            "Leyte": [],
+            "Lanao del Sur": [],
+            "Lanao del Norte": [],
+            "Laguna": [],
+            "La Union": [],
+            "Kalinga": [],
+            "Isabela": [],
+            "Iloilo": [],
+            "Ilocos Sur": [],
+            "Ilocos Norte": [],
+            "Ifugao": [],
+            "Guimaras": [],
+            "Eastern Samar": [],
+            "Dinagat Islands": [],
+            "Davao Oriental": [],
+            "Davao del Sur": [],
+            "Davao del Norte": [],
+            "Compostela Valley": [],
+            "Cebu": [],
+            "Cavite": [],
+            "Catanduanes": [],
+            "Capiz": [],
+            "Camiguin": [],
+            "Camarines Sur": [],
+            "Camarines Norte": [],
+            "Cagayan": [],
+            "Bulacan": [],
+            "Bukidnon": [],
+            "Bohol": [],
+            "Biliran": [],
+            "Benguet": [],
+            "Batangas": [],
+            "Batanes": [],
+            "Bataan": [],
+            "Basilan": [],
+            "Aurora": [],
+            "Apayao": [],
+            "Antique": [],
+            "Albay": [],
+            "Aklan": [],
+            "Agusan del Sur": [],
+            "Agusan del Norte": [],
+            "Abra": []
+        }
+    },
+    "PRT": {
+        "country": "Portugal",
+        "provinces": {
+            "Viseu": [],
+            "Vila Real": [],
+            "Viana do Castelo": [],
+            "Set\u00fabal": [],
+            "Santar\u00e9m": [],
+            "Porto": [],
+            "Portalegre": [],
+            "Lisboa": [],
+            "Leiria": [],
+            "Guarda": [],
+            "Faro": [],
+            "\u00c9vora": [],
+            "Coimbra": [],
+            "Castelo Branco": [],
+            "Bragan\u00e7a": [],
+            "Braga": [],
+            "Beja": [],
+            "Aveiro": []
+        }
+    },
+    "POL": {
+        "country": "Poland",
+        "provinces": {
+            "West Pomeranian": [],
+            "Warmian-Masurian": [],
+            "Subcarpathian": [],
+            "Silesian": [],
+            "Pomeranian": [],
+            "Podlachian": [],
+            "Opole": [],
+            "Masovian": [],
+            "Lubusz": [],
+            "Lublin": [],
+            "Lower Silesian": [],
+            "Lesser Poland": [],
+            "Kuyavian-Pomeranian": [],
+            "Greater Poland": [],
+            "\u015awi\u0119tokrzyskie": [],
+            "\u0141\u00f3d\u017a": []
+        }
+    },
+    "ROU": {
+        "country": "Romania",
+        "provinces": {
+            "Vrancea": [],
+            "Vaslui": [],
+            "V\u00e2lcea": [],
+            "Tulcea": [],
+            "Timi\u0219": [],
+            "Teleorman": [],
+            "Suceava": [],
+            "Sibiu": [],
+            "Satu Mare": [],
+            "S\u0103laj": [],
+            "Prahova": [],
+            "Olt": [],
+            "Neam\u021b": [],
+            "Mure\u0219": [],
+            "Mehedin\u021bi": [],
+            "Maramure\u0219": [],
+            "Ilfov": [],
+            "Ialomi\u021ba": [],
+            "Ia\u0219i": [],
+            "Hunedoara": [],
+            "Harghita": [],
+            "Gorj": [],
+            "Giurgiu": [],
+            "Gala\u021bi": [],
+            "Dolj": [],
+            "D\u00e2mbovi\u021ba": [],
+            "Covasna": [],
+            "Constan\u021ba": [],
+            "Cluj": [],
+            "Cara\u0219-Severin": [],
+            "C\u0103l\u0103ra\u0219i": [],
+            "Buz\u0103u": [],
+            "Bucharest": [],
+            "Br\u0103ila": [],
+            "Bra\u0219ov": [],
+            "Boto\u0219ani": [],
+            "Bistri\u021ba-N\u0103s\u0103ud": [],
+            "Bihor": [],
+            "Bac\u0103u": [],
+            "Arge\u0219": [],
+            "Arad": [],
+            "Alba": []
+        }
+    },
+    "NOR": {
+        "country": "Norway",
+        "provinces": {
+            "Vestfold": [],
+            "Vest-Agder": [],
+            "Troms": [],
+            "Telemark": [],
+            "S\u00f8r-Tr\u00f8ndelag": [],
+            "Sogn og Fjordane": [],
+            "Rogaland": [],
+            "Oslo": [],
+            "Oppland": [],
+            "Nord-Tr\u00f8ndelag": [],
+            "Nordland": [],
+            "M\u00f8re og Romsdal": [],
+            "Hordaland": [],
+            "Hedmark": [],
+            "Finnmark": [],
+            "Buskerud": [],
+            "Aust-Agder": [],
+            "\u00c3stfold": [],
+            "Akershus": []
+        }
+    },
+    "FRA": {
+        "country": "France",
+        "provinces": {
+            "Rh\u00f4ne-Alpes": [
+                "Savoie",
+                "Rh\u00f4ne",
+                "Loire",
+                "Is\u00e8re",
+                "Haute-Savoie",
+                "Dr\u00f4me",
+                "Ard\u00e8che",
+                "Ain"
+            ],
+            "Provence-Alpes-C\u00f4te-d'Azur": [
+                "Vaucluse",
+                "Var",
+                "Hautes-Alpes",
+                "Bouches-Du-Rh\u00f4ne",
+                "Alpes-Maritimes",
+                "Alpes-De-Haute-Provence"
+            ],
+            "Poitou-Charentes": [
+                "Vienne",
+                "Deux-S\u00e8vres",
+                "Charente-Maritime",
+                "Charente"
+            ],
+            "Picardie": [
+                "Somme",
+                "Oise",
+                "Aisne"
+            ],
+            "Pays de la Loire": [
+                "Vend\u00e9e",
+                "Sarthe",
+                "Mayenne",
+                "Maine-Et-Loire",
+                "Loire-Atlantique"
+            ],
+            "Nord-Pas-de-Calais": [
+                "Pas-De-Calais",
+                "Nord"
+            ],
+            "Midi-Pyr\u00e9n\u00e9es": [
+                "Tarn-Et-Garonne",
+                "Tarn",
+                "Lot",
+                "Hautes-Pyr\u00e9n\u00e9es",
+                "Haute-Garonne",
+                "Gers",
+                "Aveyron",
+                "Ari\u00e8ge"
+            ],
+            "Lorraine": [
+                "Vosges",
+                "Moselle",
+                "Meuse",
+                "Meurthe-Et-Moselle"
+            ],
+            "Limousin": [
+                "Haute-Vienne",
+                "Creuse",
+                "Corr\u00e8ze"
+            ],
+            "Languedoc-Roussillon": [
+                "Pyr\u00e9n\u00e9es-Orientales",
+                "Loz\u00e8re",
+                "H\u00e9rault",
+                "Gard",
+                "Aude"
+            ],
+            "\u00cele-de-France": [
+                "Yvelines",
+                "Ville de Paris",
+                "Val-D'Oise",
+                "Val-De-Marne",
+                "Seine-Saint-Denis",
+                "Seine-Et-Marne",
+                "Hauts-De-Seine",
+                "Essonne"
+            ],
+            "Haute-Normandie": [
+                "Seine-Maritime",
+                "Eure"
+            ],
+            "Franche-Comt\u00e9": [
+                "Territoire de Belfort",
+                "Jura",
+                "Haute-Sa\u00f4ne",
+                "Doubs"
+            ],
+            "Corse": [
+                "Haute-Corse",
+                "Corse-Du-Sud"
+            ],
+            "Champagne-Ardenne": [
+                "Marne",
+                "Haute-Marne",
+                "Aube",
+                "Ardennes"
+            ],
+            "Centre": [
+                "Loir-Et-Cher",
+                "Loiret",
+                "Indre-Et-Loire",
+                "Indre",
+                "Eure-Et-Loir",
+                "Cher"
+            ],
+            "Bretagne": [
+                "Morbihan",
+                "Ille-Et-Vilaine",
+                "Finist\u00e8re",
+                "C\u00f4tes-d'Armor"
+            ],
+            "Bourgogne": [
+                "Yonne",
+                "Sa\u00f4ne-et-Loire",
+                "Ni\u00e8vre",
+                "C\u00f4te-d'Or"
+            ],
+            "Basse-Normandie": [
+                "Orne",
+                "Manche",
+                "Calvados"
+            ],
+            "Auvergne": [
+                "Puy-De-D\u00f4me",
+                "Haute-Loire",
+                "Cantal",
+                "Allier"
+            ],
+            "Aquitaine": [
+                "Pyr\u00e9n\u00e9es-Atlantiques",
+                "Lot-Et-Garonne",
+                "Landes",
+                "Gironde",
+                "Dordogne"
+            ],
+            "Alsace": [
+                "Haut-Rhin",
+                "Bas-Rhin"
+            ]
+        }
+    },
+    "DNK": {
+        "country": "Denmark",
+        "provinces": {
+            "Viborg": [],
+            "Vestsj\u00e6lland": [],
+            "Vejle": [],
+            "Storstr\u00f8m": [],
+            "South Jutland": [],
+            "Roskilde": [],
+            "Ringk\u00f8bing": [],
+            "Ribe": [],
+            "North Jutland": [],
+            "Fyn": [],
+            "Frederiksborg": [],
+            "Copenhagen": [],
+            "Bornholm": [],
+            "\u00c5rhus": []
+        }
+    },
+    "JPN": {
+        "country": "Japan",
+        "provinces": {
+            "Yamanashi": [],
+            "Yamaguchi": [],
+            "Yamagata": [],
+            "Wakayama": [],
+            "Toyama": [],
+            "Tottori": [],
+            "Tokyo": [],
+            "Tokushima": [],
+            "Tochigi": [],
+            "Shizuoka": [],
+            "Shimane": [],
+            "Shiga": [],
+            "Saitama": [],
+            "Saga": [],
+            "Osaka": [],
+            "Okinawa": [],
+            "Okayama": [],
+            "Oita": [],
+            "Niigata": [],
+            "Nara": [],
+            "Naoasaki": [],
+            "Nagano": [],
+            "Miyazaki": [],
+            "Miyagi": [],
+            "Mie": [],
+            "Kyoto": [],
+            "Kumamoto": [],
+            "Kochi": [],
+            "Kanagawa": [],
+            "Kagoshima": [],
+            "Kagawa": [],
+            "Iwate": [],
+            "Ishikawa": [],
+            "Ibaraki": [],
+            "Hyogo": [],
+            "Hokkaido": [],
+            "Hiroshima": [],
+            "Gunma": [],
+            "Gifu": [],
+            "Fukushima": [],
+            "Fukuoka": [],
+            "Fukui": [],
+            "Ehime": [],
+            "Chiba": [],
+            "Aomori": [],
+            "Akita": [],
+            "Aichi": []
+        }
+    },
+    "DEU": {
+        "country": "Germany",
+        "provinces": {
+            "Th\u00fcringen": [
+                "Th\u00fcringen"
+            ],
+            "Schleswig-Holstein": [
+                "Schleswig-Holstein"
+            ],
+            "Sachsen-Anhalt": [
+                "Magdeburg",
+                "Halle",
+                "Dessau"
+            ],
+            "Sachsen": [
+                "Leipzig",
+                "Dresden",
+                "Chemnitz"
+            ],
+            "Saarland": [
+                "Saarland"
+            ],
+            "Rheinland-Pfalz": [
+                "Trier",
+                "Rheinhessen-Pfalz",
+                "Koblenz"
+            ],
+            "Nordrhein-Westfalen": [
+                "Munster",
+                "K\u00f6ln",
+                "D\u00fcsseldorf",
+                "Detmold",
+                "Arnsberg"
+            ],
+            "Niedersachsen": [
+                "Weser-Ems",
+                "Luneburg",
+                "Hannover",
+                "Braunschweig"
+            ],
+            "Mecklenburg-Vorpommern": [
+                "Mecklenburg-Vorpommern"
+            ],
+            "Hessen": [
+                "Kassel",
+                "Gie\u00dfen",
+                "Darmstadt"
+            ],
+            "Hamburg": [
+                "Hamburg"
+            ],
+            "Bremen": [
+                "Bremen"
+            ],
+            "Brandenburg": [
+                "Brandenburg"
+            ],
+            "Berlin": [
+                "Berlin"
+            ],
+            "Bayern": [
+                "Mittelfranken",
+                "Unterfranken",
+                "Schwaben",
+                "Oberpfalz",
+                "Oberfranken",
+                "Oberbayern",
+                "Niederbayern"
+            ],
+            "Baden-W\u00fcrttemberg": [
+                "T\u00fcbingen",
+                "Stuttgart",
+                "Karlsruhe",
+                "Freiburg"
+            ]
+        }
+    },
+    "COL": {
+        "country": "Colombia",
+        "provinces": {
+            "Vichada": [],
+            "Vaup\u00e9s": [],
+            "Valle del Cauca": [],
+            "Tolima": [],
+            "Sucre": [],
+            "Santander": [],
+            "San Andr\u00e9s y Providencia": [],
+            "Risaralda": [],
+            "Quind\u00edo": [],
+            "Putumayo": [],
+            "Norte de Santander": [],
+            "Nari\u00f1o": [],
+            "Meta": [],
+            "Magdalena": [],
+            "La Guajira": [],
+            "Huila": [],
+            "Guaviare": [],
+            "Guain\u00eda": [],
+            "Cundinamarca": [],
+            "Choc\u00f3": [],
+            "Cesar": [],
+            "Cauca": [],
+            "Casanare": [],
+            "Caquet\u00e1": [],
+            "Caldas": [],
+            "C\u00f3rdoba": [],
+            "Boyac\u00e1": [],
+            "Bol\u00edvar": [],
+            "Atl\u00e1ntico": [],
+            "Arauca": [],
+            "Antioquia": [],
+            "Amazonas": []
+        }
+    },
+    "DZA": {
+        "country": "Algeria",
+        "provinces": {
+            "Tlemcen": [],
+            "Tizi Ouzou": [],
+            "Tissemsilt": [],
+            "Tipaza": [],
+            "Tindouf": [],
+            "Tiaret": [],
+            "Tamanghasset": [],
+            "T\u00e9bessa": [],
+            "Souk Ahras": [],
+            "Skikda": [],
+            "Sidi Bel Abb\u00e8s": [],
+            "Sa\u00efda": [],
+            "S\u00e9tif": [],
+            "Relizane": [],
+            "Oum el Bouaghi": [],
+            "Ouargla": [],
+            "Oran": [],
+            "Na\u00e2ma": [],
+            "Mostaganem": [],
+            "Mila": [],
+            "Mascara": [],
+            "M\u00e9d\u00e9a": [],
+            "M'Sila": [],
+            "Laghouat": [],
+            "Khenchela": [],
+            "Jijel": [],
+            "Illizi": [],
+            "Guelma": [],
+            "Gharda\u00efa": [],
+            "El Tarf": [],
+            "El Oued": [],
+            "El Bayadh": [],
+            "Djelfa": [],
+            "Constantine": [],
+            "Chlef": [],
+            "Boumerd\u00e8s": [],
+            "Bouira": [],
+            "Bordj Bou Arr\u00e9ridj": [],
+            "Blida": [],
+            "Biskra": [],
+            "Batna": [],
+            "B\u00e9ja\u00efa": [],
+            "B\u00e9char": [],
+            "Annaba": [],
+            "Alger": [],
+            "Adrar": [],
+            "A\u00efn T\u00e9mouchent": [],
+            "A\u00efn Defla": []
+        }
+    },
+    "FIN": {
+        "country": "Finland",
+        "provinces": {
+            "Western Finland": [
+                "Southern Ostrobothnia",
+                "Satakunta",
+                "Pirkanmaa",
+                "P\u00e4ij\u00e4nne Tavastia",
+                "Ostrobothnia",
+                "Finland Proper",
+                "Central Ostrobothnia",
+                "Central Finland",
+                "Tavastia Proper"
+            ],
+            "Eastern Finland": [
+                "P\u00e4ij\u00e4nne Tavastia",
+                "North Savonia",
+                "North Karelia",
+                "Southern Savonia"
+            ],
+            "Southern Finland": [
+                "Uusimaa",
+                "South Karelia",
+                "P\u00e4ij\u00e4nne Tavastia",
+                "Kymenlaakso",
+                "Eastern Uusimaa"
+            ],
+            "Oulu": [
+                "Northern Ostrobothnia",
+                "Kainuu"
+            ],
+            "Lapland": [
+                "Lapland"
+            ]
+        }
+    },
+    "ZAF": {
+        "country": "South Africa",
+        "provinces": {
+            "Western Cape": [],
+            "Western Cape (isolated islands)": [],
+            "Northern Cape": [],
+            "North West": [],
+            "Mpumalanga": [],
+            "Limpopo": [],
+            "KwaZulu-Natal": [],
+            "Gauteng": [],
+            "Free State": [],
+            "Eastern Cape": []
+        }
+    },
+    "PAK": {
+        "country": "Pakistan",
+        "provinces": {
+            "Sind": [
+                "Sukkur",
+                "Rann of Kutch",
+                "Mirpur Khas",
+                "Larkana",
+                "Karachi",
+                "Hyderabad"
+            ],
+            "Punjab": [
+                "Sargodha",
+                "Rawalpindi",
+                "Multan",
+                "Lahore",
+                "Gujranwala",
+                "Faisalabad",
+                "Dera Ghazi Khan",
+                "Bahawalpur"
+            ],
+            "Northern Areas": [
+                "Northern Areas"
+            ],
+            "N.W.F.P.": [
+                "Peshawar",
+                "Mardan",
+                "Malakand",
+                "Kohat",
+                "Hazara",
+                "F.A.T.A.",
+                "Dera Ismail Khan",
+                "Bannu"
+            ],
+            "F.C.T.": [
+                "Islamabad"
+            ],
+            "F.A.T.A.": [
+                "F.A.T.A."
+            ],
+            "Baluchistan": [
+                "Zhob",
+                "Sibi",
+                "Quetta",
+                "Nasirabad",
+                "Makran",
+                "Kalat"
+            ],
+            "Azad Kashmir": [
+                "Azad Kashmir"
+            ]
+        }
+    },
+    "BEL": {
+        "country": "Belgium",
+        "provinces": {
+            "West Flanders": [
+                "Veurne",
+                "Tielt",
+                "Roeselare",
+                "Oostende",
+                "Kortrijk",
+                "Ieper",
+                "Diksmuide",
+                "Brugge"
+            ],
+            "Walloon Brabant": [
+                "Nijvel"
+            ],
+            "Namur": [
+                "Philippeville",
+                "Namur",
+                "Dinant"
+            ],
+            "Luxembourg": [
+                "Virton",
+                "Neufch\u00e2teau",
+                "Marche-en-Famenne",
+                "Bastogne",
+                "Arlon"
+            ],
+            "Limburg": [
+                "Tongeren",
+                "Maaseik",
+                "Hasselt"
+            ],
+            "Liege": [
+                "Verviers",
+                "Li\u00e8ge",
+                "Huy",
+                "Borgworm"
+            ],
+            "Hainaut": [
+                "Tournai",
+                "Thuin",
+                "Soignies",
+                "Mons",
+                "Moeskroen",
+                "Charleroi",
+                "Ath"
+            ],
+            "Flemish Brabant": [
+                "Louvain",
+                "Halle-Vilvoorde"
+            ],
+            "East Flanders": [
+                "Sint-Niklaas",
+                "Oudenaarde",
+                "Gent",
+                "Eeklo",
+                "Dendermonde",
+                "Aalst"
+            ],
+            "Brussels": [
+                "Brussel"
+            ],
+            "Antwerp": [
+                "Turnhout",
+                "Mechelen",
+                "Antwerpen"
+            ]
+        }
+    },
+    "CZE": {
+        "country": "Czech Republic",
+        "provinces": {
+            "Zl\u00ednsk\u00fd": [],
+            "St\u0159edo\u010desk\u00fd": [],
+            "Prague": [],
+            "Plze\u0148sk\u00fd": [],
+            "Pardubick\u00fd": [],
+            "Olomouck\u00fd": [],
+            "Moravskoslezsk\u00fd": [],
+            "Libereck\u00fd": [],
+            "Kraj Vyso\u010dina": [],
+            "Kr\u00e1lov\u00e9hradeck\u00fd": [],
+            "Karlovarsk\u00fd": [],
+            "Jihomoravsk\u00fd": [],
+            "Jiho\u010desk\u00fd": [],
+            "\u00dasteck\u00fd": []
+        }
+    },
+    "AZE": {
+        "country": "Azerbaijan",
+        "provinces": {
+            "Yukhari-Karabakh": [],
+            "Shaki-Zaqatala": [],
+            "Quba-Khachmaz": [],
+            "Nakhchivan": [],
+            "Lankaran": [],
+            "Kalbajar-Lachin": [],
+            "Ganja-Qazakh": [],
+            "Daglig-Shirvan": [],
+            "Aran": [],
+            "Absheron": []
+        }
+    },
+    "ARG": {
+        "country": "Argentina",
+        "provinces": {
+            "Tucum\u00e1n": [],
+            "Tierra del Fuego": [],
+            "Santiago del Estero": [],
+            "Santa Fe": [],
+            "Santa Cruz": [],
+            "San Luis": [],
+            "San Juan": [],
+            "Salta": [],
+            "R\u00edo Negro": [],
+            "Neuqu\u00e9n": [],
+            "Misiones": [],
+            "Mendoza": [],
+            "La Rioja": [],
+            "La Pampa": [],
+            "Jujuy": [],
+            "Formosa": [],
+            "Entre R\u00edos": [],
+            "Corrientes": [],
+            "Ciudad de Buenos Aires": [],
+            "Chubut": [],
+            "Chaco": [],
+            "Catamarca": [],
+            "C\u00f3rdoba": [],
+            "Buenos Aires": []
+        }
+    },
+    "ITA": {
+        "country": "Italy",
+        "provinces": {
+            "Veneto": [],
+            "Valle d'Aosta": [],
+            "Umbria": [],
+            "Trentino-Alto Adige": [],
+            "Toscana": [],
+            "Sicily": [],
+            "Sardegna": [],
+            "Piemonte": [],
+            "Molise": [],
+            "Marche": [],
+            "Lombardia": [],
+            "Liguria": [],
+            "Lazio": [],
+            "Friuli-Venezia Giulia": [],
+            "Emilia-Romagna": [],
+            "Campania": [],
+            "Calabria": [],
+            "Basilicata": [],
+            "Apulia": [],
+            "Abruzzo": []
+        }
+    },
+    "LBR": {
+        "country": "Liberia",
+        "provinces": {
+            "Sinoe": [],
+            "River Gee": [],
+            "River Cess": [],
+            "Nimba": [],
+            "Montserrado": [],
+            "Maryland": [],
+            "Margibi": [],
+            "Lofa": [],
+            "GrandKru": [],
+            "GrandGedeh": [],
+            "GrandBassa": [],
+            "Grand Cape Mount": [],
+            "Gbapolu": [],
+            "Bong": [],
+            "Bomi": []
+        }
+    },
+    "NZL": {
+        "country": "New Zealand",
+        "provinces": {
+            "West Coast": [],
+            "Wellington": [],
+            "Waikato": [],
+            "Taranaki": [],
+            "Southland": [],
+            "Otago": [],
+            "Northland": [],
+            "Nelson": [],
+            "Marlborough": [],
+            "Manawatu-Wanganui": [],
+            "Hawke's Bay": [],
+            "Gisborne": [],
+            "Canterbury": [],
+            "Bay of Plenty": [],
+            "Auckland": []
+        }
+    },
+    "IRL": {
+        "country": "Ireland",
+        "provinces": {
+            "Wicklow": [],
+            "Wexford": [],
+            "Westmeath": [],
+            "Waterford": [],
+            "Tipperary": [],
+            "Sligo": [],
+            "Roscommon": [],
+            "Offaly": [],
+            "Monaghan": [],
+            "Meath": [],
+            "Mayo": [],
+            "Louth": [],
+            "Longford": [],
+            "Limerick": [],
+            "Leitrim": [],
+            "Laoighis": [],
+            "Kilkenny": [],
+            "Kildare": [],
+            "Kerry": [],
+            "Galway": [],
+            "Dublin": [],
+            "Donegal": [],
+            "Cork": [],
+            "Clare": [],
+            "Cavan": [],
+            "Carlow": []
+        }
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "SWE": {
+        "country": "Sweden",
+        "provinces": {
+            "V\u00e4stra G\u00f6taland": [],
+            "V\u00e4stmanland": [],
+            "V\u00e4sternorrland": [],
+            "V\u00e4sterbotten": [],
+            "V\u00e4rmland": [],
+            "Uppsala": [],
+            "Stockholm": [],
+            "Sk\u00e5ne": [],
+            "S\u00f6dermanland": [],
+            "Orebro": [],
+            "Norrbotten": [],
+            "Kronoberg": [],
+            "Kalmar": [],
+            "J\u00f6nk\u00f6ping": [],
+            "J\u00e4mtland": [],
+            "Halland": [],
+            "Gotland": [],
+            "G\u00e4vleborg": [],
+            "Dalarna": [],
+            "Blekinge": [],
+            "\u00d6sterg\u00f6tland": []
+        }
+    }
+}

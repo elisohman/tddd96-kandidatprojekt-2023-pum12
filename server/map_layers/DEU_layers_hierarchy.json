@@ -1,0 +1,79 @@
+{
+    "DEU": {
+        "country": "Germany",
+        "provinces": {
+            "Th\u00fcringen": [
+                "Th\u00fcringen"
+            ],
+            "Schleswig-Holstein": [
+                "Schleswig-Holstein"
+            ],
+            "Sachsen-Anhalt": [
+                "Magdeburg",
+                "Halle",
+                "Dessau"
+            ],
+            "Sachsen": [
+                "Leipzig",
+                "Dresden",
+                "Chemnitz"
+            ],
+            "Saarland": [
+                "Saarland"
+            ],
+            "Rheinland-Pfalz": [
+                "Trier",
+                "Rheinhessen-Pfalz",
+                "Koblenz"
+            ],
+            "Nordrhein-Westfalen": [
+                "Munster",
+                "K\u00f6ln",
+                "D\u00fcsseldorf",
+                "Detmold",
+                "Arnsberg"
+            ],
+            "Niedersachsen": [
+                "Weser-Ems",
+                "Luneburg",
+                "Hannover",
+                "Braunschweig"
+            ],
+            "Mecklenburg-Vorpommern": [
+                "Mecklenburg-Vorpommern"
+            ],
+            "Hessen": [
+                "Kassel",
+                "Gie\u00dfen",
+                "Darmstadt"
+            ],
+            "Hamburg": [
+                "Hamburg"
+            ],
+            "Bremen": [
+                "Bremen"
+            ],
+            "Brandenburg": [
+                "Brandenburg"
+            ],
+            "Berlin": [
+                "Berlin"
+            ],
+            "Bayern": [
+                "Mittelfranken",
+                "Unterfranken",
+                "Schwaben",
+                "Oberpfalz",
+                "Oberfranken",
+                "Oberbayern",
+                "Niederbayern"
+            ],
+            "Baden-W\u00fcrttemberg": [
+                "T\u00fcbingen",
+                "Stuttgart",
+                "Karlsruhe",
+                "Freiburg"
+            ]
+        }
+    }
+}
