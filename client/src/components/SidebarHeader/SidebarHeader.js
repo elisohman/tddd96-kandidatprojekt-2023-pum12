@@ -13,15 +13,20 @@ export default function SidebarHeader(props) {
     props.setSidebarState("largeSidebar")
   }
 
+  function alarmView(){
+    console.log("Alarm view");
+    props.setSidebarState("alarm");
+  }
+
   return ( 
     <div className="SidebarHeaderContent">
       <p className="SidebarHeader">{props.location}</p>
       
       <div className="AlarmButton">
-        <a className="ButtonLinks" href="alarms">
+        {/* <a className="ButtonLinks" href="alarms"> */}
           {/* Image should only be shown if there is an alarm */}
-          <NotificationsIcon className='Buttons'/>
-        </a>
+          <NotificationsIcon className='Buttons' onClick={() => {alarmView()}} />
+        {/* </a> */}
       </div>
 
       <div className="EnlargeButton">

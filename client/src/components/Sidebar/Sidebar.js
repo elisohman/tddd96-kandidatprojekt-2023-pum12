@@ -5,6 +5,7 @@ import LineChart from "../../components/LineChart/LineChartComp";
 import SidebarHeader from "../../components/SidebarHeader/SidebarHeader";
 import Table from "../../components/Table/Table";
 import OverviewBox from "../../components/OverviewBox/OverviewBox";
+import AlarmHeader from "../../components/AlarmHeader/AlarmHeader"
 
 import TimespanButtons from "../TimespanButtons/TimespanButtons";
 
@@ -40,10 +41,15 @@ function Sidebar(props) {
     return (
         <div className={sidebarState + "Container"}>
             <div className={sidebarState + "SidebarHeader"} >
+                <div className={`${sidebarState === "alarm" ? "hiddenHeader" : 'showHeader'}`}>
                 <SidebarHeader 
                     location={location} 
                     setSidebarState={setSidebarState} 
                     sidebarState={sidebarState}/>
+                </div>
+                <div className={`${sidebarState != "alarm" ? "hiddenHeader" : 'showHeader'}`}>
+                <AlarmHeader  location={location} setSidebarState={setSidebarState} sidebarState={sidebarState}/>
+                </div>
             </div>
 
             <div className={sidebarState + "TableContainer"}>

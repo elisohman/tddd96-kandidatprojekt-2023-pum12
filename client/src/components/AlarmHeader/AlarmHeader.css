@@ -1,0 +1,42 @@
+.AlarmHeaderContent {
+    padding: 20px;
+    padding-bottom: 0;
+    display: grid;
+    grid-template-columns: 15fr 2fr 7fr;
+}
+
+
+
+.BackButton {
+    margin: 0;
+    margin-left: auto;
+    
+}
+
+.Buttons {
+    margin-top: 10px;
+    margin-right: 10px;
+    transform: scale(1.5);
+    cursor: pointer;
+    
+}
+
+.ButtonLinks {
+    margin: 0;
+    color: black;
+    text-decoration: none;
+    display: flex;
+    width: fit-content;
+}
+
+.AlarmHeader {
+    font-size: 40px;
+    padding: 0;
+    margin: 0;
+}
+
+.BackLabel{
+    font-size: 40px;
+    font-family: "Arial";
+    cursor: pointer;
+}

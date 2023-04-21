@@ -31,11 +31,12 @@ Styling for the small sidebar
     visibility: hidden;
 }
 
+
 /*-----------------------------
 Styling for the large sidebar
 -------------------------------*/
 
-.largeSidebarContainer{
+.largeSidebarContainer, .alarmContainer{
     position: absolute;
     left:20px;
     right:20px;
@@ -52,6 +53,11 @@ Styling for the large sidebar
     
 }
 
+
+
+.showHeader{
+    display: Block;
+}
 .largeSidebarLineChartContainer1{
     grid-column: 3;
     grid-row: 3;
@@ -69,6 +75,22 @@ Styling for the large sidebar
 }
 
 .largeSidebarSidebarHeader{
+    grid-column: 1/4;
+    grid-row: 1;
+}
+/*
+
+
+*/
+.hiddenHeader{
+    display: None;
+}
+.alarmTableContainer, .alarmLineChartContainer1, .alarmLineChartContainer2, 
+ .alarmOverviewBox{
+    visibility: hidden;
+}
+
+.alarmSidebarHeader{
     grid-column: 1/4;
     grid-row: 1;
 }
