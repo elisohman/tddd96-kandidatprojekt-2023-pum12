@@ -19,13 +19,12 @@ function HomePage(props) {
 			.then(data => setData(data))
 	}
     return (
-        <div className="HomePageContent">
-			<div>
-				<div className="HomePageHeader"><HomePageHeader/></div>
+        <div className="HomePage">
+			<div className="HomePageHeader"><HomePageHeader/></div>
+			<div className="HomePageContent">
 				<div className="Map"><Map/></div>
+				<div className="Sidebar"><Sidebar data={data}/></div>			
 			</div>
-			
-			<div className="Sidebar"><Sidebar data={data}/></div>			
         </div>
 
     );

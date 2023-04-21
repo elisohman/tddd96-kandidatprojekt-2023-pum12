@@ -137,11 +137,14 @@ const MapChart = () => {
                           fill={d ? colorScale(d["1m"]) : "#CBCBCB"}
                           onClick={() => {change_map(geo)}}
                           onMouseEnter={() => {
-                            console.log("Entering " + geo.properties.name);
-                            setHover(geo.properties.name);
+                            var NAME = "name";
+                            if(map !== "./maps/world.json") {
+                              if(name1.includes(country[0])) NAME = "NAME_1";
+                              else NAME = "NAME_2"
+                            }
+                            setHover(geo.properties[NAME]);
                           }}
                           onMouseLeave={() => {
-                            console.log("Leaving " + geo.properties.name);
                             setHover("");
                           }}
                           style={{

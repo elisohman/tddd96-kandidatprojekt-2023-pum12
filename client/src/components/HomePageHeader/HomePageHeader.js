@@ -12,6 +12,7 @@ export default function SidebarHeader() {
         <img src={logo} id="logo" alt="logo" className="CompanyLogo"></img>
 
       </a>
+      <hr className='Divider'></hr>
     
     </div>
   )

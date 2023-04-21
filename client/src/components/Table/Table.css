@@ -19,6 +19,7 @@ td {
 }
 
 .Header{
-    background-color: #2bbbeb;
-    border: 1px solid #44798b;
+    background-color: #BFCDFF;
+    border: 1px solid #0AC29B;
+    font-weight: bold;
 }
