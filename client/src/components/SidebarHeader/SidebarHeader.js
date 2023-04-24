@@ -6,15 +6,18 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 export default function SidebarHeader(props) {
   function detailedView(geo) {
     console.log("onclick detailed view")
+    props.setPrevState(props.sidebarState);
     if(props.sidebarState === "largeSidebar") {
       props.setSidebarState("smallSidebar")
       return
     }
+
     props.setSidebarState("largeSidebar")
   }
 
   function alarmView(){
     console.log("Alarm view");
+    props.setPrevState(props.sidebarState);
     props.setSidebarState("alarm");
   }
 

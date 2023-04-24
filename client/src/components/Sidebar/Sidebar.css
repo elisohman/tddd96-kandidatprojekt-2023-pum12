@@ -87,7 +87,7 @@ Styling for the large sidebar
 }
 .alarmTableContainer, .alarmLineChartContainer1, .alarmLineChartContainer2, 
  .alarmOverviewBox{
-    visibility: hidden;
+    display: none;
 }
 
 .alarmSidebarHeader{

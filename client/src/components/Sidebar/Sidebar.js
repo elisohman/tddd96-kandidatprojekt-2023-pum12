@@ -13,14 +13,15 @@ import TimespanButtons from "../TimespanButtons/TimespanButtons";
 //  i denna funktion updaterar man sen data för tabell & graf beroende på knapptryckning
 //  Matha med title arrayens ordning, index = 0 är title[0] o.s.v.
 function ButtonFunction(index){
-    console.log(`${index == 1 ? "Knapp1" : "annan knapp"}`);
+    console.log(`${index == 1 ? "Knapp1" : "annan knapp"}`);//exempelkod
 }
 
 function Sidebar(props) {
     let location = "World"
     const [sidebarState, setSidebarState] = useState("smallSidebar");
+    const [prevSidebarState, setPrevSidebarState] = useState("smallSidebar");
 
-	const tableColumns = [
+	const tableColumns = [//exempelkod
         {
             Header: "Amount",
             accessor : "unit"
@@ -42,13 +43,19 @@ function Sidebar(props) {
         <div className={sidebarState + "Container"}>
             <div className={sidebarState + "SidebarHeader"} >
                 <div className={`${sidebarState === "alarm" ? "hiddenHeader" : 'showHeader'}`}>
-                <SidebarHeader 
+                <SidebarHeader
+                    setPrevState = {setPrevSidebarState}
+                    prevSidebarState = {prevSidebarState}
                     location={location} 
                     setSidebarState={setSidebarState} 
                     sidebarState={sidebarState}/>
                 </div>
                 <div className={`${sidebarState != "alarm" ? "hiddenHeader" : 'showHeader'}`}>
-                <AlarmHeader  location={location} setSidebarState={setSidebarState} sidebarState={sidebarState}/>
+                <AlarmHeader 
+                    setPrevState = {setPrevSidebarState}
+                    prevSidebarState = {prevSidebarState}
+                    location={location} setSidebarState={setSidebarState}
+                    sidebarState={sidebarState}/>
                 </div>
             </div>
 

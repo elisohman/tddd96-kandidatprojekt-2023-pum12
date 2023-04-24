@@ -10,20 +10,10 @@ export default function AlarmHeader(props) {
       
 
 
-        <div className='backButton' onClick={() => {console.log("back button")}}>
+        <div className='backButton' onClick={() => {props.setSidebarState(props.prevSidebarState)}}>
         <KeyboardBackspaceIcon className='Icon' />
         <p className='Back'>Back</p>
         </div>
-        
-      {/* <div className="BackButton" onClick={() => {console.log("back button")}}> 
-          
-          <KeyboardBackspaceIcon className='Buttons' />
-      </div>
-
-      <div className="BackLabel" onClick={() => {console.log("back button")}}> 
-          
-          <p>Back</p>
-      </div> */}
 
     </div>
   )
