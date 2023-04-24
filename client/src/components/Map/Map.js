@@ -15,8 +15,8 @@ import {
 
 // The colorscale to display on contries/regions
 const colorScale = scaleLinear()
-    .domain([0.29, 0.68])
-    .range(["#94C58C", "#094F29"]);
+    .domain([0, 1])
+    .range(["#CCFF8C", "#2C5000"]);
 
 const MapChart = () => {
     const [data, setData] = useState([]);
@@ -150,13 +150,13 @@ const MapChart = () => {
                           style={{
                             default: {
                               stroke: "#000000",
-                              strokeWidth: 0.05,
+                              strokeWidth: 0.01,
                             outline: "none"
                             },
                             hover: {
                             fill: "#BFCDFF",
                             stroke: "#000000",
-                            strokeWidth: 0.05,
+                            strokeWidth: 0.025,
                             outline: "none"
                             }
                           }} 
