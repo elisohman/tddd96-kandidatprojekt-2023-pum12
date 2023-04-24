@@ -1,5 +1,6 @@
 from flask import Blueprint
-from services.map_service import get_world_map_color_service, get_district_color_service
+from services.map_service import (get_world_map_color_service,
+                                  get_district_color_service)
 
 map_route = Blueprint('map_route', __name__)
 
