@@ -17,12 +17,12 @@ def create_layers_file(wanted_keys, wanted_map, structure):
     output_file = open(f'{output_file_name}.json', 'w')
 
     if wanted_map != "all":
-        map_file = open(f'../../client/public/maps/{wanted_map}.json')
+        map_file = open(f'../../../client/public/maps/{wanted_map}.json')
         data = json.load(map_file)
         res = get_layers(data, wanted_keys, structure)
         map_file.close
     else:
-        filenames = (next(walk('../../client/public/maps/'),
+        filenames = (next(walk('../../../client/public/maps/'),
                           (None, None, []))[2])  # [] if no file
         res = [] if structure == "l" else {}
         for file_name in filenames:
@@ -30,7 +30,7 @@ def create_layers_file(wanted_keys, wanted_map, structure):
             if file_name == "world.json":
                 continue
 
-            map_file = open(f'../../client/public/maps/{file_name}')
+            map_file = open(f'../../../client/public/maps/{file_name}')
             data = json.load(map_file)
 
             if structure == "l":
@@ -63,12 +63,14 @@ def get_layers(file_dict, wanted_keys, structure):
                                 'country': v['NAME_0'],
                                 'provinces': {}
                             }
-                        province = v['NAME_1']
+
                         muni = v.get('NAME_2', None)
+                        province = v['NAME_1'] if not muni else muni
+
                         if province not in result[iso]['provinces']:
                             result[iso]['provinces'][province] = []
-                        if muni:
-                            result[iso]['provinces'][province].append(muni)
+                        # if muni:
+                        #     result[iso]['provinces'][province].append(muni)
                 elif isinstance(v, dict) or isinstance(v, list):
                     stack.append(v)
         elif isinstance(current, list):

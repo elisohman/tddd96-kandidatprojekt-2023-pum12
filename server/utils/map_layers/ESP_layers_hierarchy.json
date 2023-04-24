@@ -2,94 +2,58 @@
     "ESP": {
         "country": "Spain",
         "provinces": {
-            "Regi\u00f3n de Murcia": [
-                "Murcia"
-            ],
-            "Principado de Asturias": [
-                "Asturias"
-            ],
-            "Pa\u00eds Vasco": [
-                "Vizcaya",
-                "Guip\u00fazcoa",
-                "\u00c1lava"
-            ],
-            "La Rioja": [
-                "La Rioja"
-            ],
-            "Islas Canarias": [
-                "Santa Cruz de Tenerife",
-                "Las Palmas"
-            ],
-            "Islas Baleares": [
-                "Baleares"
-            ],
-            "Galicia": [
-                "Pontevedra",
-                "Ourense",
-                "Lugo",
-                "A Coru\u00f1a"
-            ],
-            "Extremadura": [
-                "C\u00e1ceres",
-                "Badajoz"
-            ],
-            "Comunidad Valenciana": [
-                "Valencia",
-                "Castell\u00f3n",
-                "Alicante"
-            ],
-            "Comunidad Foral de Navarra": [
-                "Navarra"
-            ],
-            "Comunidad de Madrid": [
-                "Madrid"
-            ],
-            "Ceuta y Melilla": [
-                "Melilla",
-                "Ceuta"
-            ],
-            "Catalu\u00f1a": [
-                "Tarragona",
-                "Lleida",
-                "Girona",
-                "Barcelona"
-            ],
-            "Castilla-La Mancha": [
-                "Toledo",
-                "Guadalajara",
-                "Cuenca",
-                "Ciudad Real",
-                "Albacete"
-            ],
-            "Castilla y Le\u00f3n": [
-                "Zamora",
-                "Valladolid",
-                "Soria",
-                "Segovia",
-                "Salamanca",
-                "Palencia",
-                "Le\u00f3n",
-                "Burgos",
-                "\u00c1vila"
-            ],
-            "Cantabria": [
-                "Cantabria"
-            ],
-            "Arag\u00f3n": [
-                "Zaragoza",
-                "Teruel",
-                "Huesca"
-            ],
-            "Andaluc\u00eda": [
-                "Sevilla",
-                "M\u00e1laga",
-                "Ja\u00e9n",
-                "Huelva",
-                "Granada",
-                "C\u00f3rdoba",
-                "C\u00e1diz",
-                "Almer\u00eda"
-            ]
+            "Murcia": [],
+            "Asturias": [],
+            "Vizcaya": [],
+            "Guip\u00fazcoa": [],
+            "\u00c1lava": [],
+            "La Rioja": [],
+            "Santa Cruz de Tenerife": [],
+            "Las Palmas": [],
+            "Baleares": [],
+            "Pontevedra": [],
+            "Ourense": [],
+            "Lugo": [],
+            "A Coru\u00f1a": [],
+            "C\u00e1ceres": [],
+            "Badajoz": [],
+            "Valencia": [],
+            "Castell\u00f3n": [],
+            "Alicante": [],
+            "Navarra": [],
+            "Madrid": [],
+            "Melilla": [],
+            "Ceuta": [],
+            "Tarragona": [],
+            "Lleida": [],
+            "Girona": [],
+            "Barcelona": [],
+            "Toledo": [],
+            "Guadalajara": [],
+            "Cuenca": [],
+            "Ciudad Real": [],
+            "Albacete": [],
+            "Zamora": [],
+            "Valladolid": [],
+            "Soria": [],
+            "Segovia": [],
+            "Salamanca": [],
+            "Palencia": [],
+            "Le\u00f3n": [],
+            "Burgos": [],
+            "\u00c1vila": [],
+            "Cantabria": [],
+            "Zaragoza": [],
+            "Teruel": [],
+            "Huesca": [],
+            "Sevilla": [],
+            "M\u00e1laga": [],
+            "Ja\u00e9n": [],
+            "Huelva": [],
+            "Granada": [],
+            "C\u00f3rdoba": [],
+            "C\u00e1diz": [],
+            "Almer\u00eda": []
         }
     }
 }
