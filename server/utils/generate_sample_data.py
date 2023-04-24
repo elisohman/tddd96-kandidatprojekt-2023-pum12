@@ -6,7 +6,7 @@ import random
 # Change to ISO3 for desired country
 file_name = "VEN"
 
-json_file = open(f'../client/public/maps/{file_name}.json')
+json_file = open(f'../../client/public/maps/{file_name}.json')
 csv_file = open(f'sample_data/{file_name}.csv', 'w')
 
 json_data = json.load(json_file)

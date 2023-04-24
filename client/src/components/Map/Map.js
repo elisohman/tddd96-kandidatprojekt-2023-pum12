@@ -101,7 +101,7 @@ const MapChart = () => {
 
     return (
       <div className="MapContainer">
-        <Tooltip title={hover} followCursor={true}>
+        <Tooltip title={<p style={{ fontSize: 16, margin: 0 }}>{hover}</p>} followCursor={true}>
           <ComposableMap
             projectionConfig={{
               rotate: [-10, 0, 0],
@@ -111,7 +111,7 @@ const MapChart = () => {
               <ZoomableGroup 
                 center={pos} 
                 zoom={zoom} 
-                maxZoom={70}
+                maxZoom={5000}
                 translateExtent={[
                     [0, 0],
                     [800, 600]
