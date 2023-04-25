@@ -17,27 +17,36 @@ function Table(props){
         setDate(buttons[index]);
     }
 
-    // var tableData = calculateTableData(props.data);
+    const allTables = document.querySelectorAll("table");
 
-    // function calculateTableData(data){
-    //     var tableData = [];
-    //     for(var i = 0; i < data.length; i++){
-    //         var volume = data[i].volume;
-    //         var area = data[i].area;
-    //         var fifty = volume *100/30;
-    //         var thirty = volume *100/50;
-            
-    //         tableData.push([area, fifty, thirty, volume]);
-    //     }
-    //     console.log("tableData");
-    //     console.log(tableData);
-    //     return tableData;
-    // }
+    for (const table of allTables) {
+        const tBody = table.tBodies[0];
+        const rows = Array.from(tBody.rows);
+        const headerCells = table.tHead.rows[0].cells;
+
+        for (const th of headerCells) {
+            const cellIndex = th.cellIndex;
+
+            th.addEventListener("click", () => {
+                rows.sort((tr1, tr2) => {
+                    const tr1Text = tr1.cells[cellIndex].textContent;
+                    const tr2Text = tr2.cells[cellIndex].textContent;
+                    if (!isNaN(+tr1Text)) {
+                        return tr2Text.localeCompare(tr1Text, undefined, {'numeric': true});
+                    } else {
+                        return tr1Text.localeCompare(tr2Text);
+                    }
+            });
+
+            tBody.append(...rows);
+            });
+        }
+    }
 
     return (
         <div>
             <div className = {props.sidebarState + "Tbl"}>
-                <table>
+                <table id="VolumeTable">
                     <thead>
                         <tr>
                             {columns.map((val, index) => {
@@ -51,8 +60,8 @@ function Table(props){
                             return (
                             <tr key = {indexTrData}>  
                                 <td className="Location">{valData.name}</td>
-                                <td className="Number">{Math.round(valData[date] * (5/10))}</td>
-                                <td className="Number">{Math.round(valData[date] * (3/10))}</td>
+                                <td className="Number">{Math.floor(valData[date] * (5/10))}</td>
+                                <td className="Number">{Math.floor(valData[date] * (3/10))}</td>
                                 {/* <td>{valData.BarrelTurnover}</td> */}
                                 <td className="Number">{Math.round((valData[date]) * 100) / 100}</td>
                                 {/* {column.map((colVal, indexVal) => {
