@@ -15,9 +15,8 @@ function Table(props){
     var columns = ["Area", "50cl", "30cl", "Volume (l)"]; //"Barrel turnover",
 
     function ButtonFunction(index){
-        const buttons = ["1d", "1w", "1m", "1y", "all"]
-        setDate(buttons[index])
-        console.log("Knapp " + buttons[index]);
+        const buttons = ["1d", "1w", "1m", "1y", "all"];
+        setDate(buttons[index]);
     }
 
     // var tableData = calculateTableData(props.data);
@@ -54,8 +53,8 @@ function Table(props){
                             return (
                             <tr key = {indexTrData}>  
                                 <td className="Location">{valData.name}</td>
-                                <td className="Number">{Math.round((valData[date] * (5/10)) * 100) / 100}</td>
-                                <td className="Number">{Math.round((valData[date] * (3/10)) * 100) / 100}</td>
+                                <td className="Number">{Math.round(valData[date] * (5/10))}</td>
+                                <td className="Number">{Math.round(valData[date] * (3/10))}</td>
                                 {/* <td>{valData.BarrelTurnover}</td> */}
                                 <td className="Number">{Math.round((valData[date]) * 100) / 100}</td>
                                 {/* {column.map((colVal, indexVal) => {

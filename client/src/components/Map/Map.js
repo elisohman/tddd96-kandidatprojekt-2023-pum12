@@ -26,7 +26,7 @@ const MapChart = () => {
     const [zoom, setZoom] = useState(1);
     const [country, setCountry] = useState(["", ""]);
     const [hover, setHover] = useState("");
-    const [date, setDate] = useState("1w");
+    const [date, setDate] = useState("1d");
     const navigate = useNavigate();
 
     // List of countries that use NAME_1. Add ISO3 if the country has been added and uses NAME_1

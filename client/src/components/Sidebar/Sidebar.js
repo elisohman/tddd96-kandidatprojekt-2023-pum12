@@ -12,16 +12,22 @@ function Sidebar(props) {
     const [sidebarState, setSidebarState] = useState("smallSidebar");
     const [tableData, setTableData] = useState([]);
 
-	useEffect(() => API_call("/product_data/sweden/lappland"), [])
-	function API_call(request) {
-        // TODO: Make this to csv somehow
-		fetch(request)
-			.then(res => res.json())
-			.then(data => setTableData(data))
+    useEffect(() => {
+        csv(`/product_data/sweden/lappland`).then((data) => {
+        setTableData(data);
+        });
+    }, []);
 
-        // process recieved data
+	// useEffect(() => API_call("/product_data/sweden/lappland"), [])
+	// function API_call(request) {
+    //     // TODO: Make this to csv somehow
+	// 	fetch(request)
+	// 		.then(res => res.json())
+	// 		.then(data => setTableData(data))
+
+    //     // process recieved data
         
-	}
+	// }
 
 	// const tableColumns = [
     //     {
