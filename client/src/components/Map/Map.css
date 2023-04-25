@@ -1,8 +1,15 @@
-.MapContainer {
+.MapBoarder {
     max-width: 100%;
     height: fit-content;
-    margin: 20px 10px 10px 10px;
+    margin: 20px auto 10px auto;
+    max-height: calc(87.5vh - 65px);
     border-style: solid;
     border-width: 1px;
     border-color: #000000;
+}
+
+.MapContainer {
+    max-height: calc(93.75vh);
+    display: grid;
+    grid-template-rows: 14fr 1fr;
 }
