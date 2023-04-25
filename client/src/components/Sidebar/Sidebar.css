@@ -18,7 +18,7 @@ Styling for the small sidebar
     padding: 15px;
     overflow-y: scroll;
     display: grid;
-    grid-template-rows: 1fr 10fr 6fr;
+    grid-template-rows: 1fr 7fr 7fr;
     gap: 10px;
 }
 
@@ -37,6 +37,7 @@ Styling for the small sidebar
     padding: 10px;
     margin-bottom: 5px;
     overflow-y: scroll;
+    min-height: 37.5vh;
 }
 
 .smallSidebarOverviewBox{

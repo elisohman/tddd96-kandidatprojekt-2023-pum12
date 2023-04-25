@@ -17,6 +17,6 @@ def get_district_color_service(name):
 
 
 def get_table_data_service(country, region):
-    json_url = os.path.join(SITE_ROOT, f'../utils/sample_data/table.json')
+    json_url = os.path.join(SITE_ROOT, f'../utils/sample_data/world_table_data.csv')
     data = open(json_url)
     return data
