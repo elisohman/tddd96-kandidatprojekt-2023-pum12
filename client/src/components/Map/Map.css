@@ -1,15 +1,49 @@
 .MapBoarder {
     max-width: 100%;
     height: fit-content;
-    margin: 20px auto 10px auto;
+    margin: 20px 0px 10px 10px;
     max-height: calc(87.5vh - 65px);
     border-style: solid;
     border-width: 1px;
     border-color: #000000;
 }
 
+.ColorMap {
+    display: grid;
+    grid-template-columns: 15fr 1fr;
+}
+
 .MapContainer {
     max-height: calc(93.75vh);
     display: grid;
     grid-template-rows: 14fr 1fr;
+}
+
+.Gradient {
+    background: linear-gradient(to top, #CCFF8C , #2C5000);
+    margin: auto 10px auto 10px;
+    height: 300px;
+    width: 50px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.MaxValue {
+    font-size: 20px;
+    width: fit-content;
+    margin: 5px auto 245px auto;
+    padding: 0px 5px 0px 5px;
+    border-radius: 5px;
+    color: white;
+    background-color: rgba(50 50 50 / 0.5);
+}
+
+.MinValue {
+    font-size: 20px;
+    width: fit-content;
+    margin: 0px auto 5px auto;
+    padding: 0px 5px 0px 5px;
+    border-radius: 5px;
+    color: white;
+    background-color: rgba(50 50 50 / 0.5);
 }

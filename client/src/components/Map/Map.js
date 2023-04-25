@@ -107,75 +107,81 @@ const MapChart = () => {
 
     return (
       <div className="MapContainer">
-        <Tooltip title={<p style={{ fontSize: 16, margin: 0 }}>{hover}</p>} followCursor={true}>
-          <ComposableMap
-            projectionConfig={{
-              rotate: [-10, 0, 0],
-              scale: 147
-            }}
-            className="MapBoarder"
-            >
-              <ZoomableGroup 
-                center={pos} 
-                zoom={zoom} 
-                maxZoom={5000}
-                translateExtent={[
-                    [0, 0],
-                    [800, 600]
-                  ]}
-                >
-              <Sphere stroke="#E4E5E6" strokeWidth={0.5} />
-              <Graticule stroke="#E4E5E6" strokeWidth={0.5} />
-              {data.length > 0 && (
-                <Geographies 
-                geography={map}
-                >
-                  {({ geographies }) =>
-                    geographies.map((geo) => {
-                      var NAME = "NAME_2";
-                      if(name1.includes(country[0])) NAME = "NAME_1";
-                      var d = data.find((s) => s.name === geo.properties[NAME]);
-                      if(map === "./maps/world.json") d = data.find((s) => s.ISO3 === geo.id);
-                      
-                      return (
-                        <Geography
-                          key={geo.rsmKey}
-                          geography={geo}
-                          fill={d ? colorScale(d[date]) : "#CBCBCB"}
-                          onClick={() => {change_map(geo)}}
-                          onMouseEnter={() => {
-                            var NAME = "name";
-                            if(map !== "./maps/world.json") {
-                              if(name1.includes(country[0])) NAME = "NAME_1";
-                              else NAME = "NAME_2"
-                            }
-                            setHover(geo.properties[NAME]);
-                          }}
-                          onMouseLeave={() => {
-                            setHover("");
-                          }}
-                          style={{
-                            default: {
+        <div className="ColorMap">
+          <Tooltip title={<p style={{ fontSize: 16, margin: 0 }}>{hover}</p>} followCursor={true}>
+            <ComposableMap
+              projectionConfig={{
+                rotate: [-10, 0, 0],
+                scale: 147
+              }}
+              className="MapBoarder"
+              >
+                <ZoomableGroup 
+                  center={pos} 
+                  zoom={zoom} 
+                  maxZoom={5000}
+                  translateExtent={[
+                      [0, 0],
+                      [800, 600]
+                    ]}
+                  >
+                <Sphere stroke="#E4E5E6" strokeWidth={0.5} />
+                <Graticule stroke="#E4E5E6" strokeWidth={0.5} />
+                {data.length > 0 && (
+                  <Geographies 
+                  geography={map}
+                  >
+                    {({ geographies }) =>
+                      geographies.map((geo) => {
+                        var NAME = "NAME_2";
+                        if(name1.includes(country[0])) NAME = "NAME_1";
+                        var d = data.find((s) => s.name === geo.properties[NAME]);
+                        if(map === "./maps/world.json") d = data.find((s) => s.ISO3 === geo.id);
+                        
+                        return (
+                          <Geography
+                            key={geo.rsmKey}
+                            geography={geo}
+                            fill={d ? colorScale(d[date]) : "#CBCBCB"}
+                            onClick={() => {change_map(geo)}}
+                            onMouseEnter={() => {
+                              var NAME = "name";
+                              if(map !== "./maps/world.json") {
+                                if(name1.includes(country[0])) NAME = "NAME_1";
+                                else NAME = "NAME_2"
+                              }
+                              setHover(geo.properties[NAME]);
+                            }}
+                            onMouseLeave={() => {
+                              setHover("");
+                            }}
+                            style={{
+                              default: {
+                                stroke: "#000000",
+                                strokeWidth: 0.01,
+                              outline: "none"
+                              },
+                              hover: {
+                              fill: "#BFCDFF",
                               stroke: "#000000",
-                              strokeWidth: 0.01,
-                            outline: "none"
-                            },
-                            hover: {
-                            fill: "#BFCDFF",
-                            stroke: "#000000",
-                            strokeWidth: 0.025,
-                            outline: "none"
-                            }
-                          }} 
-                        />
-                      );
-                    })
-                  }
-                </Geographies>
-              )}
-              </ZoomableGroup>
-            </ComposableMap>
-          </Tooltip>
+                              strokeWidth: 0.025,
+                              outline: "none"
+                              }
+                            }} 
+                          />
+                        );
+                      })
+                    }
+                  </Geographies>
+                )}
+                </ZoomableGroup>
+              </ComposableMap>
+            </Tooltip>
+            <div className="Gradient">
+              <div className="MaxValue">{maxColor}</div>
+              <div className="MinValue">0</div>
+            </div>
+        </div>
           <TimespanButtons parentFunction = {ButtonFunction} title = {["1 d", "1 w", "1 m", "1 y", "All"]}/>
         </div>
       );
