@@ -11,7 +11,7 @@ import './TimespanButtons.css';
 */
 export default function TimespanButtons(props) {
 
-  const [activeButton, setActiveButton] = useState(null);
+  const [activeButton, setActiveButton] = useState(0);
 
   // This function is called when a button is clicked
   // Changes active button and calls parent function
@@ -19,8 +19,6 @@ export default function TimespanButtons(props) {
     setActiveButton(index);
     props.parentFunction(index);
   }
-
-
 
   return(
     <div className="button-group">

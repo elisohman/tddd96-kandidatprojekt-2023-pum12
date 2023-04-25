@@ -9,31 +9,34 @@
     overflow-y: scroll;
 }
 
-tr{
-    position: sticky;
-}
-
-
 table {
     width: 100%;
     background-color: white;
     border-spacing: 0;
     border: 1px solid rgb(71, 71, 71);
+}
 
+tr {
+    height: 50px;
 }
   
 td {
-    /* text-align: center; */
     border: 1px solid rgb(71, 71, 71);
 }
 
 .Header{
+    text-align: center;
+    padding: 0px 10px 0px 10px;
     background-color: #BFCDFF;
     font-weight: bold;
-}
-
-th {
-    background: white;
     position: sticky;
     top: 0;
-  }
+}
+
+.Location {
+    padding-left: 10px;
+}
+
+.Number {
+    text-align: center;
+}

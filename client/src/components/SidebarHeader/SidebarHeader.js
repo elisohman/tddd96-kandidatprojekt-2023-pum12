@@ -19,14 +19,13 @@ export default function SidebarHeader(props) {
       
       <div className="AlarmButton">
         <a className="ButtonLinks" href="alarms">
-          {/* Image should only be shown if there is an alarm */}
+          {/* Image should be shown in red if there is an alarm */}
           <NotificationsIcon className='Buttons'/>
         </a>
       </div>
 
       <div className="EnlargeButton">
-        <a className="ButtonLinks" > {/*href="germany/detailed_page"}
-          {/* Image should only be shown if there is an alarm */}
+        <a className="ButtonLinks">
           <OpenInFullIcon className='Buttons' onClick={() => {detailedView()}}/>
         </a>
       </div>

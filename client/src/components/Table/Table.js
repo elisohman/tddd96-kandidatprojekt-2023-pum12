@@ -1,5 +1,6 @@
-import React, { useMemo } from "react";
+import React, { useState } from "react";
 import "./Table.css";
+import TimespanButtons from "../TimespanButtons/TimespanButtons";
 
 /*
     När man skapar en tabell kommer kolumnerna i ordningen som column har(första till sista->vänster till höger).
@@ -7,9 +8,14 @@ import "./Table.css";
 */
 
 function Table(props){
-    console.log(props.data);
+    const [date, setDate] = useState("1d");
 
-    var columns = ["Area", "50cl", "30cl", "volume"];
+    var columns = ["Area", "50cl", "30cl", "Volume (l)"]; //"Barrel turnover",
+
+    function ButtonFunction(index){
+        const buttons = ["1d", "1w", "1m", "1y", "all"];
+        setDate(buttons[index]);
+    }
 
     // var tableData = calculateTableData(props.data);
 
@@ -29,32 +35,36 @@ function Table(props){
     // }
 
     return (
-        <div className = {props.sidebarState + "Tbl"}>
-            <table>
-                <thead>
-                    <tr className="Header">
-                        {columns.map((val, index) => {
-                            return (<td key={index}> {val}</td>);
-                        })}
-                    </tr>
-                </thead>
+        <div>
+            <div className = {props.sidebarState + "Tbl"}>
+                <table>
+                    <thead>
+                        <tr>
+                            {columns.map((val, index) => {
+                                return (<td key={index} className="Header"> {val}</td>);
+                            })}
+                        </tr>
+                    </thead>
 
-                <tbody>
-                    {props.data.map((valData, indexTrData) => {
-                        return (
-                        <tr key = {indexTrData}>  
-                            <td>{valData.country}</td>
-                            <td>{valData.volume * 100/30}</td>
-                            <td>{valData.volume * 100/50}</td>
-                            <td>{valData.volume}</td>
-                            {/* {column.map((colVal, indexVal) => {
-                                return(<td key={indexVal}>{valData[colVal.accessor]}</td>);
-                            })} */}
-                        </tr>)
-                    })
-                    }
-                </tbody>
-            </table>
+                    <tbody>
+                        {props.data.map((valData, indexTrData) => {
+                            return (
+                            <tr key = {indexTrData}>  
+                                <td className="Location">{valData.name}</td>
+                                <td className="Number">{Math.round(valData[date] * (5/10))}</td>
+                                <td className="Number">{Math.round(valData[date] * (3/10))}</td>
+                                {/* <td>{valData.BarrelTurnover}</td> */}
+                                <td className="Number">{Math.round((valData[date]) * 100) / 100}</td>
+                                {/* {column.map((colVal, indexVal) => {
+                                    return(<td key={indexVal}>{valData[colVal.accessor]}</td>);
+                                })} */}
+                            </tr>)
+                        })
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <TimespanButtons parentFunction = {ButtonFunction} title = {["1 d", "1 w", "1 m", "1 y", "All"]}/>
         </div>
     );
 }
