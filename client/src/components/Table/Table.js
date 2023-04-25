@@ -8,8 +8,6 @@ import TimespanButtons from "../TimespanButtons/TimespanButtons";
 */
 
 function Table(props){
-    console.log(props.data);
-
     const [date, setDate] = useState("1d");
 
     var columns = ["Area", "50cl", "30cl", "Volume (l)"]; //"Barrel turnover",

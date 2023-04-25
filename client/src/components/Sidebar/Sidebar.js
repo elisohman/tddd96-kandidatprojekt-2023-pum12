@@ -8,12 +8,12 @@ import OverviewBox from "../../components/OverviewBox/OverviewBox";
 import { csv } from "d3-fetch";
 
 function Sidebar(props) {
-    let location = "World"
+    const [location, setLocation] = useState("World"); // TODO: Set the location
     const [sidebarState, setSidebarState] = useState("smallSidebar");
     const [tableData, setTableData] = useState([]);
 
     useEffect(() => {
-        csv(`/product_data/sweden/lappland`).then((data) => {
+        csv(`/product_data/sweden/lappland`).then((data) => { // TODO: Use variables, not sweden/lappland
         setTableData(data);
         });
     }, []);
@@ -47,6 +47,7 @@ function Sidebar(props) {
     //         accessor : "temp"
     //     }
     //     ];
+    //console.log(window.location.pathname)
     return (
         <div className={sidebarState + "Container"}>
             <div className={sidebarState + "SidebarHeader"} >

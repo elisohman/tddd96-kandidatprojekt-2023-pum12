@@ -14,11 +14,6 @@ import {
     Graticule
 } from "react-simple-maps";
 
-// The colorscale to display on contries/regions
-const colorScale = scaleLinear()
-    .domain([0, 1])
-    .range(["#CCFF8C", "#2C5000"]);
-
 const MapChart = () => {
     const [data, setData] = useState([]);
     const [map, setMap] = useState("./maps/world.json");
@@ -27,7 +22,13 @@ const MapChart = () => {
     const [country, setCountry] = useState(["", ""]);
     const [hover, setHover] = useState("");
     const [date, setDate] = useState("1d");
+    const [maxColor, setMaxColor] = useState(1); // TODO: Set max color somewhere
     const navigate = useNavigate();
+
+    // The colorscale to display on countries/regions
+    const colorScale = scaleLinear()
+      .domain([0, maxColor])
+      .range(["#CCFF8C", "#2C5000"]);
 
     // List of countries that use NAME_1. Add ISO3 if the country has been added and uses NAME_1
     const name1 = ["AZE", "ARG", "DZA", "CHN", "COL", "CZE", "DNK", "IND", "IRL", "ITA", "JPN", "LBR", "NZL", "NOR", "PHL", "POL", "PRT", "ROU", "ZAF", "SWE", "ARE", "VEN"];
@@ -36,9 +37,9 @@ const MapChart = () => {
     const available = ["DEU", "ESP", "AZE", "ARG", "DZA", "BEL", "CHN", "COL", "CZE", "DNK", "FIN", "FRA", "IND", "IRL", "ITA", "JPN", "LBR", "NZL", "NOR", "PAK", "PHL", "POL", "PRT", "ROU", "ZAF", "SWE", "ARE", "GBR", "VEN"];
     
     useEffect(() => {
-        csv(`./map_data`).then((data) => {
-        setData(data);
-        });
+      csv(`./map_data`).then((data) => {
+      setData(data);
+      });
     }, []);
 
     // Activated when map is clicked
@@ -46,7 +47,6 @@ const MapChart = () => {
     function change_map(geo){  
       const map_id = geo.id;
       
-      console.log(window.location.pathname)
       if (map === "./maps/world.json") {
         navigate('/' + geo.properties.name);
         setCountry([geo.id, geo.properties.name]);
@@ -88,7 +88,6 @@ const MapChart = () => {
         });
         cords = max[1];
       } else cords = cords[0];
-      console.log(cords);
 
       // Find longitude and latitude
       const longitude = cords.map(subarr => subarr[0]);
