@@ -1,6 +1,7 @@
 # Import flask and datetime module for showing date and time
 from flask import Flask, json
 from api.map import map_route
+from api.volume import volume_route
 import datetime
 from google.cloud import bigquery
 import os
@@ -13,6 +14,7 @@ x = datetime.datetime.now()
 # Initializing flask app
 app = Flask(__name__)
 app.register_blueprint(map_route)
+app.register_blueprint(volume_route)
 
 
 # Route for seeing a data
