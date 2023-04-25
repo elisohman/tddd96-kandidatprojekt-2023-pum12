@@ -25,6 +25,7 @@ const MapChart = () => {
     const [zoom, setZoom] = useState(1);
     const [country, setCountry] = useState(["", ""]);
     const [hover, setHover] = useState("");
+    const [date, setDate] = useState("1w");
     const navigate = useNavigate();
 
     // List of countries that use NAME_1. Add ISO3 if the country has been added and uses NAME_1
@@ -134,7 +135,7 @@ const MapChart = () => {
                         <Geography
                           key={geo.rsmKey}
                           geography={geo}
-                          fill={d ? colorScale(d["1m"]) : "#CBCBCB"}
+                          fill={d ? colorScale(d[date]) : "#CBCBCB"}
                           onClick={() => {change_map(geo)}}
                           onMouseEnter={() => {
                             var NAME = "name";
