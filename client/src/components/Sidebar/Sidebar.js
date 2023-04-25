@@ -18,25 +18,36 @@ function ButtonFunction(index){
 function Sidebar(props) {
     let location = "World"
     const [sidebarState, setSidebarState] = useState("smallSidebar");
+    const [tableData, setTableData] = useState([]);
 
-	const tableColumns = [
-        {
-            Header: "Amount",
-            accessor : "unit"
-        },
-        {
-            Header: "Average Flow",
-            accessor : "flow"
-        },
-        {
-            Header: "Air Pressure",
-            accessor : "airpressure"
-        },
-		{
-            Header: "Temperature",
-            accessor : "temp"
-        }
-        ];
+	useEffect(() => API_call("/product_data/sweden/lappland"), [])
+	function API_call(request) {
+		fetch(request)
+			.then(res => res.json())
+			.then(data => setTableData(data))
+
+        // process recieved data
+        
+	}
+
+	// const tableColumns = [
+    //     {
+    //         Header: "Amount",
+    //         accessor : "unit"
+    //     },
+    //     {
+    //         Header: "Average Flow",
+    //         accessor : "flow"
+    //     },
+    //     {
+    //         Header: "Air Pressure",
+    //         accessor : "airpressure"
+    //     },
+	// 	{
+    //         Header: "Temperature",
+    //         accessor : "temp"
+    //     }
+    //     ];
     return (
         <div className={sidebarState + "Container"}>
             <div className={sidebarState + "SidebarHeader"} >
@@ -47,14 +58,18 @@ function Sidebar(props) {
             </div>
 
             <div className={sidebarState + "TableContainer"}>
-                <Table data = {props.data} columns = {tableColumns}/>
+                <div className={sidebarState + "Table"}>
+                <Table data = {tableData} sidebarState={sidebarState}/>
+                </div>
+                <div className={sidebarState + "TableButtons"}>
                 <TimespanButtons parentFunction = {ButtonFunction} title = {["1 d", "1 w", "1 m", "1 y", "All"]}/>
+                </div>
             </div>
             <div className={sidebarState + "LineChartContainer1"}>
-                <LineChart data={props.data} xkey={"timestamp"} ykey={"airpressure"} title={"Air Pressure"} width={700} height={300}/>
+                <LineChart data={props.data} xkey={"timestamp"} ykey={"airpressure"} title={"Air Pressure"} sidebarState={sidebarState}/>
             </div>
             <div className={sidebarState + "LineChartContainer2"}>
-                <LineChart data={props.data} xkey={"timestamp"} ykey={"airpressure"} title={"Air Pressure"} width={700} height={300}/>
+                <LineChart data={props.data} xkey={"timestamp"} ykey={"airpressure"} title={"Air Pressure"} sidebarState={sidebarState}/>
             </div>
             <div className={sidebarState + "OverviewBox"}>
                 <OverviewBox />

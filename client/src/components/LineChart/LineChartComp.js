@@ -13,9 +13,9 @@ function LineChartComp(props) {
             <div className='Content'>
 
                 <p className='ChartTitle'>{props.title}</p>
-                <ResponsiveContainer width="95%" height={300}>
+                <ResponsiveContainer width="95%" height={props.sidebarState === "largeSidebar" ? 200 : 200}>
                         
-                        <LineChart width={props.width} height={props.height} data={props.data}>
+                        <LineChart data={props.data}>
                             <CartesianGrid strokeDasharray="3 3" />
                             <XAxis dataKey={props.xkey} tick={false}/>
                             <YAxis dataKey={props.ykey}/>
