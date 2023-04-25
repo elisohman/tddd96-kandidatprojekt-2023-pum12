@@ -7,30 +7,49 @@ import "./Table.css";
 */
 
 function Table(props){
+    console.log(props.data);
 
-    const data = useMemo( () => (
-        props.data
-    ));
+    var columns = ["Area", "50cl", "30cl", "volume"];
 
-    const column = useMemo(()=>(
-        props.columns
-    ));
+    // var tableData = calculateTableData(props.data);
+
+    // function calculateTableData(data){
+    //     var tableData = [];
+    //     for(var i = 0; i < data.length; i++){
+    //         var volume = data[i].volume;
+    //         var area = data[i].area;
+    //         var fifty = volume *100/30;
+    //         var thirty = volume *100/50;
+            
+    //         tableData.push([area, fifty, thirty, volume]);
+    //     }
+    //     console.log("tableData");
+    //     console.log(tableData);
+    //     return tableData;
+    // }
+
     return (
-        <div className = "Tbl">
+        <div className = {props.sidebarState + "Tbl"}>
             <table>
-                <tbody>
+                <thead>
                     <tr className="Header">
-                        {column.map((val, index) => {
-                            return (<td key={index}> {val.Header}</td>);
+                        {columns.map((val, index) => {
+                            return (<td key={index}> {val}</td>);
                         })}
-
-                    
                     </tr>
-                    {data.map((valData, indexTrData) => {
-                        return (<tr key = {indexTrData}>
-                            {column.map((colVal, indexVal) => {
+                </thead>
+
+                <tbody>
+                    {props.data.map((valData, indexTrData) => {
+                        return (
+                        <tr key = {indexTrData}>  
+                            <td>{valData.country}</td>
+                            <td>{valData.volume * 100/30}</td>
+                            <td>{valData.volume * 100/50}</td>
+                            <td>{valData.volume}</td>
+                            {/* {column.map((colVal, indexVal) => {
                                 return(<td key={indexVal}>{valData[colVal.accessor]}</td>);
-                            })}
+                            })} */}
                         </tr>)
                     })
                     }
