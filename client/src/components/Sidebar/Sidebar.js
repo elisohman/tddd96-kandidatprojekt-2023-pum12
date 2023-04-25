@@ -6,8 +6,9 @@ import SidebarHeader from "../../components/SidebarHeader/SidebarHeader";
 import Table from "../../components/Table/Table";
 import OverviewBox from "../../components/OverviewBox/OverviewBox";
 import AlarmHeader from "../../components/AlarmHeader/AlarmHeader"
-
+import Notification from "../../components/Notification/Notification";
 import TimespanButtons from "../TimespanButtons/TimespanButtons";
+
 
 
 //  i denna funktion updaterar man sen data för tabell & graf beroende på knapptryckning
@@ -56,9 +57,30 @@ function Sidebar(props) {
                     prevSidebarState = {prevSidebarState}
                     location={location} setSidebarState={setSidebarState}
                     sidebarState={sidebarState}/>
-                </div>
+                </div> 
             </div>
-
+            
+            <div className={sidebarState + "Notifications"}>
+                <Notification location = {"Första"} unit = {69} alarm = {"för mycket öl!"} timestamp = {"28/03/2023 19:53"} read = {false}/>
+                <Notification location = {"Sverige"} unit = {69} alarm = {"för mycket öl!"} timestamp = {"28/03/2023 19:53"} read = {false}/>
+                <Notification location = {"Sverige"} unit = {69} alarm = {"för mycket öl!"} timestamp = {"28/03/2023 19:53"} read = {false}/>
+                <Notification location = {"Sverige"} unit = {69} alarm = {"för mycket öl!"} timestamp = {"28/03/2023 19:53"} read = {false}/>
+                <Notification location = {"Sverige"} unit = {69} alarm = {"för mycket öl!"} timestamp = {"28/03/2023 19:53"} read = {false}/>
+                <Notification location = {"Sverige"} unit = {69} alarm = {"för mycket öl!"} timestamp = {"28/03/2023 19:53"} read = {true}/>
+                <Notification location = {"Sverige"} unit = {69} alarm = {"för mycket öl!"} timestamp = {"28/03/2023 19:53"} read = {true}/>
+                <Notification location = {"Sverige"} unit = {69} alarm = {"för mycket öl!"} timestamp = {"28/03/2023 19:53"} read = {true}/>
+                <Notification location = {"Sverige"} unit = {69} alarm = {"för mycket öl!"} timestamp = {"28/03/2023 19:53"} read = {true}/>
+                <Notification location = {"Sverige"} unit = {69} alarm = {"för mycket öl!"} timestamp = {"28/03/2023 19:53"} read = {true}/>
+                <Notification location = {"Sverige"} unit = {69} alarm = {"för mycket öl!"} timestamp = {"28/03/2023 19:53"} read = {true}/>
+                <Notification location = {"Sverige"} unit = {69} alarm = {"för mycket öl!"} timestamp = {"28/03/2023 19:53"} read = {true}/>
+                <Notification location = {"Sverige"} unit = {69} alarm = {"för mycket öl!"} timestamp = {"28/03/2023 19:53"} read = {true}/>
+                <Notification location = {"Sverige"} unit = {69} alarm = {"för mycket öl!"} timestamp = {"28/03/2023 19:53"} read = {true}/>
+                <Notification location = {"Sverige"} unit = {69} alarm = {"för mycket öl!"} timestamp = {"28/03/2023 19:53"} read = {true}/>
+                <Notification location = {"Sverige"} unit = {69} alarm = {"för mycket öl!"} timestamp = {"28/03/2023 19:53"} read = {true}/>
+                <Notification location = {"Sverige"} unit = {69} alarm = {"för mycket öl!"} timestamp = {"28/03/2023 19:53"} read = {true}/>
+                <Notification location = {"Sista"} unit = {69} alarm = {"för mycket öl!"} timestamp = {"28/03/2023 19:53"} read = {true}/>
+            </div>
+            
             <div className={sidebarState + "TableContainer"}>
                 <Table data = {props.data} columns = {tableColumns}/>
                 <TimespanButtons parentFunction = {ButtonFunction} title = {["1 d", "1 w", "1 m", "1 y", "All"]}/>

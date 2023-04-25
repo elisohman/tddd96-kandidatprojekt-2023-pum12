@@ -6,7 +6,7 @@ export default function AlarmHeader(props) {
 
   return ( 
     <div className="AlarmHeaderContent">
-      <p className="AlarmHeader">{props.location}</p>
+      <p className="location">{props.location}</p>
       
 
 

@@ -1,18 +1,28 @@
 .AlarmHeaderContent {
     padding: 20px;
     padding-bottom: 0;
-    display: grid;
-    grid-template-columns: 16fr 1fr 1fr;
-    align-items: center;
-  }
-
-
-  .backButton {
-    width: 100%;
+    background-color: #43494F80;
     display: flex;
-    align-items: center;
+    justify-content: space-between;
+    
+  }
+  
+  
+  
+  .location {
+    font-size: 40px;
+    padding: 0;
+    margin: 0;
+    float: left;
+    margin-left: 1%;
+    
+  }
+  
+  .backButton {
     cursor: pointer;
     color: #000;
+    float: right;
+    margin-right: 1%;
     
   }
 
@@ -21,11 +31,11 @@
   }
   
   .Icon {
-    width: 5px;
     transform: scale(2.7);
-    height: 5px;
-    margin-right: 15px;
+    margin-right: 20px;
+    margin-top: 10px;
     transition: transform 0.2s ease-in-out;
+    float: left;
   }
   
   
@@ -33,13 +43,9 @@
     margin: 0;
     font-size: 40px;
     font-family: "Arial";
+    float: right;
+    align-items: center;
   }
   
 
-  
-  .AlarmHeader {
-    font-size: 40px;
-    padding: 0;
-    margin: 0;
-  }
       
