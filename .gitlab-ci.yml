@@ -28,6 +28,7 @@ eslint:
         - npm i eslint
         - npm i eslint-plugin-react
         - npm i eslint-plugin-import
+        - npm i eslint-config-code-complexity
         # Run eslint
         - node_modules/eslint/bin/eslint.js .
     only:
