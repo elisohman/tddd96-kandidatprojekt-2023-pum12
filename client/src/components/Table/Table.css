@@ -31,6 +31,7 @@ td {
     font-weight: bold;
     position: sticky;
     top: 0;
+    cursor: pointer;
 }
 
 .Location {
