@@ -2,10 +2,12 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     width: 100%;
+    justify-self: center;
 }
 
 .button {
     background-color: #0AC29B;
+    min-width: 70px;
     border: none;
     border-radius: 25px;
     color: white;

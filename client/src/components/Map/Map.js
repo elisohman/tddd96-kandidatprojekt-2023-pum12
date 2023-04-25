@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import './Map.css';
+import TimespanButtons from "../../components/TimespanButtons/TimespanButtons";
 import Tooltip from '@mui/material/Tooltip';
 import { scaleLinear } from "d3-scale";
 import { csv } from "d3-fetch";
@@ -68,6 +69,11 @@ const MapChart = () => {
       });
     }
 
+    function ButtonFunction(index){
+      const buttons = ["1d", "1w", "1m", "1y", "all"];
+      setDate(buttons[index]);
+    }
+
     function average_postion(geo){
       var cords = geo["geometry"]["coordinates"];
       
@@ -108,6 +114,7 @@ const MapChart = () => {
               rotate: [-10, 0, 0],
               scale: 147
             }}
+            className="MapBoarder"
             >
               <ZoomableGroup 
                 center={pos} 
@@ -170,6 +177,7 @@ const MapChart = () => {
               </ZoomableGroup>
             </ComposableMap>
           </Tooltip>
+          <TimespanButtons parentFunction = {ButtonFunction} title = {["1 d", "1 w", "1 m", "1 y", "All"]}/>
         </div>
       );
       
