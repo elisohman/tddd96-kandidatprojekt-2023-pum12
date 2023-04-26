@@ -1,0 +1,51 @@
+.AlarmHeaderContent {
+    padding: 20px;
+    padding-bottom: 0;
+    background-color: #43494F80;
+    display: flex;
+    justify-content: space-between;
+    
+  }
+  
+  
+  
+  .location {
+    font-size: 40px;
+    padding: 0;
+    margin: 0;
+    float: left;
+    margin-left: 1%;
+    
+  }
+  
+  .backButton {
+    cursor: pointer;
+    color: #000;
+    float: right;
+    margin-right: 1%;
+    
+  }
+
+  .backButton:hover{
+    transform: scale(1.05);
+  }
+  
+  .Icon {
+    transform: scale(2.7);
+    margin-right: 20px;
+    margin-top: 10px;
+    transition: transform 0.2s ease-in-out;
+    float: left;
+  }
+  
+  
+  .Back {
+    margin: 0;
+    font-size: 40px;
+    font-family: "Arial";
+    float: right;
+    align-items: center;
+  }
+  
+
+      

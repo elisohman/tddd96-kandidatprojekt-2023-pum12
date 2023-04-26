@@ -1,0 +1,42 @@
+#component{
+    padding: 3px;
+    margin: 3px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items:center;
+    cursor: pointer;
+    justify-content: space-evenly;
+    /* width: 90%; */
+
+}
+
+.newAlarm{
+    font-size: 25px;
+    background-color:#FF000080;
+    font-family: "Arial";
+    color: black;
+    border-radius: 25px;
+    vertical-align: middle;
+    
+}
+
+.oldAlarm{
+    font-size: 25px;
+    background-color: #33393F80;
+    font-family: "Arial";
+    color: black;
+    border-radius: 25px;
+}
+
+#alarmType{
+    margin:0;
+    padding: 0;
+    text-align: left;
+    margin-left: 30px;
+}
+
+#alarmDate{
+    flex: 1;
+    text-align: right;
+    margin-right: 30px;
+}

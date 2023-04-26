@@ -28,7 +28,11 @@ Styling for the small sidebar
 }
 
 .smallSidebarLineChartContainer2{
-    display: none;
+    display:none;
+}
+
+.smallSidebarOverviewBox{
+    display:none;
 }
 
 .smallSidebarTableContainer{
@@ -44,9 +48,20 @@ Styling for the small sidebar
     display: none;
 }
 
+
 /*-----------------------------
 Styling for the large sidebar
 -------------------------------*/
+
+.alarmContainer{
+    position: absolute;
+    left:10px;
+    right:10px;
+    height: calc(93.75vh - 65px);
+    background-color: #EBEBEB;
+    margin-top: 20px;
+    overflow-y: scroll;
+}
 
 .largeSidebarContainer{
     position: absolute;
@@ -58,12 +73,14 @@ Styling for the large sidebar
     margin-bottom: 20px;
     padding: 15px;
     overflow-y: scroll;
+
     display: grid;
     grid-template-rows: 1fr 8fr 8fr;
     grid-template-columns: 3fr 2fr 2fr;
     gap: 15px 15px;
     border-radius: 10px;
 }
+
 
 .largeSidebarLineChartContainer1{
     margin-top: 20px;
@@ -89,3 +106,37 @@ Styling for the large sidebar
     grid-column: 1/4;
     grid-row: 1;
 }
+
+
+.hiddenHeader{
+    display: none;
+}
+.alarmTableContainer, .alarmLineChartContainer1, .alarmLineChartContainer2, 
+ .alarmOverviewBox{
+    display: none;
+}
+
+.alarmSidebarHeader{
+    grid-row: 1;
+    gap: 0px;
+    grid-column: 1/4;
+}
+
+.largeSidebarNotifications, .smallSidebarNotifications{
+    display: none;
+}
+
+.alarmContainer{
+    display: grid;
+    grid-template-rows: 1fr 14fr;
+    grid-template-columns: 1fr 50fr 1fr ;
+}
+
+
+.alarmNotifications{
+    overflow-y: scroll;
+    padding-top: 10px;
+    grid-row: 2/14;
+    grid-column: 2;
+}
+
