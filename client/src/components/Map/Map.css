@@ -1,7 +1,7 @@
 .MapBoarder {
     max-width: 100%;
     height: fit-content;
-    margin: 20px 0px 10px 10px;
+    margin: 20px auto 10px auto;
     max-height: calc(87.5vh - 65px);
     border-style: solid;
     border-width: 1px;
@@ -23,7 +23,7 @@
     background: linear-gradient(to top, #CCFF8C , #2C5000);
     margin: auto 10px auto 10px;
     height: 300px;
-    width: 50px;
+    width: 60px;
     border-style: solid;
     border-width: 1px;
     border-color: #000000;
@@ -34,7 +34,7 @@
 .MaxValue {
     font-size: 20px;
     width: fit-content;
-    margin: 5px auto 245px auto;
+    margin: 5px auto 235px auto;
     padding: 0px 5px 0px 5px;
     border-radius: 5px;
     color: white;

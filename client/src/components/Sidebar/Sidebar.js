@@ -26,30 +26,30 @@ function Sidebar(props) {
     const [location, setLocation] = useState("World"); // TODO: Set the location
     const [tableData, setTableData] = useState([]);
 
-    useEffect(() => {
-        csv(`/product_data/sweden/lappland`).then((data) => { // TODO: Use variables, not sweden/lappland
-        setTableData(data);
-        });
-    }, []);
+    // useEffect(() => {
+    //     csv(`/product_data/sweden/lappland`).then((data) => { // TODO: Use variables, not sweden/lappland
+    //     setTableData(data);
+    //     });
+    // }, []);
 
-	const tableColumns = [//exempelkod
-        {
-            Header: "Amount",
-            accessor : "unit"
-        },
-        {
-            Header: "Average Flow",
-            accessor : "flow"
-        },
-        {
-            Header: "Air Pressure",
-            accessor : "airpressure"
-        },
-		{
-            Header: "Temperature",
-            accessor : "temp"
-        }
-        ];
+	// const tableColumns = [//exempelkod
+    //     {
+    //         Header: "Amount",
+    //         accessor : "unit"
+    //     },
+    //     {
+    //         Header: "Average Flow",
+    //         accessor : "flow"
+    //     },
+    //     {
+    //         Header: "Air Pressure",
+    //         accessor : "airpressure"
+    //     },
+	// 	{
+    //         Header: "Temperature",
+    //         accessor : "temp"
+    //     }
+    //     ];
 
 	// useEffect(() => API_call("/product_data/sweden/lappland"), [])
 	// function API_call(request) {
