@@ -29,12 +29,7 @@ export default function SidebarHeader(props) {
         {/* <a className="ButtonLinks" href="alarms"> */}
           {/* Image should only be shown if there is an alarm */}
           <NotificationsIcon className='Buttons' onClick={() => {alarmView()}} />
-        {/* </a> */}
 
-        <a className="ButtonLinks" href="alarms">
-          {/* Image should be shown in red if there is an alarm */}
-          <NotificationsIcon className='Buttons'/>
-        </a>
       </div>
 
       <div className="EnlargeButton">

@@ -10,16 +10,7 @@ import Notification from "../../components/Notification/Notification";
 import TimespanButtons from "../TimespanButtons/TimespanButtons";
 import { csv } from "d3-fetch";
 
-function Sidebar(props) {
-    const [location, setLocation] = useState("World"); // TODO: Set the location
-    const [sidebarState, setSidebarState] = useState("smallSidebar");
-    const [tableData, setTableData] = useState([]);
 
-    useEffect(() => {
-        csv(`/product_data/sweden/lappland`).then((data) => { // TODO: Use variables, not sweden/lappland
-        setTableData(data);
-        });
-    }, []);
 
 //  i denna funktion updaterar man sen data för tabell & graf beroende på knapptryckning
 //  Matha med title arrayens ordning, index = 0 är title[0] o.s.v.
@@ -28,9 +19,17 @@ function ButtonFunction(index){
 }
 
 function Sidebar(props) {
-    let location = "World"
+    // let location = "World"
     const [sidebarState, setSidebarState] = useState("smallSidebar");
     const [prevSidebarState, setPrevSidebarState] = useState("smallSidebar");
+    const [location, setLocation] = useState("World"); // TODO: Set the location
+    const [tableData, setTableData] = useState([]);
+
+    useEffect(() => {
+        csv(`/product_data/sweden/lappland`).then((data) => { // TODO: Use variables, not sweden/lappland
+        setTableData(data);
+        });
+    }, []);
 
 	const tableColumns = [//exempelkod
         {
@@ -61,26 +60,6 @@ function Sidebar(props) {
     //     // process recieved data
         
 	// }
-
-	// const tableColumns = [
-    //     {
-    //         Header: "Amount",
-    //         accessor : "unit"
-    //     },
-    //     {
-    //         Header: "Average Flow",
-    //         accessor : "flow"
-    //     },
-    //     {
-    //         Header: "Air Pressure",
-    //         accessor : "airpressure"
-    //     },
-	// 	{
-    //         Header: "Temperature",
-    //         accessor : "temp"
-    //     }
-    //     ];
-    //console.log(window.location.pathname)
 
     return (
         <div className={sidebarState + "Container"}>
