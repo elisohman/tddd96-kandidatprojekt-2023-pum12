@@ -1,9 +1,8 @@
 .OverviewBoxContainer{
-    background-color: #EBEBEB;
+    background-color: #FFFFFF;
     height: 100%;
     border-radius: 10px;
-    /* padding: 10px; */
-
+    padding: 10px;
     display: grid;
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr 1fr;
@@ -11,9 +10,13 @@
 }
 
 .InfoBox{
-    background-color: white;
+    background-color: #BFCDFF;
     border-radius: 10px;
-
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    text-align: center;
+    align-items: center;
     display: grid;
     grid-template-rows: 1fr 1fr;
 }
@@ -21,13 +24,12 @@
 .InfoBoxTitle{
     display: flex;
     justify-content: center;
-    align-items: center;
     font-size: 20px;
+    font-weight: bold;
 }
 
 .InfoBoxValue{
     display: flex;
     justify-content: center;
-    align-items: center;
-    font-size: 40px;
+    font-size: 20px;
 }

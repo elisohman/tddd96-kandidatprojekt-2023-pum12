@@ -1,6 +1,4 @@
 .SidebarHeaderContent {
-    padding: 20px;
-    padding-bottom: 0;
     display: grid;
     grid-template-columns: 7fr 2fr 2fr;
 }

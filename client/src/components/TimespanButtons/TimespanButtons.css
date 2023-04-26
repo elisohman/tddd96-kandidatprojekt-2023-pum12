@@ -1,11 +1,13 @@
 .button-group {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     width: 100%;
+    justify-self: center;
 }
 
 .button {
     background-color: #0AC29B;
+    min-width: 70px;
     border: none;
     border-radius: 25px;
     color: white;
@@ -15,9 +17,7 @@
     text-align: center;
     transition-duration: 0.4s;
     cursor: pointer;
-    margin-top: 10px;
-    margin-left: 3px;
-    width: 19%;
+    margin: 10px 5px 0px 5px;
     font-family: "Arial";
 }
 

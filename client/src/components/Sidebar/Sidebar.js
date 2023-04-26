@@ -8,8 +8,18 @@ import OverviewBox from "../../components/OverviewBox/OverviewBox";
 import AlarmHeader from "../../components/AlarmHeader/AlarmHeader"
 import Notification from "../../components/Notification/Notification";
 import TimespanButtons from "../TimespanButtons/TimespanButtons";
+import { csv } from "d3-fetch";
 
+function Sidebar(props) {
+    const [location, setLocation] = useState("World"); // TODO: Set the location
+    const [sidebarState, setSidebarState] = useState("smallSidebar");
+    const [tableData, setTableData] = useState([]);
 
+    useEffect(() => {
+        csv(`/product_data/sweden/lappland`).then((data) => { // TODO: Use variables, not sweden/lappland
+        setTableData(data);
+        });
+    }, []);
 
 //  i denna funktion updaterar man sen data för tabell & graf beroende på knapptryckning
 //  Matha med title arrayens ordning, index = 0 är title[0] o.s.v.
@@ -40,6 +50,38 @@ function Sidebar(props) {
             accessor : "temp"
         }
         ];
+
+	// useEffect(() => API_call("/product_data/sweden/lappland"), [])
+	// function API_call(request) {
+    //     // TODO: Make this to csv somehow
+	// 	fetch(request)
+	// 		.then(res => res.json())
+	// 		.then(data => setTableData(data))
+
+    //     // process recieved data
+        
+	// }
+
+	// const tableColumns = [
+    //     {
+    //         Header: "Amount",
+    //         accessor : "unit"
+    //     },
+    //     {
+    //         Header: "Average Flow",
+    //         accessor : "flow"
+    //     },
+    //     {
+    //         Header: "Air Pressure",
+    //         accessor : "airpressure"
+    //     },
+	// 	{
+    //         Header: "Temperature",
+    //         accessor : "temp"
+    //     }
+    //     ];
+    //console.log(window.location.pathname)
+
     return (
         <div className={sidebarState + "Container"}>
             <div className={sidebarState + "SidebarHeader"} >
@@ -82,14 +124,17 @@ function Sidebar(props) {
             </div>
             
             <div className={sidebarState + "TableContainer"}>
-                <Table data = {props.data} columns = {tableColumns}/>
-                <TimespanButtons parentFunction = {ButtonFunction} title = {["1 d", "1 w", "1 m", "1 y", "All"]}/>
+                <div className={sidebarState + "Table"}>
+                <Table data = {tableData} sidebarState={sidebarState}/>
+                </div>
+                <div className={sidebarState + "TableButtons"}>
+                </div>
             </div>
             <div className={sidebarState + "LineChartContainer1"}>
-                <LineChart data={props.data} xkey={"timestamp"} ykey={"airpressure"} title={"Air Pressure"} width={700} height={300}/>
+                <LineChart data={props.data} xkey={"timestamp"} ykey={"airpressure"} title={"Air Pressure"} sidebarState={sidebarState}/>
             </div>
             <div className={sidebarState + "LineChartContainer2"}>
-                <LineChart data={props.data} xkey={"timestamp"} ykey={"airpressure"} title={"Air Pressure"} width={700} height={300}/>
+                <LineChart data={props.data} xkey={"timestamp"} ykey={"airpressure"} title={"Air Pressure"} sidebarState={sidebarState}/>
             </div>
             <div className={sidebarState + "OverviewBox"}>
                 <OverviewBox />
