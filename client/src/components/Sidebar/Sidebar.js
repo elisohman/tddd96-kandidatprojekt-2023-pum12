@@ -5,11 +5,11 @@ import LineChart from "../../components/LineChart/LineChartComp";
 import SidebarHeader from "../../components/SidebarHeader/SidebarHeader";
 import Table from "../../components/Table/Table";
 import OverviewBox from "../../components/OverviewBox/OverviewBox";
+import { getVolumeSeries } from '../../apis/VolumeAPI';
 
 import TimespanButtons from "../TimespanButtons/TimespanButtons";
 
-
-//  i denna funktion updaterar man sen data för tabell & graf beroende på knapptryckning
+//  I denna funktion updaterar man sen data för tabell & graf beroende på knapptryckning
 //  Matha med title arrayens ordning, index = 0 är title[0] o.s.v.
 function ButtonFunction(index){
     console.log(`${index == 1 ? "Knapp1" : "annan knapp"}`);
@@ -17,6 +17,8 @@ function ButtonFunction(index){
 
 function Sidebar(props) {
     let location = "World"
+    const xkeys1 = ["timestamp_hour", "timestamp_day", "timestamp_day", "timestamp_month", "timestamp_month"];
+    const xkeys2 = ["timestamp_hour", "timestamp_day", "timestamp_day", "timestamp_month", "timestamp_month"];
     const [sidebarState, setSidebarState] = useState("smallSidebar");
     const [tableData, setTableData] = useState([]);
 
@@ -25,29 +27,8 @@ function Sidebar(props) {
 		fetch(request)
 			.then(res => res.json())
 			.then(data => setTableData(data))
-
-        // process recieved data
-        
 	}
 
-	// const tableColumns = [
-    //     {
-    //         Header: "Amount",
-    //         accessor : "unit"
-    //     },
-    //     {
-    //         Header: "Average Flow",
-    //         accessor : "flow"
-    //     },
-    //     {
-    //         Header: "Air Pressure",
-    //         accessor : "airpressure"
-    //     },
-	// 	{
-    //         Header: "Temperature",
-    //         accessor : "temp"
-    //     }
-    //     ];
     return (
         <div className={sidebarState + "Container"}>
             <div className={sidebarState + "SidebarHeader"} >
@@ -66,10 +47,10 @@ function Sidebar(props) {
                 </div>
             </div>
             <div className={sidebarState + "LineChartContainer1"}>
-                <LineChart /*data={props.data} xkey={"timestamp_day"} ykey={"total_volume"}*/ title={"Volume tapped (L)"} width={700} height={300}/>
+                <LineChart dataAPI={getVolumeSeries} xkeys={xkeys1} ykey={"total_volume"} title={"Volume tapped (l)"} width={700} height={300}/>
             </div>
             <div className={sidebarState + "LineChartContainer2"}>
-                <LineChart data={props.data} xkey={"timestamp"} ykey={"airpressure"} title={"Air Pressure"} sidebarState={sidebarState}/>
+                <LineChart dataAPI={getVolumeSeries} xkeys={xkeys2} ykey={"total_volume"} title={"Volume tapped (l)"} sidebarState={sidebarState}/>
             </div>
             <div className={sidebarState + "OverviewBox"}>
                 <OverviewBox />
