@@ -19,7 +19,7 @@ def get_series_service(time_range, country="NULL"):
     return results
 
 
-def get_total_service(time_range, country="NULL"):
+def get_total_service(time_range, country="NULL", test=None):
     query = f"""
         CALL `internet-of-kegs.Testing123.tableGetCountries{
         get_procedure_time_range(time_range)
@@ -27,8 +27,17 @@ def get_total_service(time_range, country="NULL"):
         """
 
     results = get_bigquery_data(query)
+    max = 0
+    key = get_volume_time_range(time_range)
+    for row in results:
+        if row[key] > max:
+            max = row[key]
 
-    return results
+    resulting_dict = {
+        "max_volume": max,
+        "volumes": results
+    }
+    return resulting_dict
 
 
 def get_bigquery_data(query):
@@ -51,3 +60,16 @@ def get_procedure_time_range(time_range):
     elif time_range == "1y":
         procedure_time_range = "1Year"
     return procedure_time_range
+
+
+def get_volume_time_range(time_range):
+    volume_time_range = "volume_all"
+    if time_range == "1d":
+        volume_time_range = "volume_24hours"
+    elif time_range == "1w":
+        volume_time_range = "volume_1week"
+    elif time_range == "1m":
+        volume_time_range = "volume_1month"
+    elif time_range == "1y":
+        volume_time_range = "volume_1year"
+    return volume_time_range

@@ -2,7 +2,8 @@ import axios from 'axios';
 
 
 const volumeSeriesCacheMap = new Map();
-const CACHE_EXPIRY_TIME_MS = 5 * 60 * 1000;
+const volumeTotalCacheMap = new Map();
+const CACHE_EXPIRY_TIME_MS = 0.5 * 60 * 1000;
 
 
 export const getVolumeSeries = (timeRange, country=null) => {
@@ -13,6 +14,16 @@ export const getVolumeSeries = (timeRange, country=null) => {
     const cacheKey = timeRange + countryPath;
     const request = `/volume/series${countryPath}?time_range=${timeRange}`
     return getCachedData(volumeSeriesCacheMap, cacheKey, request)
+};
+
+export const getVolumeTotal = (timeRange, country=null) => {
+    let countryPath = "";
+    if (country !== null) {
+        countryPath = `/${country}`;
+    }
+    const cacheKey = timeRange + countryPath;
+    const request = `/volume/total${countryPath}?time_range=${timeRange}`
+    return getCachedData(volumeTotalCacheMap, cacheKey, request)
 };
 
 
