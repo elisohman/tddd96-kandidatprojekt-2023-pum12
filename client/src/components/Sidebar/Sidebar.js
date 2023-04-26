@@ -19,7 +19,6 @@ function ButtonFunction(index){
 }
 
 function Sidebar(props) {
-    let location = "World"
     const xkeys1 = ["timestamp_hour", "timestamp_day", "timestamp_day", "timestamp_month", "timestamp_month"];
     const xkeys2 = ["timestamp_hour", "timestamp_day", "timestamp_day", "timestamp_month", "timestamp_month"];
     const [sidebarState, setSidebarState] = useState("smallSidebar");
