@@ -5,21 +5,22 @@ import LineChart from "../../components/LineChart/LineChartComp";
 import SidebarHeader from "../../components/SidebarHeader/SidebarHeader";
 import Table from "../../components/Table/Table";
 import OverviewBox from "../../components/OverviewBox/OverviewBox";
+import { getVolumeSeries } from '../../apis/VolumeAPI';
 import AlarmHeader from "../../components/AlarmHeader/AlarmHeader"
 import Notification from "../../components/Notification/Notification";
 import TimespanButtons from "../TimespanButtons/TimespanButtons";
 import { csv } from "d3-fetch";
 
 
-
-//  i denna funktion updaterar man sen data för tabell & graf beroende på knapptryckning
+//  I denna funktion updaterar man sen data för tabell & graf beroende på knapptryckning
 //  Matha med title arrayens ordning, index = 0 är title[0] o.s.v.
 function ButtonFunction(index){
     console.log(`${index == 1 ? "Knapp1" : "annan knapp"}`);//exempelkod
 }
 
 function Sidebar(props) {
-    // let location = "World"
+    const xkeys1 = ["timestamp_hour", "timestamp_day", "timestamp_day", "timestamp_month", "timestamp_month"];
+    const xkeys2 = ["timestamp_hour", "timestamp_day", "timestamp_day", "timestamp_month", "timestamp_month"];
     const [sidebarState, setSidebarState] = useState("smallSidebar");
     const [prevSidebarState, setPrevSidebarState] = useState("smallSidebar");
     const [location, setLocation] = useState("World"); // TODO: Set the location
@@ -110,10 +111,10 @@ function Sidebar(props) {
                 </div>
             </div>
             <div className={sidebarState + "LineChartContainer1"}>
-                <LineChart data={props.data} xkey={"timestamp"} ykey={"airpressure"} title={"Air Pressure"} sidebarState={sidebarState}/>
+                <LineChart dataAPI={getVolumeSeries} xkeys={xkeys1} ykey={"total_volume"} title={"Volume tapped (l)"} width={700} height={300}/>
             </div>
             <div className={sidebarState + "LineChartContainer2"}>
-                <LineChart data={props.data} xkey={"timestamp"} ykey={"airpressure"} title={"Air Pressure"} sidebarState={sidebarState}/>
+                <LineChart dataAPI={getVolumeSeries} xkeys={xkeys2} ykey={"total_volume"} title={"Volume tapped (l)"} sidebarState={sidebarState}/>
             </div>
             <div className={sidebarState + "OverviewBox"}>
                 <OverviewBox />
