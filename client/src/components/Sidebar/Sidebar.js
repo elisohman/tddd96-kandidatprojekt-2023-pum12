@@ -66,7 +66,7 @@ function Sidebar(props) {
                 </div>
             </div>
             <div className={sidebarState + "LineChartContainer1"}>
-                <LineChart data={props.data} xkey={"timestamp"} ykey={"airpressure"} title={"Air Pressure"} sidebarState={sidebarState}/>
+                <LineChart /*data={props.data} xkey={"timestamp_day"} ykey={"total_volume"}*/ title={"Volume tapped (L)"} width={700} height={300}/>
             </div>
             <div className={sidebarState + "LineChartContainer2"}>
                 <LineChart data={props.data} xkey={"timestamp"} ykey={"airpressure"} title={"Air Pressure"} sidebarState={sidebarState}/>
