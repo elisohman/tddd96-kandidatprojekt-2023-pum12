@@ -7,14 +7,13 @@ export default function AlarmHeader(props) {
   return ( 
     <div className="AlarmHeaderContent">
       <p className="location">{props.location}</p>
-      
 
-
-        <div className='backButton' onClick={() => {props.setSidebarState(props.prevSidebarState)}}>
-        <KeyboardBackspaceIcon className='Icon' />
-        <p className='Back'>Back</p>
-        </div>
-
+      <div className='backButton' onClick={() => {
+        props.setSidebarState(props.prevSidebarState)
+        props.parentFunction("smallSidebar")}}>
+      <KeyboardBackspaceIcon className='Icon' />
+      <p className='Back'>Back</p>
+      </div>
     </div>
   )
 }

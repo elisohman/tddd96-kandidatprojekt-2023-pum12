@@ -8,15 +8,16 @@ export default function SidebarHeader(props) {
     console.log("onclick detailed view")
     props.setPrevState(props.sidebarState);
     if(props.sidebarState === "largeSidebar") {
-      props.setSidebarState("smallSidebar")
+      props.parentFunction("smallSidebar");
+      props.setSidebarState("smallSidebar");
       return
     }
-
-    props.setSidebarState("largeSidebar")
+    props.parentFunction("largeSidebar");
+    props.setSidebarState("largeSidebar");
   }
 
-  function alarmView(){
-    console.log("Alarm view");
+  function alarmView() {
+    props.parentFunction("largeSidebar");
     props.setPrevState(props.sidebarState);
     props.setSidebarState("alarm");
   }
@@ -26,16 +27,12 @@ export default function SidebarHeader(props) {
       <p className="SidebarHeader">{props.location}</p>
       
       <div className="AlarmButton">
-        {/* <a className="ButtonLinks" href="alarms"> */}
-          {/* Image should only be shown if there is an alarm */}
-          <NotificationsIcon className='Buttons' onClick={() => {alarmView()}} />
-
+        {/* Image should show in red if there is an alarm */}
+        <NotificationsIcon className='Buttons' onClick={() => {alarmView()}} />
       </div>
 
       <div className="EnlargeButton">
-        <a className="ButtonLinks">
-          <OpenInFullIcon className='Buttons' onClick={() => {detailedView()}}/>
-        </a>
+        <OpenInFullIcon className='Buttons' onClick={() => {detailedView()}}/>
       </div>
     </div>
   )

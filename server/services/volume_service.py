@@ -28,15 +28,25 @@ def get_total_service(time_range, country="NULL", test=None):
 
     results = get_bigquery_data(query)
     max = 0
-    key = get_volume_time_range(time_range)
+    total_volume = 0
+    key = "total_volume"
     for row in results:
+        # Measurement comes in milliliters, we want to display liters
+        row[key] = row[key]/1000
+
+        # Calculate the total volume for this time_range
+        total_volume += row[key]
+
+        # Find out the largest volume
         if row[key] > max:
             max = row[key]
 
     resulting_dict = {
         "max_volume": max,
+        "total_volume": total_volume,
         "volumes": results
     }
+    print(resulting_dict)
     return resulting_dict
 
 
@@ -60,16 +70,3 @@ def get_procedure_time_range(time_range):
     elif time_range == "1y":
         procedure_time_range = "1Year"
     return procedure_time_range
-
-
-def get_volume_time_range(time_range):
-    volume_time_range = "volume_all"
-    if time_range == "1d":
-        volume_time_range = "volume_24hours"
-    elif time_range == "1w":
-        volume_time_range = "volume_1week"
-    elif time_range == "1m":
-        volume_time_range = "volume_1month"
-    elif time_range == "1y":
-        volume_time_range = "volume_1year"
-    return volume_time_range

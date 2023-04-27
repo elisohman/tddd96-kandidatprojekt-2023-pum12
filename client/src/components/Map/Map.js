@@ -4,7 +4,6 @@ import './Map.css';
 import TimespanButtons from "../../components/TimespanButtons/TimespanButtons";
 import Tooltip from '@mui/material/Tooltip';
 import { scaleLinear } from "d3-scale";
-import { csv } from "d3-fetch";
 import {
     ComposableMap,
     Geographies,
@@ -15,7 +14,7 @@ import {
 } from "react-simple-maps";
 import { getVolumeTotal } from "../../apis/VolumeAPI.js";
 
-const MapChart = () => {
+const MapChart = (props) => {
     const [data, setData] = useState([]);
     const [map, setMap] = useState("./maps/world.json");
     const [pos, setPos] = useState([0,0]);
@@ -23,8 +22,8 @@ const MapChart = () => {
     const [country, setCountry] = useState(["", ""]);
     const [hover, setHover] = useState("");
     const [date, setDate] = useState("1d");
-    const [volume, setVolume] = useState("volume_24hours");
-    const [maxColor, setMaxColor] = useState(1); // TODO: Set max color somewhere
+    const [maxColor, setMaxColor] = useState(1);
+    const [mapLocation, setMapLocation] = useState("World");
     const navigate = useNavigate();
 
     // The colorscale to display on countries/regions
@@ -58,49 +57,55 @@ const MapChart = () => {
       
       // Update the map
       setMap("./maps/" + map_id + ".json");
-
-      // Update the colors on the map
-      csv(`./map_data/` + map_id).then((data) => {
-      setData(data);
-      });
+      
+      var location = window.location.pathname.toString().split("/");
+      location = decodeURIComponent(location[location.length-1]);
+      setMapLocation(location);
+      props.parentFunction(location);
     }
 
     function ButtonFunction(index){
       const buttons = ["1d", "1w", "1m", "1y", "all"];
-      const volumes = ["volume_24hours", "volume_1week", "volume_1month", "volume_1year", "volume_all"];
       setDate(buttons[index]);
-      setVolume(volumes[index]);
     }
 
     useEffect(() => {
-      getVolumeTotal(date).then( data => {
-        setData(data.volumes);
-        setMaxColor(data.max_volume)
-      })
+      if (mapLocation === "World") {
+        getVolumeTotal(date).then( data => {
+          setData(data.volumes);
+          setMaxColor(data.max_volume);
+        })
+      }
+      else {
+        getVolumeTotal(date, mapLocation).then( data => {
+          setData(data.volumes);
+          setMaxColor(data.max_volume);
+        })
+      }
     }, [date]);
 
     function average_postion(geo){
-      var cords = geo["geometry"]["coordinates"];
+      var coords = geo["geometry"]["coordinates"];
       
       // If the country has islands --> zoom to the biggest part
-      if(typeof(cords[0][0][0][0]) == "number") {       
+      if(typeof(coords[0][0][0][0]) == "number") {       
         var max = [0, 0];
-        cords.forEach(element => {
+        coords.forEach(element => {
             if (element[0].length > max[0]){
-               max = [element[0].length, element[0]];
+              max = [element[0].length, element[0]];
             }
 
         });
-        cords = max[1];
-      } else cords = cords[0];
+        coords = max[1];
+      } else coords = coords[0];
 
       // Find longitude and latitude
-      const longitude = cords.map(subarr => subarr[0]);
-      const latitude = cords.map(subarr => subarr[1]);
+      const longitude = coords.map(subarr => subarr[0]);
+      const latitude = coords.map(subarr => subarr[1]);
 
       // Find middle
-      const avgLong = longitude.reduce((sum, value) => sum + value, 0) / cords.length;
-      const avgLat = latitude.reduce((sum, value) => sum + value, 0) / cords.length;
+      const avgLong = longitude.reduce((sum, value) => sum + value, 0) / coords.length;
+      const avgLat = latitude.reduce((sum, value) => sum + value, 0) / coords.length;
       
       // Find max differential in height
       const maxDiffHeight = Math.max(...latitude) - Math.min(...latitude);
@@ -139,7 +144,7 @@ const MapChart = () => {
                   >
                 <Sphere stroke="#E4E5E6" strokeWidth={0.5} />
                 <Graticule stroke="#E4E5E6" strokeWidth={0.5} />
-                {data.length > 0 && (
+                {
                   <Geographies 
                   geography={map}
                   >
@@ -149,12 +154,11 @@ const MapChart = () => {
                         if(name1.includes(country[0])) NAME = "NAME_1";
                         var d = data.find((s) => s.location === geo.properties[NAME]);
                         if(map === "./maps/world.json") d = data.find((s) => s.location === geo.properties.name);
-                        
                         return (
                           <Geography
                             key={geo.rsmKey}
                             geography={geo}
-                            fill={d ? colorScale(d[volume]) : "#CBCBCB"}
+                            fill={d ? colorScale(d["total_volume"]) : "#CBCBCB"}
                             onClick={() => {change_map(geo)}}
                             onMouseEnter={() => {
                               var NAME = "name";
@@ -185,12 +189,12 @@ const MapChart = () => {
                       })
                     }
                   </Geographies>
-                )}
+                }
                 </ZoomableGroup>
               </ComposableMap>
             </Tooltip>
             <div className="Gradient">
-              <div className="MaxValue">{getMaxVolume(maxColor / 1000)}&#8467;</div>
+              <div className="MaxValue">{getMaxVolume(maxColor)}&#8467;</div>
               <div className="MinValue">0&#8467;</div> {/*&#8467;*/}
             </div>
         </div>
