@@ -8,31 +8,32 @@ function LineChartComp(props) {
     // Data fetch for graph
 	const [data, setData] = useState([]);
     const [date, setDate] = useState("1d");
-    const [xkey, setXKey] = useState(props.xkeys[0]);
+    const [title, setTitle] = useState(NaN);
 
     function ButtonFunction(index){
         const buttons = ["1d", "1w", "1m", "1y", "all"];
         setDate(buttons[index]);
-        setXKey(props.xkeys[index]);
     }
-
+    
+    const dataAPI = props.dataAPI;
     useEffect(() => {
-        props.dataAPI(date).then( data => {
+        dataAPI(date).then( data => {
             setData(data);
+            if (data.length == 0) setTitle(NaN);
+            else setTitle(props.title);
         })
-      }, [date]);
+    }, [dataAPI, date]);
 
-      
     return (
         <div className='ChartContainer'>
             <div className='Content'>
 
-                <p className='ChartTitle'>{props.title}</p>
+                <p className='ChartTitle'>{title}</p>
                 <ResponsiveContainer width="95%" height={props.sidebarState === "largeSidebar" ? 200 : 200}>
                         
                         <LineChart width={props.width} height={props.height} data={data}>
                             <CartesianGrid strokeDasharray="3 3" />
-                            <XAxis dataKey={xkey} tick={false}/>
+                            <XAxis dataKey={props.xkey} tick={false}/>
                             <YAxis dataKey={props.ykey}/>
                             <Tooltip />
                             <Line type="monotone" isAnimationActive={false} dataKey={props.ykey} fill="#8884d8" activeDot={false}/>

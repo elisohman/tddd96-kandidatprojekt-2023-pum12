@@ -9,22 +9,20 @@ import { getVolumeTotal } from "../../apis/VolumeAPI.js";
 */
 
 function Table(props){
-    const [data, setData] = useState([]);
+    const [data, setData] = useState([{"location": NaN, "total_volume": NaN}]);
     const [date, setDate] = useState("1d");
-    const [volume, setVolume] = useState("volume_24hours");
 
-    var columns = ["Area", "50cl", "30cl", "Volume (l)"]; //"Barrel turnover",
+    var columns = ["Area", "50c\u2113", "30c\u2113", "Volume (\u2113)"]; //"Barrel turnover",
 
     function ButtonFunction(index){
         const buttons = ["1d", "1w", "1m", "1y", "all"];
-        const volumes = ["volume_24hours", "volume_1week", "volume_1month", "volume_1year", "volume_all"];
         setDate(buttons[index]);
-        setVolume(volumes[index]);
     }
 
     useEffect(() => {
         getVolumeTotal(date).then( data => {
-            setData(data.volumes);
+            if (data.volumes.length === 0) setData([{"location": NaN, "total_volume": NaN}]);
+            else setData(data.volumes);
         })
     }, [date]);
 
@@ -72,9 +70,9 @@ function Table(props){
                             return (
                             <tr key = {indexTrData}>  
                                 <td className="Location">{valData.location}</td>
-                                <td className="Number">{Math.floor(valData[volume] * (5/10))}</td>
-                                <td className="Number">{Math.floor(valData[volume] * (3/10))}</td>
-                                <td className="Number">{Math.round(valData[volume] * 100) / 100}</td>
+                                <td className="Number">{(valData["total_volume"] * (10/5)).toLocaleString(undefined, {maximumFractionDigits:0})}</td>
+                                <td className="Number">{(valData["total_volume"] * (10/3)).toLocaleString(undefined, {maximumFractionDigits:0})}</td>
+                                <td className="Number">{valData["total_volume"].toLocaleString(undefined, {maximumFractionDigits:2})}</td>
                             </tr>)
                         })
                         }

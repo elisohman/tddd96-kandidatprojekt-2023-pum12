@@ -4,7 +4,6 @@ import './Map.css';
 import TimespanButtons from "../../components/TimespanButtons/TimespanButtons";
 import Tooltip from '@mui/material/Tooltip';
 import { scaleLinear } from "d3-scale";
-import { csv } from "d3-fetch";
 import {
     ComposableMap,
     Geographies,
@@ -23,8 +22,7 @@ const MapChart = () => {
     const [country, setCountry] = useState(["", ""]);
     const [hover, setHover] = useState("");
     const [date, setDate] = useState("1d");
-    const [volume, setVolume] = useState("volume_24hours");
-    const [maxColor, setMaxColor] = useState(1); // TODO: Set max color somewhere
+    const [maxColor, setMaxColor] = useState(1);
     const navigate = useNavigate();
 
     // The colorscale to display on countries/regions
@@ -58,18 +56,11 @@ const MapChart = () => {
       
       // Update the map
       setMap("./maps/" + map_id + ".json");
-
-      // Update the colors on the map
-      csv(`./map_data/` + map_id).then((data) => {
-      setData(data);
-      });
     }
 
     function ButtonFunction(index){
       const buttons = ["1d", "1w", "1m", "1y", "all"];
-      const volumes = ["volume_24hours", "volume_1week", "volume_1month", "volume_1year", "volume_all"];
       setDate(buttons[index]);
-      setVolume(volumes[index]);
     }
 
     useEffect(() => {
@@ -139,7 +130,7 @@ const MapChart = () => {
                   >
                 <Sphere stroke="#E4E5E6" strokeWidth={0.5} />
                 <Graticule stroke="#E4E5E6" strokeWidth={0.5} />
-                {data.length > 0 && (
+                {
                   <Geographies 
                   geography={map}
                   >
@@ -149,12 +140,11 @@ const MapChart = () => {
                         if(name1.includes(country[0])) NAME = "NAME_1";
                         var d = data.find((s) => s.location === geo.properties[NAME]);
                         if(map === "./maps/world.json") d = data.find((s) => s.location === geo.properties.name);
-                        
                         return (
                           <Geography
                             key={geo.rsmKey}
                             geography={geo}
-                            fill={d ? colorScale(d[volume]) : "#CBCBCB"}
+                            fill={d ? colorScale(d["total_volume"]) : "#CBCBCB"}
                             onClick={() => {change_map(geo)}}
                             onMouseEnter={() => {
                               var NAME = "name";
@@ -185,12 +175,12 @@ const MapChart = () => {
                       })
                     }
                   </Geographies>
-                )}
+                }
                 </ZoomableGroup>
               </ComposableMap>
             </Tooltip>
             <div className="Gradient">
-              <div className="MaxValue">{getMaxVolume(maxColor / 1000)}&#8467;</div>
+              <div className="MaxValue">{getMaxVolume(maxColor)}&#8467;</div>
               <div className="MinValue">0&#8467;</div> {/*&#8467;*/}
             </div>
         </div>
