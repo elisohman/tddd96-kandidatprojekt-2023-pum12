@@ -8,21 +8,35 @@ function LineChartComp(props) {
     // Data fetch for graph
 	const [data, setData] = useState([]);
     const [date, setDate] = useState("1d");
-    const [title, setTitle] = useState(NaN);
+    const [title, setTitle] = useState(NaN.toString());
+    const [location, setLocation] = useState(props.location);
 
     function ButtonFunction(index){
         const buttons = ["1d", "1w", "1m", "1y", "all"];
         setDate(buttons[index]);
     }
+
+    useEffect(() => {
+        setLocation(props.location);
+    }, [props.location]);
     
     const dataAPI = props.dataAPI;
     useEffect(() => {
-        dataAPI(date).then( data => {
-            setData(data);
-            if (data.length == 0) setTitle(NaN);
-            else setTitle(props.title);
-        })
-    }, [dataAPI, date]);
+        if (location === "World") {
+            dataAPI(date).then( data => {
+                setData(data);
+                if (data.length === 0) setTitle(NaN.toString());
+                else setTitle(props.title);
+            })
+        }
+        else {
+            dataAPI(date, location).then( data => {
+                setData(data);
+                if (data.length === 0) setTitle(NaN.toString());
+                else setTitle(props.title);
+            })
+        }
+    }, [location, dataAPI, date]);
 
     return (
         <div className='ChartContainer'>

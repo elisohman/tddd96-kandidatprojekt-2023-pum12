@@ -14,7 +14,7 @@ import {
 } from "react-simple-maps";
 import { getVolumeTotal } from "../../apis/VolumeAPI.js";
 
-const MapChart = () => {
+const MapChart = (props) => {
     const [data, setData] = useState([]);
     const [map, setMap] = useState("./maps/world.json");
     const [pos, setPos] = useState([0,0]);
@@ -23,6 +23,7 @@ const MapChart = () => {
     const [hover, setHover] = useState("");
     const [date, setDate] = useState("1d");
     const [maxColor, setMaxColor] = useState(1);
+    const [mapLocation, setMapLocation] = useState("World");
     const navigate = useNavigate();
 
     // The colorscale to display on countries/regions
@@ -56,6 +57,11 @@ const MapChart = () => {
       
       // Update the map
       setMap("./maps/" + map_id + ".json");
+      
+      var location = window.location.pathname.toString().split("/");
+      location = decodeURIComponent(location[location.length-1]);
+      setMapLocation(location);
+      props.parentFunction(location);
     }
 
     function ButtonFunction(index){
@@ -64,34 +70,42 @@ const MapChart = () => {
     }
 
     useEffect(() => {
-      getVolumeTotal(date).then( data => {
-        setData(data.volumes);
-        setMaxColor(data.max_volume)
-      })
+      if (mapLocation === "World") {
+        getVolumeTotal(date).then( data => {
+          setData(data.volumes);
+          setMaxColor(data.max_volume);
+        })
+      }
+      else {
+        getVolumeTotal(date, mapLocation).then( data => {
+          setData(data.volumes);
+          setMaxColor(data.max_volume);
+        })
+      }
     }, [date]);
 
     function average_postion(geo){
-      var cords = geo["geometry"]["coordinates"];
+      var coords = geo["geometry"]["coordinates"];
       
       // If the country has islands --> zoom to the biggest part
-      if(typeof(cords[0][0][0][0]) == "number") {       
+      if(typeof(coords[0][0][0][0]) == "number") {       
         var max = [0, 0];
-        cords.forEach(element => {
+        coords.forEach(element => {
             if (element[0].length > max[0]){
-               max = [element[0].length, element[0]];
+              max = [element[0].length, element[0]];
             }
 
         });
-        cords = max[1];
-      } else cords = cords[0];
+        coords = max[1];
+      } else coords = coords[0];
 
       // Find longitude and latitude
-      const longitude = cords.map(subarr => subarr[0]);
-      const latitude = cords.map(subarr => subarr[1]);
+      const longitude = coords.map(subarr => subarr[0]);
+      const latitude = coords.map(subarr => subarr[1]);
 
       // Find middle
-      const avgLong = longitude.reduce((sum, value) => sum + value, 0) / cords.length;
-      const avgLat = latitude.reduce((sum, value) => sum + value, 0) / cords.length;
+      const avgLong = longitude.reduce((sum, value) => sum + value, 0) / coords.length;
+      const avgLat = latitude.reduce((sum, value) => sum + value, 0) / coords.length;
       
       // Find max differential in height
       const maxDiffHeight = Math.max(...latitude) - Math.min(...latitude);

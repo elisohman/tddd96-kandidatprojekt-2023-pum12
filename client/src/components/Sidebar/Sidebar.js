@@ -1,5 +1,5 @@
 // inspired by https://www.youtube.com/watch?v=5R9jFHlG6ik
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Sidebar.css";
 import LineChart from "../../components/LineChart/LineChartComp";
 import SidebarHeader from "../../components/SidebarHeader/SidebarHeader";
@@ -16,7 +16,15 @@ import Notification from "../../components/Notification/Notification";
 function Sidebar(props) {
     const [sidebarState, setSidebarState] = useState("smallSidebar");
     const [prevSidebarState, setPrevSidebarState] = useState("smallSidebar");
-    const [location, setLocation] = useState("World"); // TODO: Set the location
+    const [location, setLocation] = useState(props.location);
+
+    useEffect(() => {
+        setLocation(props.location);
+    }, [props.location]);
+
+    function changeMapShowing(state) {
+        props.parentFunction(state);
+    }
 
     return (
         <div className={sidebarState + "Container"}>
@@ -27,56 +35,58 @@ function Sidebar(props) {
                     prevSidebarState = {prevSidebarState}
                     location={location} 
                     setSidebarState={setSidebarState} 
-                    sidebarState={sidebarState}/>
+                    sidebarState={sidebarState}
+                    parentFunction={changeMapShowing}/>
                 </div>
                 <div className={`${sidebarState !== "alarm" ? "hiddenHeader" : 'showHeader'}`}>
                 <AlarmHeader 
                     setPrevState = {setPrevSidebarState}
                     prevSidebarState = {prevSidebarState}
                     location={location} setSidebarState={setSidebarState}
-                    sidebarState={sidebarState}/>
+                    sidebarState={sidebarState}
+                    parentFunction={changeMapShowing}/>
                 </div> 
             </div>
             
             <div className={sidebarState + "Notifications"}>
-                <Notification location = {"Första"} unit = {69} alarm = {"för mycket öl!"} timestamp = {"28/03/2023 19:53"} read = {false}/>
-                <Notification location = {"Sverige"} unit = {69} alarm = {"för mycket öl!"} timestamp = {"28/03/2023 19:53"} read = {false}/>
-                <Notification location = {"Sverige"} unit = {69} alarm = {"för mycket öl!"} timestamp = {"28/03/2023 19:53"} read = {false}/>
-                <Notification location = {"Sverige"} unit = {69} alarm = {"för mycket öl!"} timestamp = {"28/03/2023 19:53"} read = {false}/>
-                <Notification location = {"Sverige"} unit = {69} alarm = {"för mycket öl!"} timestamp = {"28/03/2023 19:53"} read = {false}/>
-                <Notification location = {"Sverige"} unit = {69} alarm = {"för mycket öl!"} timestamp = {"28/03/2023 19:53"} read = {true}/>
-                <Notification location = {"Sverige"} unit = {69} alarm = {"för mycket öl!"} timestamp = {"28/03/2023 19:53"} read = {true}/>
-                <Notification location = {"Sverige"} unit = {69} alarm = {"för mycket öl!"} timestamp = {"28/03/2023 19:53"} read = {true}/>
-                <Notification location = {"Sverige"} unit = {69} alarm = {"för mycket öl!"} timestamp = {"28/03/2023 19:53"} read = {true}/>
-                <Notification location = {"Sverige"} unit = {69} alarm = {"för mycket öl!"} timestamp = {"28/03/2023 19:53"} read = {true}/>
-                <Notification location = {"Sverige"} unit = {69} alarm = {"för mycket öl!"} timestamp = {"28/03/2023 19:53"} read = {true}/>
-                <Notification location = {"Sverige"} unit = {69} alarm = {"för mycket öl!"} timestamp = {"28/03/2023 19:53"} read = {true}/>
-                <Notification location = {"Sverige"} unit = {69} alarm = {"för mycket öl!"} timestamp = {"28/03/2023 19:53"} read = {true}/>
-                <Notification location = {"Sverige"} unit = {69} alarm = {"för mycket öl!"} timestamp = {"28/03/2023 19:53"} read = {true}/>
-                <Notification location = {"Sverige"} unit = {69} alarm = {"för mycket öl!"} timestamp = {"28/03/2023 19:53"} read = {true}/>
-                <Notification location = {"Sverige"} unit = {69} alarm = {"för mycket öl!"} timestamp = {"28/03/2023 19:53"} read = {true}/>
-                <Notification location = {"Sverige"} unit = {69} alarm = {"för mycket öl!"} timestamp = {"28/03/2023 19:53"} read = {true}/>
-                <Notification location = {"Sista"} unit = {69} alarm = {"för mycket öl!"} timestamp = {"28/03/2023 19:53"} read = {true}/>
+                <Notification location = {"First"} unit = {42} alarm = {"temperature too high!"} timestamp = {"28/03/2023 19:53"} read = {false}/>
+                <Notification location = {"Sweden"} unit = {42} alarm = {"temperature too high!"} timestamp = {"28/03/2023 19:53"} read = {false}/>
+                <Notification location = {"Sweden"} unit = {42} alarm = {"temperature too high!"} timestamp = {"28/03/2023 19:53"} read = {false}/>
+                <Notification location = {"Sweden"} unit = {42} alarm = {"temperature too high!"} timestamp = {"28/03/2023 19:53"} read = {false}/>
+                <Notification location = {"Sweden"} unit = {42} alarm = {"temperature too high!"} timestamp = {"28/03/2023 19:53"} read = {false}/>
+                <Notification location = {"Sweden"} unit = {42} alarm = {"temperature too high!"} timestamp = {"28/03/2023 19:53"} read = {true}/>
+                <Notification location = {"Sweden"} unit = {42} alarm = {"temperature too high!"} timestamp = {"28/03/2023 19:53"} read = {true}/>
+                <Notification location = {"Sweden"} unit = {42} alarm = {"temperature too high!"} timestamp = {"28/03/2023 19:53"} read = {true}/>
+                <Notification location = {"Sweden"} unit = {42} alarm = {"temperature too high!"} timestamp = {"28/03/2023 19:53"} read = {true}/>
+                <Notification location = {"Sweden"} unit = {42} alarm = {"temperature too high!"} timestamp = {"28/03/2023 19:53"} read = {true}/>
+                <Notification location = {"Sweden"} unit = {42} alarm = {"temperature too high!"} timestamp = {"28/03/2023 19:53"} read = {true}/>
+                <Notification location = {"Sweden"} unit = {42} alarm = {"temperature too high!"} timestamp = {"28/03/2023 19:53"} read = {true}/>
+                <Notification location = {"Sweden"} unit = {42} alarm = {"temperature too high!"} timestamp = {"28/03/2023 19:53"} read = {true}/>
+                <Notification location = {"Sweden"} unit = {42} alarm = {"temperature too high!"} timestamp = {"28/03/2023 19:53"} read = {true}/>
+                <Notification location = {"Sweden"} unit = {42} alarm = {"temperature too high!"} timestamp = {"28/03/2023 19:53"} read = {true}/>
+                <Notification location = {"Sweden"} unit = {42} alarm = {"temperature too high!"} timestamp = {"28/03/2023 19:53"} read = {true}/>
+                <Notification location = {"Sweden"} unit = {42} alarm = {"temperature too high!"} timestamp = {"28/03/2023 19:53"} read = {true}/>
+                <Notification location = {"Last"} unit = {42} alarm = {"temperature too high!"} timestamp = {"28/03/2023 19:53"} read = {true}/>
             </div>
             
             <div className={sidebarState + "TableContainer"}>
                 <div className={sidebarState + "Table"}>
-                <Table sidebarState={sidebarState}/>
+                <Table sidebarState={sidebarState} location={location}/>
                 </div>
                 <div className={sidebarState + "TableButtons"}>
                 </div>
             </div>
             <div className={sidebarState + "LineChartContainer1"}>
-                <LineChart dataAPI={getVolumeSeries} xkey={"timestamp"} ykey={"total_volume"} title={"Volume tapped (\u2113)"} width={700} height={300}/>
+                <LineChart dataAPI={getVolumeSeries} xkey={"timestamp"} ykey={"total_volume"} title={"Volume tapped (\u2113)"} width={700} height={300} location={location}/>
             </div>
             <div className={sidebarState + "LineChartContainer2"}>
-                <LineChart dataAPI={getVolumeSeries} xkey={"timestamp"} ykey={"total_volume"} title={"Volume tapped (\u2113)"} sidebarState={sidebarState}/>
+                <LineChart dataAPI={getVolumeSeries} xkey={"timestamp"} ykey={"total_volume"} title={"Volume tapped (\u2113)"} sidebarState={sidebarState} location={location}/>
             </div>
             <div className={sidebarState + "OverviewBox"}>
-                <OverviewBox />
+                <OverviewBox location={location}/>
             </div>
             <div className={sidebarState + "OverviewBox"}>
-                <OverviewBox />
+                <OverviewBox location={location}/>
             </div>
 
         </div>

@@ -9,8 +9,9 @@ import { getVolumeTotal } from "../../apis/VolumeAPI.js";
 */
 
 function Table(props){
-    const [data, setData] = useState([{"location": NaN, "total_volume": NaN}]);
+    const [data, setData] = useState([{"location": NaN.toString(), "total_volume": NaN.toString()}]);
     const [date, setDate] = useState("1d");
+    const [location, setLocation] = useState(props.location);
 
     var columns = ["Area", "50c\u2113", "30c\u2113", "Volume (\u2113)"]; //"Barrel turnover",
 
@@ -20,11 +21,43 @@ function Table(props){
     }
 
     useEffect(() => {
-        getVolumeTotal(date).then( data => {
-            if (data.volumes.length === 0) setData([{"location": NaN, "total_volume": NaN}]);
-            else setData(data.volumes);
-        })
-    }, [date]);
+        if (location === "World") {
+            getVolumeTotal(date).then( data => {
+                if (data.volumes.length === 0) setData([{"location": NaN.toString(), "total_volume": NaN.toString()}]);
+                else setData(data.volumes);
+            })
+        }
+        else {
+            getVolumeTotal(date, location).then( data => {
+                if (data.volumes.length === 0) setData([{"location": NaN.toString(), "total_volume": NaN.toString()}]);
+                else setData(data.volumes);
+            })
+        }
+    }, [location, date]);
+
+    useEffect(() => {
+        setLocation(props.location);
+    }, [props.location]);
+
+    function reverseString(str) {
+        return str.split('').reverse().join('');
+    }
+
+    function transform(str) {
+        let str1 = str.split(",");
+        if (str1.length > 1) {
+            let str2 = reverseString(str1[0]);
+            str2 = str2.replace(/(.{3})./g,"$1");
+            str2 = reverseString(str2);
+            return str2 + str1[1];
+        }
+        else {
+            let str2 = reverseString(str);
+            str2 = str2.replace(/(.{3})./g,"$1");
+            str2 = reverseString(str2);
+            return str2;
+        }
+    }
 
     // Sorting the table
     const allTables = document.querySelectorAll("table");
@@ -41,8 +74,10 @@ function Table(props){
                 rows.sort((tr1, tr2) => {
                     const tr1Text = tr1.cells[cellIndex].textContent;
                     const tr2Text = tr2.cells[cellIndex].textContent;
-                    if (!isNaN(+tr1Text)) {
-                        return tr2Text.localeCompare(tr1Text, undefined, {'numeric': true});
+                    let transformedTr1 = transform(tr1Text);
+                    let transformedTr2 = transform(tr2Text);
+                    if (!isNaN(+transformedTr1)) {
+                        return transformedTr2.localeCompare(transformedTr1, undefined, {'numeric': true});
                     } else {
                         return tr1Text.localeCompare(tr2Text);
                     }

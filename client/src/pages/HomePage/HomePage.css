@@ -14,6 +14,10 @@
     grid-template-columns: 2fr 1fr;
 }
 
-.Map {
-    height: calc(93.75vh - 65px);;
+.smallSidebarMap {
+    height: calc(93.75vh - 65px);
+}
+
+.largeSidebarMap {
+    display: none;
 }

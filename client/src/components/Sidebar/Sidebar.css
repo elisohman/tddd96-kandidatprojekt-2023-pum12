@@ -48,7 +48,6 @@ Styling for the small sidebar
     display: none;
 }
 
-
 /*-----------------------------
 Styling for the large sidebar
 -------------------------------*/
@@ -57,9 +56,10 @@ Styling for the large sidebar
     position: absolute;
     left:10px;
     right:10px;
-    height: calc(93.75vh - 65px);
+    height: calc(93.75vh - 35px);
     background-color: #EBEBEB;
     margin-top: 20px;
+    border-radius: 10px;
     overflow-y: scroll;
 }
 
