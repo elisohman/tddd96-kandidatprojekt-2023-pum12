@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Table.css";
 import TimespanButtons from "../TimespanButtons/TimespanButtons";
-import { getVolumeTotal } from "../../apis/VolumeAPI.js";
+import { getVolumeTotal, getVolumeTotalTest } from "../../apis/VolumeAPI.js";
 
 /*
     När man skapar en tabell kommer kolumnerna i ordningen som column har(första till sista->vänster till höger).
@@ -22,7 +22,7 @@ function Table(props){
 
     useEffect(() => {
         if (location === "World") {
-            getVolumeTotal(date).then( data => {
+            getVolumeTotalTest(date, null, true).then( data => {
                 if (data.volumes.length === 0) setData([{"location": NaN.toString(), "total_volume": NaN.toString()}]);
                 else setData(data.volumes);
             })

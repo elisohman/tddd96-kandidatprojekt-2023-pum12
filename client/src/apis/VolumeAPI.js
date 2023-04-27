@@ -14,13 +14,25 @@ export const getVolumeSeries = (timeRange, country=null) => {
     return getCachedData(volumeSeriesCacheMap, cacheKey, request)
 };
 
-export const getVolumeTotal = (timeRange, country=null) => {
+export const getVolumeTotal = (timeRange, country=null, test=false) => {
     let countryPath = "";
     if (country !== null) {
         countryPath = `/${country}`;
     }
     const cacheKey = timeRange + countryPath;
+    
     const request = `/volume/total${countryPath}?time_range=${timeRange}`
+    return getCachedData(volumeTotalCacheMap, cacheKey, request)
+};
+
+export const getVolumeTotalTest = (timeRange, country=null, test=false) => {
+    let countryPath = "";
+    if (country !== null) {
+        countryPath = `/${country}`;
+    }
+    const cacheKey = timeRange + countryPath;
+    
+    const request = `/volume/total/test?time_range=${timeRange}`
     return getCachedData(volumeTotalCacheMap, cacheKey, request)
 };
 

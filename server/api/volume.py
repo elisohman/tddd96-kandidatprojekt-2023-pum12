@@ -1,6 +1,7 @@
 from flask import Blueprint, request
 from services.volume_service import (get_series_service,
-                                     get_total_service)
+                                     get_total_service,
+                                     get_total_service_test)
 
 volume_route = Blueprint('volume_route', __name__)
 
@@ -22,6 +23,10 @@ def get_total_for_world_view():
     time_range = request.args.get('time_range')
     return get_total_service(time_range)
 
+@volume_route.route("/volume/total/test", methods=['GET'])
+def get_total_for_world_view_test():
+    time_range = request.args.get('time_range')
+    return get_total_service_test(time_range)
 
 @volume_route.route("/volume/total/<country>", methods=['GET'])
 def get_total_for_country_view(country):

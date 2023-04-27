@@ -19,7 +19,7 @@ def get_series_service(time_range, country="NULL"):
     return results
 
 
-def get_total_service(time_range, country="NULL", test=None):
+def get_total_service(time_range, country="NULL"):
     query = f"""
         CALL `internet-of-kegs.Testing123.tableGetCountries{
         get_procedure_time_range(time_range)
@@ -46,9 +46,29 @@ def get_total_service(time_range, country="NULL", test=None):
         "total_volume": total_volume,
         "volumes": results
     }
-    print(resulting_dict)
     return resulting_dict
 
+def get_total_service_test(time_range, country="NULL"):
+    time_range = "'NULL'"
+    query = f"""
+        CALL `internet-of-kegs.Testing123.tableGetWorldData`({time_range});
+        """
+
+    results = get_bigquery_data(query)
+    max = 0
+    key = "total_volume"
+    for row in results:
+        # Find out the largest volume
+        if round(float(row[key])) > max:
+            max = round(float(row[key]))
+
+    resulting_dict = {
+        "max_volume": max,
+        "volumes": results
+    }
+    print("---------------------------------------------------")
+    print(resulting_dict)
+    return resulting_dict
 
 def get_bigquery_data(query):
     client = bigquery.Client()
