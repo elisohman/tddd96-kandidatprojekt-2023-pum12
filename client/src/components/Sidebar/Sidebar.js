@@ -4,7 +4,8 @@ import "./Sidebar.css";
 import LineChart from "../../components/LineChart/LineChartComp";
 import SidebarHeader from "../../components/SidebarHeader/SidebarHeader";
 import Table from "../../components/Table/Table";
-import OverviewBox from "../../components/OverviewBox/OverviewBox";
+import OverviewBoxBeers from "../OverviewBoxBeers/OverviewBoxBeers";
+import OverviewBoxLiters from "../OverviewBoxLiters/OverviewBoxLiters";
 import { getVolumeSeries } from '../../apis/VolumeAPI';
 import AlarmHeader from "../../components/AlarmHeader/AlarmHeader"
 import Notification from "../../components/Notification/Notification";
@@ -83,10 +84,10 @@ function Sidebar(props) {
                 <LineChart dataAPI={getVolumeSeries} xkey={"timestamp"} ykey={"total_volume"} title={"Volume tapped (\u2113)"} sidebarState={sidebarState} location={location}/>
             </div>
             <div className={sidebarState + "OverviewBox"}>
-                <OverviewBox location={location}/>
+                <OverviewBoxBeers location={location}/>
             </div>
             <div className={sidebarState + "OverviewBox"}>
-                <OverviewBox location={location}/>
+                <OverviewBoxLiters location={location}/>
             </div>
 
         </div>
