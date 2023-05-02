@@ -21,7 +21,7 @@ function HomePage() {
         <div className="HomePage">
 			<div className="HomePageHeader"><HomePageHeader/></div>
 			<div className="HomePageContent">
-				<div className={sidebarState + "Map"}><Map parentFunction={changeLocation}/></div>
+				<div className={sidebarState + "Map"}><Map location={location} parentFunction={changeLocation}/></div>
 				<div className="Sidebar"><Sidebar location={location} parentFunction={changeMapShowing}/></div>			
 			</div>
         </div>

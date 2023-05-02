@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const volumeSeriesCacheMap = new Map();
 const volumeTotalCacheMap = new Map();
-const CACHE_EXPIRY_TIME_MS = 5 * 60 * 1000;
+const CACHE_EXPIRY_TIME_MS = 60 * 1000;
 
 export const getVolumeSeries = (timeRange, country=null) => {
     let countryPath = "";
