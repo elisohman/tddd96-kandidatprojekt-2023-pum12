@@ -1,0 +1,35 @@
+.OverviewBoxContainer{
+    background-color: #FFFFFF;
+    height: 100%;
+    border-radius: 10px;
+    padding: 10px;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px
+}
+
+.InfoBox{
+    background-color: #BFCDFF;
+    border-radius: 10px;
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    text-align: center;
+    align-items: center;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+
+.InfoBoxTitle{
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.InfoBoxValue{
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+}
