@@ -24,7 +24,6 @@ const MapChart = (props) => {
     const [date, setDate] = useState("1d");
     const [maxColor, setMaxColor] = useState(1);
     const [mapLocation, setMapLocation] = useState(props.location);
-    const [triggerUpdate, setTriggerUpdate] = useState(0);
     const navigate = useNavigate();
     
     useEffect(() => {
@@ -32,7 +31,7 @@ const MapChart = (props) => {
       const interval = setInterval(() => {
         // Code to be executed every 60 seconds
         updateInformation();
-      }, 10 * 1000);
+      }, 60 * 1000);
   
       return () => clearInterval(interval);
     }, [mapLocation]);
@@ -52,10 +51,10 @@ const MapChart = (props) => {
       const buttons = ["1d", "1w", "1m", "1y", "all"];
       buttons.forEach((button) => {
         if (mapLocation === "World") {
-          getVolumeTotal(button)
+          getVolumeTotal(button);
         }
         else {
-          getVolumeTotal(button, mapLocation)
+          getVolumeTotal(button, mapLocation);
         }
       })
     }
@@ -86,7 +85,6 @@ const MapChart = (props) => {
       props.parentFunction(location);
       setMapLocation(location);
       updateInformation();
-      setTriggerUpdate(triggerUpdate+1);
     }
 
     function ButtonFunction(index){
@@ -107,7 +105,7 @@ const MapChart = (props) => {
           setMaxColor(data.max_volume);
         })
       }
-    }, [date, triggerUpdate]);
+    }, [date, mapLocation]);
 
     function average_postion(geo){
       var coords = geo["geometry"]["coordinates"];
@@ -141,7 +139,7 @@ const MapChart = (props) => {
 
     function getMaxVolume(v) {
       var p = Math.floor(Math.log(v) / Math.LN10), l = Math.floor(p / 3);
-      var result = (Math.pow(10, p - l * 3) * +(v / Math.pow(10, p)).toFixed(1)) + ['', 'K', 'M'][l];
+      var result = (Math.pow(10, p - l * 3) * +(v / Math.pow(10, p)).toFixed(1)) + ['', 'K', 'M', 'G', 'T', 'P', 'E', 'Z', 'Y'][l];
       if (Number.isNaN(result)) result = "<1";
       return result;
     }

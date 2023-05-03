@@ -21,6 +21,10 @@ function Table(props){
     }
 
     useEffect(() => {
+        setLocation(props.location);
+    }, [props.location]);
+
+    useEffect(() => {
         if (location === "World") {
             getVolumeTotal(date).then( data => {
                 if (data.volumes.length === 0) setData([{"location": NaN.toString(), "total_volume": NaN.toString()}]);
@@ -35,58 +39,54 @@ function Table(props){
         }
     }, [location, date]);
 
-    useEffect(() => {
-        setLocation(props.location);
-    }, [props.location]);
+    // function reverseString(str) {
+    //     return str.split('').reverse().join('');
+    // }
 
-    function reverseString(str) {
-        return str.split('').reverse().join('');
-    }
+    // function transform(str) {
+    //     let str1 = str.split(",");
+    //     if (str1.length > 1) {
+    //         let str2 = reverseString(str1[0]);
+    //         str2 = str2.replace(/(.{3})./g,"$1");
+    //         str2 = reverseString(str2);
+    //         return str2 + str1[1];
+    //     }
+    //     else {
+    //         let str2 = reverseString(str);
+    //         str2 = str2.replace(/(.{3})./g,"$1");
+    //         str2 = reverseString(str2);
+    //         return str2;
+    //     }
+    // }
 
-    function transform(str) {
-        let str1 = str.split(",");
-        if (str1.length > 1) {
-            let str2 = reverseString(str1[0]);
-            str2 = str2.replace(/(.{3})./g,"$1");
-            str2 = reverseString(str2);
-            return str2 + str1[1];
-        }
-        else {
-            let str2 = reverseString(str);
-            str2 = str2.replace(/(.{3})./g,"$1");
-            str2 = reverseString(str2);
-            return str2;
-        }
-    }
+    // // Sorting the table
+    // const allTables = document.querySelectorAll("table");
 
-    // Sorting the table
-    const allTables = document.querySelectorAll("table");
+    // for (const table of allTables) {
+    //     const tBody = table.tBodies[0];
+    //     const rows = Array.from(tBody.rows);
+    //     const headerCells = table.tHead.rows[0].cells;
 
-    for (const table of allTables) {
-        const tBody = table.tBodies[0];
-        const rows = Array.from(tBody.rows);
-        const headerCells = table.tHead.rows[0].cells;
+    //     for (const th of headerCells) {
+    //         const cellIndex = th.cellIndex;
 
-        for (const th of headerCells) {
-            const cellIndex = th.cellIndex;
+    //         th.addEventListener("click", () => {
+    //             rows.sort((tr1, tr2) => {
+    //                 const tr1Text = tr1.cells[cellIndex].textContent;
+    //                 const tr2Text = tr2.cells[cellIndex].textContent;
+    //                 let transformedTr1 = transform(tr1Text);
+    //                 let transformedTr2 = transform(tr2Text);
+    //                 if (!isNaN(+transformedTr1)) {
+    //                     return transformedTr2.localeCompare(transformedTr1, undefined, {'numeric': true});
+    //                 } else {
+    //                     return tr1Text.localeCompare(tr2Text);
+    //                 }
+    //         });
 
-            th.addEventListener("click", () => {
-                rows.sort((tr1, tr2) => {
-                    const tr1Text = tr1.cells[cellIndex].textContent;
-                    const tr2Text = tr2.cells[cellIndex].textContent;
-                    let transformedTr1 = transform(tr1Text);
-                    let transformedTr2 = transform(tr2Text);
-                    if (!isNaN(+transformedTr1)) {
-                        return transformedTr2.localeCompare(transformedTr1, undefined, {'numeric': true});
-                    } else {
-                        return tr1Text.localeCompare(tr2Text);
-                    }
-            });
-
-            tBody.append(...rows);
-            });
-        }
-    }
+    //         tBody.append(...rows);
+    //         });
+    //     }
+    // }
 
     return (
         <div>
@@ -105,8 +105,8 @@ function Table(props){
                             return (
                             <tr key = {indexTrData}>  
                                 <td className="Location">{valData.location}</td>
-                                <td className="Number">{(valData["total_volume"] * (10/5)).toLocaleString(undefined, {maximumFractionDigits:0})}</td>
-                                <td className="Number">{(valData["total_volume"] * (10/3)).toLocaleString(undefined, {maximumFractionDigits:0})}</td>
+                                <td className="Number">{Math.floor((valData["total_volume"] * (10/5)))}</td>
+                                <td className="Number">{Math.floor((valData["total_volume"] * (10/3)))}</td>
                                 <td className="Number">{valData["total_volume"].toLocaleString(undefined, {maximumFractionDigits:2})}</td>
                             </tr>)
                         })
