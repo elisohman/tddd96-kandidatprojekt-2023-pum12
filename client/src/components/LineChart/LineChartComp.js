@@ -10,6 +10,7 @@ function LineChartComp(props) {
     const [date, setDate] = useState("1d");
     const [title, setTitle] = useState(NaN.toString());
     const [location, setLocation] = useState(props.location);
+    const dataAPI = props.dataAPI;
 
     function ButtonFunction(index){
         const buttons = ["1d", "1w", "1m", "1y", "all"];
@@ -17,10 +18,31 @@ function LineChartComp(props) {
     }
 
     useEffect(() => {
+        updateInformation();
+        const interval = setInterval(() => {
+            // Code to be executed every 60 seconds
+            updateInformation();
+        }, 60 * 1000);
+    
+        return () => clearInterval(interval);
+    }, [location]);
+
+    function updateInformation() {
+        const buttons = ["1d", "1w", "1m", "1y", "all"];
+        buttons.forEach((button) => {
+            if (location === "World") {
+                dataAPI(button);
+            }
+            else {
+                dataAPI(button, location);
+            }
+        })
+    }
+
+    useEffect(() => {
         setLocation(props.location);
     }, [props.location]);
-    
-    const dataAPI = props.dataAPI;
+
     useEffect(() => {
         if (location === "World") {
             dataAPI(date).then( data => {

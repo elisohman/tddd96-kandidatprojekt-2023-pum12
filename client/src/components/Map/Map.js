@@ -23,9 +23,19 @@ const MapChart = (props) => {
     const [hover, setHover] = useState("");
     const [date, setDate] = useState("1d");
     const [maxColor, setMaxColor] = useState(1);
-    const [mapLocation, setMapLocation] = useState("World");
+    const [mapLocation, setMapLocation] = useState(props.location);
     const navigate = useNavigate();
-
+    
+    useEffect(() => {
+      updateInformation();
+      const interval = setInterval(() => {
+        // Code to be executed every 60 seconds
+        updateInformation();
+      }, 60 * 1000);
+  
+      return () => clearInterval(interval);
+    }, [mapLocation]);
+    
     // The colorscale to display on countries/regions
     const colorScale = scaleLinear()
       .domain([0, maxColor])
@@ -36,6 +46,18 @@ const MapChart = (props) => {
 
     // List of all available countries. Add ISO3 if there exists a json file for it
     const available = ["DEU", "ESP", "AZE", "ARG", "DZA", "BEL", "CHN", "COL", "CZE", "DNK", "FIN", "FRA", "IND", "IRL", "ITA", "JPN", "LBR", "NZL", "NOR", "PAK", "PHL", "POL", "PRT", "ROU", "ZAF", "SWE", "ARE", "GBR", "VEN"];
+
+    function updateInformation() {
+      const buttons = ["1d", "1w", "1m", "1y", "all"];
+      buttons.forEach((button) => {
+        if (mapLocation === "World") {
+          getVolumeTotal(button);
+        }
+        else {
+          getVolumeTotal(button, mapLocation);
+        }
+      })
+    }
 
     // Activated when map is clicked
     // Changes the map, colordata, zoom and location
@@ -60,8 +82,9 @@ const MapChart = (props) => {
       
       var location = window.location.pathname.toString().split("/");
       location = decodeURIComponent(location[location.length-1]);
-      setMapLocation(location);
       props.parentFunction(location);
+      setMapLocation(location);
+      updateInformation();
     }
 
     function ButtonFunction(index){
@@ -82,7 +105,7 @@ const MapChart = (props) => {
           setMaxColor(data.max_volume);
         })
       }
-    }, [date]);
+    }, [date, mapLocation]);
 
     function average_postion(geo){
       var coords = geo["geometry"]["coordinates"];
@@ -94,7 +117,6 @@ const MapChart = (props) => {
             if (element[0].length > max[0]){
               max = [element[0].length, element[0]];
             }
-
         });
         coords = max[1];
       } else coords = coords[0];
@@ -117,7 +139,7 @@ const MapChart = (props) => {
 
     function getMaxVolume(v) {
       var p = Math.floor(Math.log(v) / Math.LN10), l = Math.floor(p / 3);
-      var result = (Math.pow(10, p - l * 3) * +(v / Math.pow(10, p)).toFixed(1)) + ['', 'K', 'M'][l];
+      var result = (Math.pow(10, p - l * 3) * +(v / Math.pow(10, p)).toFixed(1)) + ['', 'K', 'M', 'G', 'T', 'P', 'E', 'Z', 'Y'][l];
       if (Number.isNaN(result)) result = "<1";
       return result;
     }
@@ -195,7 +217,7 @@ const MapChart = (props) => {
             </Tooltip>
             <div className="Gradient">
               <div className="MaxValue">{getMaxVolume(maxColor)}&#8467;</div>
-              <div className="MinValue">0&#8467;</div> {/*&#8467;*/}
+              <div className="MinValue">0&#8467;</div>
             </div>
         </div>
           <TimespanButtons parentFunction = {ButtonFunction} title = {["1 d", "1 w", "1 m", "1 y", "All"]}/>
