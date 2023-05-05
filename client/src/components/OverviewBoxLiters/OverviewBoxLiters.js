@@ -4,20 +4,24 @@ import TimespanButtons from "../TimespanButtons/TimespanButtons";
 import { getVolumeTotal } from "../../apis/VolumeAPI.js";
 
 export default function SidebarHeader(props) {
-    const [data, setData] = useState([{"location": NaN.toString(), "total_volume": NaN.toString()}]);
+    const [data, setData] = useState({"location": NaN.toString(), "total_volume": NaN.toString()});
     const [date, setDate] = useState("all");
     const [location, setLocation] = useState(props.location);
 
     useEffect(() => {
+        setLocation(props.location);
+    }, [props.location]);
+
+    useEffect(() => {
         if (location === "World") {
             getVolumeTotal(date).then( data => {
-                if (data.volumes.length === 0) setData([{"location": NaN.toString(), "total_volume": NaN.toString()}]);
+                if (data.volumes.length === 0) setData({"location": NaN.toString(), "total_volume": NaN.toString()});
                 else setData(data);
             })
         }
         else {
             getVolumeTotal(date, location).then( data => {
-                if (data.volumes.length === 0) setData([{"location": NaN.toString(), "total_volume": NaN.toString()}]);
+                if (data.volumes.length === 0) setData({"location": NaN.toString(), "total_volume": NaN.toString()});
                 else setData(data);
             })
         }

@@ -9,6 +9,10 @@ export default function SidebarHeader(props) {
     const [location, setLocation] = useState(props.location);
 
     useEffect(() => {
+        setLocation(props.location);
+    }, [props.location]);
+
+    useEffect(() => {
         if (location === "World") {
             getVolumeTotal(date).then( data => {
                 if (data.volumes.length === 0) setData([{"location": NaN.toString(), "total_volume": NaN.toString()}]);
