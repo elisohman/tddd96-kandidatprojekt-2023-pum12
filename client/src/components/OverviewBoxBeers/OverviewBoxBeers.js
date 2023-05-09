@@ -13,21 +13,12 @@ export default function SidebarHeader(props) {
     }, [props.location]);
 
     useEffect(() => {
-        if (location === "World") {
-            getVolumeTotal(date).then( data => {
-                if (data.volumes.length === 0) setData([{"location": NaN.toString(), "total_volume": NaN.toString()}]);
-                else setData(data);
-            })
-        }
-        else {
-            getVolumeTotal(date, location).then( data => {
-                if (data.volumes.length === 0) setData([{"location": NaN.toString(), "total_volume": NaN.toString()}]);
-                else setData(data);
-            })
-        }
+        getVolumeTotal(date, location).then( data => {
+            if (data.volumes.length === 0) setData([{"location": NaN.toString(), "total_volume": NaN.toString()}]);
+            else setData(data);
+        })
+        
     }, [location, date]);
-
-    console.log(data.total_volume);
 
   return ( 
     <div className="OverviewBoxContainer">

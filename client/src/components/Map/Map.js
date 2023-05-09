@@ -15,6 +15,7 @@ import {
 import { getVolumeTotal } from "../../apis/VolumeAPI.js";
 
 const MapChart = (props) => {
+    const [buttonsAreDisabled, setButtonsAreDisabled] = useState(true);
     const [data, setData] = useState([]);
     const [map, setMap] = useState("./maps/world.json");
     const [pos, setPos] = useState([0,0]);
@@ -93,18 +94,11 @@ const MapChart = (props) => {
     }
 
     useEffect(() => {
-      if (mapLocation === "World") {
-        getVolumeTotal(date).then( data => {
-          setData(data.volumes);
-          setMaxColor(data.max_volume);
-        })
-      }
-      else {
-        getVolumeTotal(date, mapLocation).then( data => {
-          setData(data.volumes);
-          setMaxColor(data.max_volume);
-        })
-      }
+      getVolumeTotal(date, mapLocation).then( data => {
+        setData(data.volumes);
+        setMaxColor(data.max_volume);
+        setButtonsAreDisabled(false);
+      })   
     }, [date, mapLocation]);
 
     function average_postion(geo){
@@ -220,7 +214,7 @@ const MapChart = (props) => {
               <div className="MinValue">0 L</div>
             </div>
         </div>
-          <TimespanButtons parentFunction = {ButtonFunction} title = {["1 d", "1 w", "1 m", "1 y", "All"]}/>
+          <TimespanButtons parentFunction = {ButtonFunction} isDisabled = {buttonsAreDisabled} title = {["1 d", "1 w", "1 m", "1 y", "All"]}/>
         </div>
       );
       

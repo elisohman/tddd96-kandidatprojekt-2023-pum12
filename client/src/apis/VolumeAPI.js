@@ -15,7 +15,7 @@ export const getVolumeSeries = (timeRange, country=null) => {
 
 export const getVolumeTotal = (timeRange, country=null) => {
     let countryPath = "";
-    if (country !== null) {
+    if (country !== "World" && country !== null) {
         countryPath = `/${country}`;
     }
     const cacheKey = timeRange + countryPath;
