@@ -9,6 +9,7 @@ import OverviewBoxLiters from "../OverviewBoxLiters/OverviewBoxLiters";
 import { getVolumeSeries } from '../../apis/VolumeAPI';
 import AlarmHeader from "../../components/AlarmHeader/AlarmHeader"
 import Notification from "../../components/Notification/Notification";
+import { NotificationsData } from "./NotificationsData";
 
 
 //  I denna funktion updaterar man sen data för tabell & graf beroende på knapptryckning
@@ -18,6 +19,7 @@ function Sidebar(props) {
     const [sidebarState, setSidebarState] = useState("smallSidebar");
     const [prevSidebarState, setPrevSidebarState] = useState("smallSidebar");
     const [location, setLocation] = useState(props.location);
+    
 
     useEffect(() => {
         setLocation(props.location);
@@ -50,24 +52,9 @@ function Sidebar(props) {
             </div>
             
             <div className={sidebarState + "Notifications"}>
-                <Notification location = {"First"} unit = {42} alarm = {"temperature too high!"} timestamp = {"28/03/2023 19:53"} read = {false}/>
-                <Notification location = {"Sweden"} unit = {42} alarm = {"temperature too high!"} timestamp = {"28/03/2023 19:53"} read = {false}/>
-                <Notification location = {"Sweden"} unit = {42} alarm = {"temperature too high!"} timestamp = {"28/03/2023 19:53"} read = {false}/>
-                <Notification location = {"Sweden"} unit = {42} alarm = {"temperature too high!"} timestamp = {"28/03/2023 19:53"} read = {false}/>
-                <Notification location = {"Sweden"} unit = {42} alarm = {"temperature too high!"} timestamp = {"28/03/2023 19:53"} read = {false}/>
-                <Notification location = {"Sweden"} unit = {42} alarm = {"temperature too high!"} timestamp = {"28/03/2023 19:53"} read = {true}/>
-                <Notification location = {"Sweden"} unit = {42} alarm = {"temperature too high!"} timestamp = {"28/03/2023 19:53"} read = {true}/>
-                <Notification location = {"Sweden"} unit = {42} alarm = {"temperature too high!"} timestamp = {"28/03/2023 19:53"} read = {true}/>
-                <Notification location = {"Sweden"} unit = {42} alarm = {"temperature too high!"} timestamp = {"28/03/2023 19:53"} read = {true}/>
-                <Notification location = {"Sweden"} unit = {42} alarm = {"temperature too high!"} timestamp = {"28/03/2023 19:53"} read = {true}/>
-                <Notification location = {"Sweden"} unit = {42} alarm = {"temperature too high!"} timestamp = {"28/03/2023 19:53"} read = {true}/>
-                <Notification location = {"Sweden"} unit = {42} alarm = {"temperature too high!"} timestamp = {"28/03/2023 19:53"} read = {true}/>
-                <Notification location = {"Sweden"} unit = {42} alarm = {"temperature too high!"} timestamp = {"28/03/2023 19:53"} read = {true}/>
-                <Notification location = {"Sweden"} unit = {42} alarm = {"temperature too high!"} timestamp = {"28/03/2023 19:53"} read = {true}/>
-                <Notification location = {"Sweden"} unit = {42} alarm = {"temperature too high!"} timestamp = {"28/03/2023 19:53"} read = {true}/>
-                <Notification location = {"Sweden"} unit = {42} alarm = {"temperature too high!"} timestamp = {"28/03/2023 19:53"} read = {true}/>
-                <Notification location = {"Sweden"} unit = {42} alarm = {"temperature too high!"} timestamp = {"28/03/2023 19:53"} read = {true}/>
-                <Notification location = {"Last"} unit = {42} alarm = {"temperature too high!"} timestamp = {"28/03/2023 19:53"} read = {true}/>
+                {NotificationsData.map((item, index) => {
+                    return <Notification location = {item.location} unit = {item.unit} alarm = {item.alarm} timestamp = {item.timestamp} read = {item.read}/>
+                })};
             </div>
             
             <div className={sidebarState + "TableContainer"}>

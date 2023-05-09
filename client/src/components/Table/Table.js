@@ -9,6 +9,7 @@ import { getVolumeTotal } from "../../apis/VolumeAPI.js";
 */
 
 function Table(props){
+    const [buttonsAreDisabled, setButtonsAreDisabled] = useState(true);
     const [data, setData] = useState([{"location": NaN.toString(), "total_volume": NaN.toString()}]);
     const [date, setDate] = useState("1d");
     const [location, setLocation] = useState(props.location);
@@ -25,68 +26,14 @@ function Table(props){
     }, [props.location]);
 
     useEffect(() => {
-        if (location === "World") {
-            getVolumeTotal(date).then( data => {
-                if (data.volumes.length === 0) setData([{"location": NaN.toString(), "total_volume": NaN.toString()}]);
-                else setData(data.volumes);
-            })
-        }
-        else {
-            getVolumeTotal(date, location).then( data => {
-                if (data.volumes.length === 0) setData([{"location": NaN.toString(), "total_volume": NaN.toString()}]);
-                else setData(data.volumes);
-            })
-        }
+
+        getVolumeTotal(date, location).then( data => {
+            if (data.volumes.length === 0) setData([{"location": NaN.toString(), "total_volume": NaN.toString()}]);
+            else setData(data.volumes);
+            setButtonsAreDisabled(false);
+        })
+        
     }, [location, date]);
-
-    // function reverseString(str) {
-    //     return str.split('').reverse().join('');
-    // }
-
-    // function transform(str) {
-    //     let str1 = str.split(",");
-    //     if (str1.length > 1) {
-    //         let str2 = reverseString(str1[0]);
-    //         str2 = str2.replace(/(.{3})./g,"$1");
-    //         str2 = reverseString(str2);
-    //         return str2 + str1[1];
-    //     }
-    //     else {
-    //         let str2 = reverseString(str);
-    //         str2 = str2.replace(/(.{3})./g,"$1");
-    //         str2 = reverseString(str2);
-    //         return str2;
-    //     }
-    // }
-
-    // // Sorting the table
-    // const allTables = document.querySelectorAll("table");
-
-    // for (const table of allTables) {
-    //     const tBody = table.tBodies[0];
-    //     const rows = Array.from(tBody.rows);
-    //     const headerCells = table.tHead.rows[0].cells;
-
-    //     for (const th of headerCells) {
-    //         const cellIndex = th.cellIndex;
-
-    //         th.addEventListener("click", () => {
-    //             rows.sort((tr1, tr2) => {
-    //                 const tr1Text = tr1.cells[cellIndex].textContent;
-    //                 const tr2Text = tr2.cells[cellIndex].textContent;
-    //                 let transformedTr1 = transform(tr1Text);
-    //                 let transformedTr2 = transform(tr2Text);
-    //                 if (!isNaN(+transformedTr1)) {
-    //                     return transformedTr2.localeCompare(transformedTr1, undefined, {'numeric': true});
-    //                 } else {
-    //                     return tr1Text.localeCompare(tr2Text);
-    //                 }
-    //         });
-
-    //         tBody.append(...rows);
-    //         });
-    //     }
-    // }
 
     return (
         <div>
@@ -114,7 +61,7 @@ function Table(props){
                     </tbody>
                 </table>
             </div>
-            <TimespanButtons parentFunction = {ButtonFunction} title = {["1 d", "1 w", "1 m", "1 y", "All"]}/>
+            <TimespanButtons parentFunction = {ButtonFunction} isDisabled = {buttonsAreDisabled} title = {["1 d", "1 w", "1 m", "1 y", "All"]}/>
         </div>
     );
 }

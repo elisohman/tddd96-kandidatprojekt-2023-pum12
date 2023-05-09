@@ -6,6 +6,7 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContai
 
 function LineChartComp(props) {
     // Data fetch for graph
+    const [buttonsAreDisabled, setButtonsAreDisabled] = useState(true);
 	const [data, setData] = useState([]);
     const [date, setDate] = useState("1d");
     const [title, setTitle] = useState(NaN.toString());
@@ -49,6 +50,7 @@ function LineChartComp(props) {
                 setData(data);
                 if (data.length === 0) setTitle(NaN.toString());
                 else setTitle(props.title);
+                setButtonsAreDisabled(false);
             })
         }
         else {
@@ -56,6 +58,7 @@ function LineChartComp(props) {
                 setData(data);
                 if (data.length === 0) setTitle(NaN.toString());
                 else setTitle(props.title);
+                setButtonsAreDisabled(false);
             })
         }
     }, [location, dataAPI, date]);
@@ -76,7 +79,7 @@ function LineChartComp(props) {
                             
                         </LineChart>
                 </ResponsiveContainer>
-                <TimespanButtons parentFunction = {ButtonFunction} title = {["1 d", "1 w", "1 m", "1 y", "All"]}/>
+                <TimespanButtons parentFunction = {ButtonFunction} isDisabled = {buttonsAreDisabled} title = {["1 d", "1 w", "1 m", "1 y", "All"]}/>
             </div>
         </div>
     );
