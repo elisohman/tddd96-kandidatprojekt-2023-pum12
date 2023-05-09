@@ -27,7 +27,7 @@ export default function SidebarHeader(props) {
         }
     }, [location, date]);
 
-    console.log(data.total_volume);
+    //console.log(data.total_volume);
 
   return ( 
     <div className="OverviewBoxContainer">

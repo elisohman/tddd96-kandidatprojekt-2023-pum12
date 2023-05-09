@@ -4,46 +4,58 @@ import TimespanButtons from "../TimespanButtons/TimespanButtons";
 import { getVolumeTotal } from "../../apis/VolumeAPI.js";
 
 export default function SidebarHeader(props) {
-    const [data, setData] = useState({"location": NaN.toString(), "total_volume": NaN.toString()});
-    const [date, setDate] = useState("all");
+    const [data, setData] = useState({"1d":0, "1w":0, "1m":0, "1y":0, "all":0});
     const [location, setLocation] = useState(props.location);
+    const timeSpan = ["1d", "1w", "1m", "1y", "all"];
 
     useEffect(() => {
         setLocation(props.location);
     }, [props.location]);
 
     useEffect(() => {
+        let temp = {};
         if (location === "World") {
-            getVolumeTotal(date).then( data => {
-                if (data.volumes.length === 0) setData({"location": NaN.toString(), "total_volume": NaN.toString()});
-                else setData(data);
-            })
+            timeSpan.forEach( (date) => {
+                getVolumeTotal(date).then( data => {
+                    if (data.volumes.length === 0) setData({"1d":0, "1w":0, "1m":0, "1y":0, "all":0});
+                    else temp[date] = data.total_volume.toLocaleString(undefined, {maximumFractionDigits:0});
+                })
+            });
         }
         else {
-            getVolumeTotal(date, location).then( data => {
-                if (data.volumes.length === 0) setData({"location": NaN.toString(), "total_volume": NaN.toString()});
-                else setData(data);
-            })
+            timeSpan.forEach( (date) => {
+                getVolumeTotal(date, location).then( data => {
+                    if (data.volumes.length === 0) setData({"1d":0, "1w":0, "1m":0, "1y":0, "all":0});
+                    else temp[date] = data.total_volume.toLocaleString(undefined, {maximumFractionDigits:0});
+                })
+            });
         }
-    }, [location, date]);
+        setData(temp);
+    }, [location]);
 
-    console.log(data.total_volume);
-
-  return ( 
+  return (
     <div className="OverviewBoxContainer">
         <div className='InfoBox'> 
             <div className='InfoBoxTitle'>Tapped day (&#8467;)</div>
-            <div className='InfoBoxValue'>{(data.total_volume).toLocaleString(undefined, {maximumFractionDigits:0})} &#8467;</div>
+            <div className='InfoBoxValue'>{
+            data["1d"]
+            } &#8467;</div>
         </div>
         <div className='InfoBox'> 
             <div className='InfoBoxTitle'>Tapped week (&#8467;)</div>
-            <div className='InfoBoxValue'>{(data.total_volume).toLocaleString(undefined, {maximumFractionDigits:0})} &#8467;</div>
+            <div className='InfoBoxValue'>{
+            data["1w"]
+            } &#8467;</div>
         </div>        <div className='InfoBox'> 
             <div className='InfoBoxTitle'>Tapped month (&#8467;)</div>
-            <div className='InfoBoxValue'>{(data.total_volume).toLocaleString(undefined, {maximumFractionDigits:0})} &#8467;</div>
+            <div className='InfoBoxValue'>{
+            data["1m"]
+            } &#8467;</div>
         </div>        <div className='InfoBox'> 
             <div className='InfoBoxTitle'>Tapped year (&#8467;)</div>
-            <div className='InfoBoxValue'>{(data.total_volume).toLocaleString(undefined, {maximumFractionDigits:0})} &#8467;</div>
+            <div className='InfoBoxValue'>{
+            data["1y"]
+            } &#8467;</div>
         </div>        
     </div>
   )

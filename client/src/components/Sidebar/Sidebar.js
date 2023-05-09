@@ -87,7 +87,7 @@ function Sidebar(props) {
                 <OverviewBoxBeers location={location}/>
             </div>
             <div className={sidebarState + "OverviewBox"}>
-                <OverviewBoxLiters location={location}/>
+                <OverviewBoxLiters location={location} dataAPI={getVolumeSeries}/>
             </div>
 
         </div>
