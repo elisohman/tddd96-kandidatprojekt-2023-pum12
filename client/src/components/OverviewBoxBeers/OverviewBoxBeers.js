@@ -32,11 +32,11 @@ export default function SidebarHeader(props) {
   return ( 
     <div className="OverviewBoxContainer">
         <div className='InfoBox'> 
-            <div className='InfoBoxTitle'>Small beer (30c&#8467;)</div>
+            <div className='InfoBoxTitle'>Small beer (30cl)</div>
             <div className='InfoBoxValue'>{(data.total_volume *10/3).toLocaleString(undefined, {maximumFractionDigits:0})} cans</div>
         </div>
         <div className='InfoBox'> 
-            <div className='InfoBoxTitle'>Large beer (50c&#8467;)</div>
+            <div className='InfoBoxTitle'>Large beer (50cl)</div>
             <div className='InfoBoxValue'>{(data.total_volume *10/5).toLocaleString(undefined, {maximumFractionDigits:0})} cans</div>
         </div>        <div className='InfoBox'> 
             <div className='InfoBoxTitle'>Average time to empty barrel</div>

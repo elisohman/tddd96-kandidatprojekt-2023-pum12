@@ -32,17 +32,17 @@ export default function SidebarHeader(props) {
   return ( 
     <div className="OverviewBoxContainer">
         <div className='InfoBox'> 
-            <div className='InfoBoxTitle'>Tapped day (&#8467;)</div>
+            <div className='InfoBoxTitle'>Tapped day (L)</div>
             <div className='InfoBoxValue'>{(data.total_volume).toLocaleString(undefined, {maximumFractionDigits:0})} &#8467;</div>
         </div>
         <div className='InfoBox'> 
-            <div className='InfoBoxTitle'>Tapped week (&#8467;)</div>
+            <div className='InfoBoxTitle'>Tapped week (L)</div>
             <div className='InfoBoxValue'>{(data.total_volume).toLocaleString(undefined, {maximumFractionDigits:0})} &#8467;</div>
         </div>        <div className='InfoBox'> 
-            <div className='InfoBoxTitle'>Tapped month (&#8467;)</div>
+            <div className='InfoBoxTitle'>Tapped month (L)</div>
             <div className='InfoBoxValue'>{(data.total_volume).toLocaleString(undefined, {maximumFractionDigits:0})} &#8467;</div>
         </div>        <div className='InfoBox'> 
-            <div className='InfoBoxTitle'>Tapped year (&#8467;)</div>
+            <div className='InfoBoxTitle'>Tapped year (L)</div>
             <div className='InfoBoxValue'>{(data.total_volume).toLocaleString(undefined, {maximumFractionDigits:0})} &#8467;</div>
         </div>        
     </div>

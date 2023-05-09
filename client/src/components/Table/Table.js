@@ -13,7 +13,7 @@ function Table(props){
     const [date, setDate] = useState("1d");
     const [location, setLocation] = useState(props.location);
 
-    var columns = ["Area", "50c\u2113", "30c\u2113", "Volume (\u2113)"];
+    var columns = ["Area", "50cl", "30cl", "Volume (L)"];
 
     function ButtonFunction(index){
         const buttons = ["1d", "1w", "1m", "1y", "all"];
