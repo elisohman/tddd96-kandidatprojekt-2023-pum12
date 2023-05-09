@@ -65,10 +65,10 @@ function Sidebar(props) {
                 </div>
             </div>
             <div className={sidebarState + "LineChartContainer1"}>
-                <LineChart dataAPI={getVolumeSeries} xkey={"timestamp"} ykey={"total_volume"} title={"Volume tapped (l)"} width={700} height={300} location={location}/>
+                <LineChart dataAPI={getVolumeSeries} xkey={"timestamp"} ykey={"total_volume"} title={"Volume tapped (L)"} width={700} height={300} location={location}/>
             </div>
             <div className={sidebarState + "LineChartContainer2"}>
-                <LineChart dataAPI={getVolumeSeries} xkey={"timestamp"} ykey={"total_volume"} title={"Volume tapped (l)"} sidebarState={sidebarState} location={location}/>
+                <LineChart dataAPI={getVolumeSeries} xkey={"timestamp"} ykey={"total_volume"} title={"Volume tapped (L)"} sidebarState={sidebarState} location={location}/>
             </div>
             <div className={sidebarState + "OverviewBox"}>
                 <OverviewBoxBeers location={location}/>

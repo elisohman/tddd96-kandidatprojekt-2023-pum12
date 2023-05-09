@@ -133,7 +133,7 @@ const MapChart = (props) => {
 
     function getMaxVolume(v) {
       var p = Math.floor(Math.log(v) / Math.LN10), l = Math.floor(p / 3);
-      var result = (Math.pow(10, p - l * 3) * +(v / Math.pow(10, p)).toFixed(1)) + ['', 'k', 'm', 'g', 't', 'p', 'e', 'z', 'y'][l];
+      var result = (Math.pow(10, p - l * 3) * +(v / Math.pow(10, p)).toFixed(1)) + ' ' + ['', 'k', 'M', 'G', 'T', 'P', 'E', 'Z', 'Y'][l];
       if (Number.isNaN(result)) result = "<1";
       return result;
     }
@@ -210,8 +210,8 @@ const MapChart = (props) => {
               </ComposableMap>
             </Tooltip>
             <div className="Gradient">
-              <div className="MaxValue">{getMaxVolume(maxColor)}l</div>
-              <div className="MinValue">0l</div>
+              <div className="MaxValue">{getMaxVolume(maxColor)}L</div>
+              <div className="MinValue">0 L</div>
             </div>
         </div>
           <TimespanButtons parentFunction = {ButtonFunction} isDisabled = {buttonsAreDisabled} title = {["1 d", "1 w", "1 m", "1 y", "All"]}/>

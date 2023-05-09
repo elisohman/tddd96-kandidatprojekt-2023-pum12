@@ -23,13 +23,15 @@
 
 .InfoBoxTitle{
     display: flex;
-    justify-content: center;
+    margin: auto;
+    max-width: 80%;
     font-size: 20px;
     font-weight: bold;
 }
 
 .InfoBoxValue{
     display: flex;
-    justify-content: center;
+    margin: auto;
+    max-width: 80%;
     font-size: 20px;
 }
