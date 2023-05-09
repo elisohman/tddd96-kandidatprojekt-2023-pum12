@@ -210,8 +210,8 @@ const MapChart = (props) => {
               </ComposableMap>
             </Tooltip>
             <div className="Gradient">
-              <div className="MaxValue">{getMaxVolume(maxColor)}L</div>
-              <div className="MinValue">0 L</div>
+              <div className="MaxValue">{getMaxVolume(maxColor)}l</div>
+              <div className="MinValue">0l</div>
             </div>
         </div>
           <TimespanButtons parentFunction = {ButtonFunction} isDisabled = {buttonsAreDisabled} title = {["1 d", "1 w", "1 m", "1 y", "All"]}/>

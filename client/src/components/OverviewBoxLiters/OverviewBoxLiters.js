@@ -20,26 +20,26 @@ export default function OverviewBoxLiters(props) {
   return (
     <div className="OverviewBoxContainer"> {/* &#8467; */}
         <div className='InfoBox'> 
-            <div className='InfoBoxTitle'>Tapped day (L)</div>
+            <div className='InfoBoxTitle'>Tapped day (l)</div>
             <div className='InfoBoxValue'>{
             data["1d"]
-            } L</div>
+            }l</div>
         </div>
         <div className='InfoBox'> 
-            <div className='InfoBoxTitle'>Tapped week (L)</div>
+            <div className='InfoBoxTitle'>Tapped week (l)</div>
             <div className='InfoBoxValue'>{
             data["1w"]
-            } L</div>
+            }l</div>
         </div>        <div className='InfoBox'> 
-            <div className='InfoBoxTitle'>Tapped month (L)</div>
+            <div className='InfoBoxTitle'>Tapped month (l)</div>
             <div className='InfoBoxValue'>{
             data["1m"]
-            } L</div>
+            }l</div>
         </div>        <div className='InfoBox'> 
-            <div className='InfoBoxTitle'>Tapped year (L)</div>
+            <div className='InfoBoxTitle'>Tapped year (l)</div>
             <div className='InfoBoxValue'>{
             data["1y"]
-            } L</div>
+            }l</div>
         </div>        
     </div>
   )
