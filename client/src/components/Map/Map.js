@@ -210,7 +210,7 @@ const MapChart = (props) => {
               </ComposableMap>
             </Tooltip>
             <div className="Gradient">
-              <div className="MaxValue">{getMaxVolume(maxColor)} L</div>
+              <div className="MaxValue">{getMaxVolume(maxColor)}L</div>
               <div className="MinValue">0 L</div>
             </div>
         </div>
