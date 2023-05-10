@@ -1,24 +1,19 @@
 import React, { useEffect, useState } from "react";
 import "./OverviewBoxBeers.css";
-import TimespanButtons from "../TimespanButtons/TimespanButtons";
 import { getVolumeTotal } from "../../apis/VolumeAPI.js";
 
 export default function SidebarHeader(props) {
     const [data, setData] = useState([{"location": NaN.toString(), "total_volume": NaN.toString()}]);
-    const [date, setDate] = useState("all");
-    const [location, setLocation] = useState(props.location);
+    const timespan = "all";
 
+    // Call API with and save in "data"
     useEffect(() => {
-        setLocation(props.location);
-    }, [props.location]);
-
-    useEffect(() => {
-        getVolumeTotal(date, location).then( data => {
+        getVolumeTotal(timespan, props.location).then( data => {
             if (data.volumes.length === 0) setData([{"location": NaN.toString(), "total_volume": NaN.toString()}]);
             else setData(data);
         })
         
-    }, [location, date]);
+    }, [props.location]);
 
   return ( 
     <div className="OverviewBoxContainer">
