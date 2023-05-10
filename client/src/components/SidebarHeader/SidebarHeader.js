@@ -1,6 +1,7 @@
 import React from 'react'
 import './SidebarHeader.css'
 import OpenInFullIcon from '@mui/icons-material/OpenInFull';
+import CloseFullscreenIcon from '@mui/icons-material/CloseFullscreen';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 
 export default function SidebarHeader(props) {
@@ -32,7 +33,11 @@ export default function SidebarHeader(props) {
       </div>
 
       <div className="EnlargeButton">
-        <OpenInFullIcon className='Buttons' onClick={() => {detailedView()}}/>
+        {props.sidebarState === "smallSidebar" ? (
+          <OpenInFullIcon className='Buttons' onClick={() => {detailedView()}}/>
+        ) : (
+          <CloseFullscreenIcon className='Buttons' onClick={() => {detailedView()}}/>
+        )}
       </div>
     </div>
   )
