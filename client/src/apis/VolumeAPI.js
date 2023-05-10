@@ -5,7 +5,7 @@ const volumeTotalCacheMap = new Map();
 
 export const getVolumeSeries = (timeRange, country=null) => {
     let countryPath = "";
-    if (country !== null) {
+    if (country !== null && country !== "World") {
         countryPath = `/${country}`;
     }
     const cacheKey = timeRange + countryPath;
