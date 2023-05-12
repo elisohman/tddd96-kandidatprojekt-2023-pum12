@@ -10,8 +10,8 @@ React + Flask app
 ## Getting started 🚀
 1. Clone repo
 2. Make sure `Python3`, `Node.js` and `npm` is installed.
-3. In `/server` run In `pip install flask`
-4. In `/server` run In `pip install --upgrade google-cloud-bigquery`
+3. In `/server` run `pip install flask`
+4. In `/server` run `pip install --upgrade google-cloud-bigquery`
 5. In `/server` run `python3 server.py` to start backend.
 6. In `/client` run `npm install` to install dependencies in frontend. It's normal to see some warnings.
 7. In new terminal go to `/client` and run `npm start` to start frontend.
@@ -30,4 +30,5 @@ React + Flask app
 ```
 
 ## Documentation
-See `/doc` folder.
+More information on [frontend](/doc/frontend.md)
+and more information on [backend](/doc/backend.md).
