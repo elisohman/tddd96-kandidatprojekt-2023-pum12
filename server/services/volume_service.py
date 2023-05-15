@@ -4,7 +4,12 @@ import os
 
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = '../service-account-key.json'
 
+# Instead of calling bigquery with a query string, we can call a procedure.
+# This is a more secure way of calling bigquery. 
+# The procidure is created in cloud.
 
+# The procedure is called with a time_range and a country.
+# Returns json of all the districts in country in a given time_range
 def get_series_service(time_range, country="NULL"):
     query = f"""
         CALL `internet-of-kegs.Testing123.graphGetCountries{
@@ -50,6 +55,7 @@ def get_total_service(time_range, country="NULL", test=None):
     return resulting_dict
 
 
+# The function that does the actual call to bigquery
 def get_bigquery_data(query):
     client = bigquery.Client()
     query_job = client.query(query)

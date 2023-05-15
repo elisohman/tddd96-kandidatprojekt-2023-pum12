@@ -17,7 +17,9 @@ app.register_blueprint(map_route)
 app.register_blueprint(volume_route)
 
 
-# Route for seeing a data
+# Route for seeing a single data point 
+# (used for testing an not currently in use)
+# For all routes see server/api
 @app.route("/data")
 def get_time():
     # Returning an api for showing in reactjs

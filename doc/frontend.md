@@ -8,7 +8,7 @@
 
 ## Maps
 ### React simple maps
-The library used for creating the maps is `React simple maps`. This library was choosen for the simplicity to color regions in a a solid color. React simple maps renders a json-file format called topoJSON containing the borders of a region and the absolute global position for that region. It exist several online tools to covert from other fileformats to topoJSON. More region borders can be downloaded from this webside: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX. The topoJSON maps are located in `/client/public/maps`. The code related to the map is in the `Map` component. 
+The library used for creating the maps is `React simple maps`. This library was choosen for the simplicity to color regions in a a solid color. React simple maps renders a json-file format called topoJSON containing the borders of a region and the absolute global position for that region. It exist several online tools to covert from other fileformats to topoJSON. For example [this](https://mapshaper.org/). Region and country borders can be downloaded from [here](https://github.com/deldersveld/topojson) and [here](http://www.diva-gis.org/gdata). The topoJSON maps are located in `/client/public/maps`. The code related to the map is in the `Map` component. 
 
 ### API calls
 The app get the region color data from an API call to server. These files are in .csv format. The key in the .csv must match with the name of the region in the .json map file. The value in the .csv is on a scale from 0 to 1.
@@ -25,4 +25,5 @@ and then in code use:
 ```<HelpIcon/>```
 
 ## More information on React
-Can be found [here](../client/README.md)
+### Can be found [here](../client/README.md)
+### Information on backend [here](./backend.md)
