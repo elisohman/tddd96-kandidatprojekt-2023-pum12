@@ -19,13 +19,11 @@ React + Flask app
 
 ## Project Structure 📁
 ```
-├── doc
-├── config
-├── src
-│   └── client
-│   └── server
-├── tests
+├── doc         (documentation)   
+├── client      (frontend)
+├── server      (backend)
 ├── README.md
+├── LICENCE
 ├── .gitignore
 ```
 
