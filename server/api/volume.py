@@ -1,6 +1,12 @@
+"""Volume API Routes / Endpoints
+
+This file contains all the routes related to volume data.
+"""
+
 from flask import Blueprint, request
 from services.volume_service import (get_series_service,
                                      get_total_service)
+
 
 volume_route = Blueprint('volume_route', __name__)
 

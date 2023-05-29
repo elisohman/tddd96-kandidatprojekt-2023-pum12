@@ -1,16 +1,36 @@
+"""Volume Service
+
+This file contains all the logic for the volume routes.
+
+# BigQuery info:
+Instead of calling bigquery with a query string, we can call a procedure.
+This is a more secure way of calling bigquery.
+The procidure is created in cloud.
+"""
+
 from google.cloud import bigquery
 import os
 
-
+# Used for BigQuery authentication
+# Not secure handling of credentials, should be changed
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = '../service-account-key.json'
 
-# Instead of calling bigquery with a query string, we can call a procedure.
-# This is a more secure way of calling bigquery. 
-# The procidure is created in cloud.
 
-# The procedure is called with a time_range and a country.
-# Returns json of all the districts in country in a given time_range
 def get_series_service(time_range, country="NULL"):
+    """Retrieves a series of volume data for the world or a specified country
+        in a given time_range.
+
+    Args:
+        time_range (str): specifies the time_range (all, 1d, 1w, 1m, 1y)
+        country (str): specifies the country
+            (default is "NULL", which equals the world)
+
+    Returns:
+        list: a list of dictionaries, where a dictinary represents a
+            data point in the series, with the fields
+            "timestamp" and "total_volume" (in liters).
+    """
+
     query = f"""
         CALL `internet-of-kegs.Testing123.graphGetCountries{
         get_procedure_time_range(time_range)
@@ -19,12 +39,31 @@ def get_series_service(time_range, country="NULL"):
 
     results = get_bigquery_data(query)
     for row in results:
+        # Measurement comes in milliliters, we want to display liters
         row['total_volume'] /= 1000
 
     return results
 
 
-def get_total_service(time_range, country="NULL", test=None):
+def get_total_service(time_range, country="NULL"):
+    """Retrieves the total volume for each country in the world
+        (when no country is specified) or for each district in a
+        specified country, in a given time_range.
+
+    Args:
+        time_range (str): specifies the time_range (all, 1d, 1w, 1m, 1y)
+        country (str): specifies the country
+            (default is "NULL", which equals the world)
+
+    Returns:
+        dict: a dict with the fields:
+            "max_volume" — the largest total_volume, for a location,
+                in the time_range.
+            "total_volume" — the sum of all locations total_volume.
+            "volumes" — a list of dictionaries, one for each location,
+                with the fields "location" and "total_volume".
+    """
+
     query = f"""
         CALL `internet-of-kegs.Testing123.tableGetCountries{
         get_procedure_time_range(time_range)
@@ -51,7 +90,7 @@ def get_total_service(time_range, country="NULL", test=None):
         "total_volume": total_volume,
         "volumes": results
     }
-    print(resulting_dict)
+    # print(resulting_dict)
     return resulting_dict
 
 
